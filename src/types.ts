@@ -32,6 +32,8 @@ export interface RankingEpisode {
   bvid: string;
   title: string;
   pubdate?: number;
+  /** season = 合集正片；search:xxx = 靠关键词搜索兜底捞到的 */
+  source?: string;
 }
 
 export interface RankingPayload {
@@ -49,6 +51,8 @@ export interface RankingPayload {
     seasonId: string;
   };
   episodes: RankingEpisode[];
+  /** 正片 + 搜索命中到的全部视频 */
+  videos?: RankingEpisode[];
   /** 已发布但结果尚未录入的期数，需要人工补录 rounds */
   pendingEpisodes: RankingEpisode[];
   models: KillLineSeedRecord[];

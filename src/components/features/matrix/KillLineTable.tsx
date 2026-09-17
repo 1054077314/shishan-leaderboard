@@ -235,8 +235,10 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
         {pendingEpisodes.length > 0 && (
           <>
             <span className="text-zinc-700">·</span>
-            <span className="text-amber-400">
-              {pendingEpisodes.length} 期新视频待录入实测结果
+            <span className="text-amber-400" title={pendingEpisodes
+                .map((p) => `${p.pubdate ? new Date(p.pubdate * 1000).toLocaleDateString("zh-CN") : "—"}  ${p.title}`)
+                .join("\n")}>
+              {pendingEpisodes.length} 个新视频待录入实测结果
             </span>
           </>
         )}

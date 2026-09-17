@@ -2,8 +2,8 @@
  * 重建运行时排名数据 public/rankingData.json。
  *
  * 输入：
- *  1. src/data/killLineSeed.json      —— 模型结果（含结构化 rounds）
- *  2. scripts/.cache/bilibili_season.json —— B站采集缓存（可选，来自 sync_bilibili.py）
+ *  1. src/data/killLineSeed.json            —— 模型结果（含结构化 rounds）
+ *  2. scripts/.cache/bilibili_season.json   —— B站采集缓存（来自 sync_bilibili.py）
  *
  * 输出：
  *  public/rankingData.json，带 dataVersion。前端靠 dataVersion 判断是否需要重排。
@@ -25,27 +25,36 @@ const seedFile = resolve(root, "src/data/killLineSeed.json");
 const seasonCacheFile = resolve(root, "scripts/.cache/bilibili_season.json");
 const outFile = resolve(root, "public/rankingData.json");
 
-const scoreMode = process.env.RANKING_SCORE_MODE === "computed" ? "computed" : "curated";
+const scoreMode =
+  process.env.RANKING_SCORE_MODE === "computed" ? "computed" : "curated";
 
 const seed = JSON.parse(readFileSync(seedFile, "utf8"));
 
+// 正片来自合集，extras 是 UP主没放进合集、但标题命中搜索的视频
 let episodes = seed.episodes ?? [];
+let extras = [];
 if (existsSync(seasonCacheFile)) {
   const cache = JSON.parse(readFileSync(seasonCacheFile, "utf8"));
   if (Array.isArray(cache.episodes) && cache.episodes.length > 0) {
-    // 以 B站实际发布为准，缺失的 pubdate 不覆盖已有数据
     episodes = cache.episodes.map((ep) => ({
       ...episodes.find((e) => e.bvid === ep.bvid),
       ...ep,
     }));
   }
+  extras = Array.isArray(cache.extras) ? cache.extras : [];
 }
 
-// 已发布但种子里还没有对应结果的期数 -> 需要人工补录 rounds
-const knownBvids = new Set(
-  seed.models.flatMap((m) => (m.bilibiliBvid ? [m.bilibiliBvid] : []))
-);
-const pendingEpisodes = episodes.filter((ep) => !knownBvids.has(ep.bvid));
+// 所有已知视频 = 正片 + 未进合集的
+const videos = [...episodes, ...extras.map((e) => ({ ...e, ep: e.ep ?? 0 }))];
+
+// 已被榜单覆盖的视频：既有 seed 里的正片，也有模型记录里引用到的 bvid
+const covered = new Set([
+  ...(seed.episodes ?? []).map((e) => e.bvid),
+  ...seed.models.flatMap((m) => (m.bilibiliBvid ? [m.bilibiliBvid] : [])),
+]);
+
+// 已发布但没有任何模型结果引用的 -> 需要人工补录 rounds
+const pendingEpisodes = videos.filter((v) => !covered.has(v.bvid));
 
 const hash = (value) =>
   createHash("sha1").update(JSON.stringify(value)).digest("hex").slice(0, 12);
@@ -53,7 +62,7 @@ const hash = (value) =>
 const payload = {
   schemaVersion: 1,
   scoreMode,
-  dataVersion: hash({ models: seed.models, episodes }),
+  dataVersion: hash({ models: seed.models, videos }),
   updatedAt: new Date().toISOString(),
   scoring: {
     weights: { gold: 0.2, diamond: 0.35, king: 0.45 },
@@ -61,6 +70,7 @@ const payload = {
   },
   source: seed.source,
   episodes,
+  videos,
   pendingEpisodes,
   models: seed.models,
 };
@@ -68,11 +78,16 @@ const payload = {
 writeFileSync(outFile, JSON.stringify(payload, null, 2) + "\n", "utf8");
 
 console.log(
-  `[rebuildRanking] ${payload.models.length} 条模型 / ${episodes.length} 期 / ` +
-    `待补录 ${pendingEpisodes.length} 期 · dataVersion=${payload.dataVersion} (${scoreMode})`
+  `[rebuildRanking] ${payload.models.length} 条模型 / 正片 ${episodes.length} 期 / ` +
+    `站外 ${extras.length} 条 / 待补录 ${pendingEpisodes.length} 条 · ` +
+    `dataVersion=${payload.dataVersion} (${scoreMode})`
 );
 if (pendingEpisodes.length > 0) {
   pendingEpisodes.forEach((ep) =>
-    console.log(`  待补录: 第${String(ep.ep).padStart(2, "0")}期 ${ep.bvid} ${ep.title}`)
+    console.log(
+      `  待补录: ${ep.bvid} ${new Date((ep.pubdate || 0) * 1000)
+        .toISOString()
+        .slice(0, 10)} ${ep.title}`
+    )
   );
 }

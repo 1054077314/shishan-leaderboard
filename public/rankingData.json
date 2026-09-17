@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "scoreMode": "curated",
-  "dataVersion": "571669344061",
-  "updatedAt": "2026-09-17T16:11:38.132Z",
+  "dataVersion": "b85275b6ccd5",
+  "updatedAt": "2026-09-17T16:57:49.538Z",
   "scoring": {
     "weights": {
       "gold": 0.2,
@@ -21,76 +21,273 @@
       "ep": 1,
       "bvid": "BV1smTi6aE6J",
       "title": "祖传BUG，屎山论剑｜国模AI选拔赛",
-      "pubdate": 1782922108
+      "pubdate": 1782922108,
+      "source": "season"
     },
     {
       "ep": 2,
       "bvid": "BV1okM86eEwi",
       "title": "LongCat2.0发布：美团龙猫，请直面屎山代码！",
-      "pubdate": 1783417791
+      "pubdate": 1783417791,
+      "source": "season"
     },
     {
       "ep": 3,
       "bvid": "BV1etMJ6NEd4",
       "title": "HY3.0！你终究还是要面对屎山代码的考验！",
-      "pubdate": 1783584818
+      "pubdate": 1783584818,
+      "source": "season"
     },
     {
       "ep": 4,
       "bvid": "BV1KeN76rEJ9",
       "title": "Grok4.5！从火星来的AI！到屎山去改BUG！",
-      "pubdate": 1783675377
+      "pubdate": 1783675377,
+      "source": "season"
     },
     {
       "ep": 5,
       "bvid": "BV1QNKw6uE3L",
       "title": "Kimi-K3｜实战祖传代码｜代表月亮！照亮屎山！",
-      "pubdate": 1784364686
+      "pubdate": 1784364686,
+      "source": "season"
     },
     {
       "ep": 6,
       "bvid": "BV1vrgQ6aEJU",
       "title": "请接受《屎山》的检验｜Qwen3.8Max｜Gemini3.6Flash【B站AI创造公开赛】",
-      "pubdate": 1784797208
+      "pubdate": 1784797208,
+      "source": "season"
     },
     {
       "ep": 7,
       "bvid": "BV1893x6HE7s",
       "title": "屎山论剑｜中美AI！决战屎山之巅！",
-      "pubdate": 1785411067
+      "pubdate": 1785411067,
+      "source": "season"
     },
     {
       "ep": 8,
       "bvid": "BV1fk3X6CEXb",
       "title": "屎山论剑｜DeepSeekV4Flash：下一位！",
-      "pubdate": 1785645230
+      "pubdate": 1785645230,
+      "source": "season"
     },
     {
       "ep": 9,
       "bvid": "BV1HzbX6tEvR",
       "title": "开源AI闭源AI决战屎山之巅｜屎山论剑",
-      "pubdate": 1786883169
+      "pubdate": 1786883169,
+      "source": "season"
     },
     {
       "ep": 10,
       "bvid": "BV1mu4X6cEkD",
       "title": "谁是模型斩杀线，来看屎山大论剑｜屎山论剑",
-      "pubdate": 1788077468
+      "pubdate": 1788077468,
+      "source": "season"
     },
     {
       "ep": 11,
       "bvid": "BV1R2b56uEK7",
       "title": "来屎山之巅，看GPT6和Fable5.1神仙打架｜屎山论剑",
-      "pubdate": 1788858159
+      "pubdate": 1788858159,
+      "source": "season"
     },
     {
       "ep": 12,
       "bvid": "BV1eCYD6QEqS",
       "title": "四家Flash大乱斗，挑战屎山代码｜屎山论剑",
-      "pubdate": 1789194859
+      "pubdate": 1789194859,
+      "source": "season"
     }
   ],
-  "pendingEpisodes": [],
+  "videos": [
+    {
+      "ep": 1,
+      "bvid": "BV1smTi6aE6J",
+      "title": "祖传BUG，屎山论剑｜国模AI选拔赛",
+      "pubdate": 1782922108,
+      "source": "season"
+    },
+    {
+      "ep": 2,
+      "bvid": "BV1okM86eEwi",
+      "title": "LongCat2.0发布：美团龙猫，请直面屎山代码！",
+      "pubdate": 1783417791,
+      "source": "season"
+    },
+    {
+      "ep": 3,
+      "bvid": "BV1etMJ6NEd4",
+      "title": "HY3.0！你终究还是要面对屎山代码的考验！",
+      "pubdate": 1783584818,
+      "source": "season"
+    },
+    {
+      "ep": 4,
+      "bvid": "BV1KeN76rEJ9",
+      "title": "Grok4.5！从火星来的AI！到屎山去改BUG！",
+      "pubdate": 1783675377,
+      "source": "season"
+    },
+    {
+      "ep": 5,
+      "bvid": "BV1QNKw6uE3L",
+      "title": "Kimi-K3｜实战祖传代码｜代表月亮！照亮屎山！",
+      "pubdate": 1784364686,
+      "source": "season"
+    },
+    {
+      "ep": 6,
+      "bvid": "BV1vrgQ6aEJU",
+      "title": "请接受《屎山》的检验｜Qwen3.8Max｜Gemini3.6Flash【B站AI创造公开赛】",
+      "pubdate": 1784797208,
+      "source": "season"
+    },
+    {
+      "ep": 7,
+      "bvid": "BV1893x6HE7s",
+      "title": "屎山论剑｜中美AI！决战屎山之巅！",
+      "pubdate": 1785411067,
+      "source": "season"
+    },
+    {
+      "ep": 8,
+      "bvid": "BV1fk3X6CEXb",
+      "title": "屎山论剑｜DeepSeekV4Flash：下一位！",
+      "pubdate": 1785645230,
+      "source": "season"
+    },
+    {
+      "ep": 9,
+      "bvid": "BV1HzbX6tEvR",
+      "title": "开源AI闭源AI决战屎山之巅｜屎山论剑",
+      "pubdate": 1786883169,
+      "source": "season"
+    },
+    {
+      "ep": 10,
+      "bvid": "BV1mu4X6cEkD",
+      "title": "谁是模型斩杀线，来看屎山大论剑｜屎山论剑",
+      "pubdate": 1788077468,
+      "source": "season"
+    },
+    {
+      "ep": 11,
+      "bvid": "BV1R2b56uEK7",
+      "title": "来屎山之巅，看GPT6和Fable5.1神仙打架｜屎山论剑",
+      "pubdate": 1788858159,
+      "source": "season"
+    },
+    {
+      "ep": 12,
+      "bvid": "BV1eCYD6QEqS",
+      "title": "四家Flash大乱斗，挑战屎山代码｜屎山论剑",
+      "pubdate": 1789194859,
+      "source": "season"
+    },
+    {
+      "bvid": "BV1zXj263E6X",
+      "title": "屎山BUG半决赛｜Qwen3.7Max和GPT5.5｜决战屎山之巅！",
+      "pubdate": 1782213199,
+      "source": "search:决战屎山之巅",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1p57s6QEYJ",
+      "title": "屎山BUG总决赛｜屎山之巅！起风了！",
+      "pubdate": 1782570300,
+      "source": "search:决战屎山之巅",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1ufNF6hEGN",
+      "title": "屎山论剑｜美区选拔赛｜Grok4.5｜Fable5｜GPT5.6",
+      "pubdate": 1783773048,
+      "source": "search:屎山论剑",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1NDMy6xE6i",
+      "title": "屎山考核｜Qwen3.8Max正式版｜再战祖传代码！",
+      "pubdate": 1785926390,
+      "source": "search:祖传代码",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1gggJ6eEdn",
+      "title": "十六路AI诸侯分组抽签| 祖传BUG挑战赛｜逐鹿中原",
+      "pubdate": 1786587593,
+      "source": "search:祖传BUG",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1x9h369EgD",
+      "title": "小扎的MuseSpark1.2踢馆祖传屎山代码｜祖传BUG挑战赛",
+      "pubdate": 1787654399,
+      "source": "search:祖传BUG",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1R7eg6gEnJ",
+      "title": "屎山留给DeepSeek的时间不多了｜B组第二轮",
+      "pubdate": 1789634773,
+      "source": "search:屎山",
+      "ep": 0
+    }
+  ],
+  "pendingEpisodes": [
+    {
+      "bvid": "BV1zXj263E6X",
+      "title": "屎山BUG半决赛｜Qwen3.7Max和GPT5.5｜决战屎山之巅！",
+      "pubdate": 1782213199,
+      "source": "search:决战屎山之巅",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1p57s6QEYJ",
+      "title": "屎山BUG总决赛｜屎山之巅！起风了！",
+      "pubdate": 1782570300,
+      "source": "search:决战屎山之巅",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1ufNF6hEGN",
+      "title": "屎山论剑｜美区选拔赛｜Grok4.5｜Fable5｜GPT5.6",
+      "pubdate": 1783773048,
+      "source": "search:屎山论剑",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1NDMy6xE6i",
+      "title": "屎山考核｜Qwen3.8Max正式版｜再战祖传代码！",
+      "pubdate": 1785926390,
+      "source": "search:祖传代码",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1gggJ6eEdn",
+      "title": "十六路AI诸侯分组抽签| 祖传BUG挑战赛｜逐鹿中原",
+      "pubdate": 1786587593,
+      "source": "search:祖传BUG",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1x9h369EgD",
+      "title": "小扎的MuseSpark1.2踢馆祖传屎山代码｜祖传BUG挑战赛",
+      "pubdate": 1787654399,
+      "source": "search:祖传BUG",
+      "ep": 0
+    },
+    {
+      "bvid": "BV1R7eg6gEnJ",
+      "title": "屎山留给DeepSeek的时间不多了｜B组第二轮",
+      "pubdate": 1789634773,
+      "source": "search:屎山",
+      "ep": 0
+    }
+  ],
   "models": [
     {
       "id": "gpt-6-astra",

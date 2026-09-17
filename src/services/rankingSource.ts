@@ -30,6 +30,7 @@ const FALLBACK_PAYLOAD: RankingPayload = {
     seasonId: (seed as any).source.seasonId,
   },
   episodes: (seed as any).episodes,
+  videos: (seed as any).episodes,
   pendingEpisodes: [],
   models: (seed as any).models as KillLineSeedRecord[],
 };
