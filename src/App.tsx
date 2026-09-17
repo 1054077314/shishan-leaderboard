@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { motion } from "motion/react";
 import { KillLineRecord } from "./types";
 import { ModelService } from "./services/modelService";
+import { useRankingData } from "./services/rankingSource";
 
 // UI Components
 import { Header } from "./components/Header";
@@ -25,7 +26,16 @@ export default function App() {
   const [filterTier, setFilterTier] = useState("ALL");
   const [sortBy, setSortBy] = useState<"score" | "name" | "diamond" | "king">("score");
 
-  const allModels = useMemo(() => ModelService.getAllModels(), []);
+  // 排名数据来自运行时数据源，dataVersion 一变就会自动重排
+  const {
+    ranked: allModels,
+    payload,
+    loading: rankingLoading,
+    usingFallback,
+    lastSyncedAt,
+    refresh: refreshRanking,
+  } = useRankingData();
+
   const [selectedModel, setSelectedModel] = useState<KillLineRecord>(allModels[0]);
   const [selectedForCompare, setSelectedForCompare] = useState<KillLineRecord[]>([]);
   const [isComparatorOpen, setIsComparatorOpen] = useState(false);
@@ -64,8 +74,9 @@ export default function App() {
 
   const handleOpenComparator = () => {
     if (selectedForCompare.length === 0) {
-      const astra = ModelService.getModelById("gpt-6-astra") || allModels[0];
-      const flash = ModelService.getModelById("deepseek-v41-flash") || allModels[1];
+      const astra = ModelService.getModelById(allModels, "gpt-6-astra") || allModels[0];
+      const flash =
+        ModelService.getModelById(allModels, "deepseek-v41-flash") || allModels[1];
       setSelectedForCompare([astra, flash]);
     } else if (selectedForCompare.length === 1) {
       const candidate = allModels.find((m) => m.id !== selectedForCompare[0].id) || allModels[0];
@@ -89,18 +100,18 @@ export default function App() {
   };
 
   const handleExportData = (format: "json" | "csv") => {
-    ModelService.exportData(format);
+    ModelService.exportData(allModels, format);
   };
 
   const handleSelectHighlight = (type: "ASTRA" | "DS_FLASH" | "DIAMOND" | "KING") => {
     if (type === "ASTRA") {
-      const astra = ModelService.getModelById("gpt-6-astra");
+      const astra = ModelService.getModelById(allModels, "gpt-6-astra");
       if (astra) {
         setSelectedModel(astra);
         setDetailModalModel(astra);
       }
     } else if (type === "DS_FLASH") {
-      const ds = ModelService.getModelById("deepseek-v41-flash");
+      const ds = ModelService.getModelById(allModels, "deepseek-v41-flash");
       if (ds) {
         setSelectedModel(ds);
         setDetailModalModel(ds);
@@ -115,13 +126,14 @@ export default function App() {
   };
 
   // Delegated to ModelService
+  // 依赖里带上 allModels：数据版本一换，排序立即重算
   const filteredAndSortedData = useMemo(() => {
-    return ModelService.filterAndSortModels({
+    return ModelService.filterAndSortModels(allModels, {
       searchQuery,
       filterTier,
       sortBy,
     });
-  }, [searchQuery, filterTier, sortBy]);
+  }, [allModels, searchQuery, filterTier, sortBy]);
 
   return (
     <div className="min-h-screen bg-[#050505] text-[#ededed] font-sans antialiased selection:bg-rose-500/20 selection:text-rose-200">
@@ -175,6 +187,13 @@ export default function App() {
         >
           <KillLineTable
             data={filteredAndSortedData}
+            dataVersion={payload?.dataVersion ?? ""}
+            updatedAt={payload?.updatedAt ?? ""}
+            pendingEpisodes={payload?.pendingEpisodes ?? []}
+            syncing={rankingLoading}
+            usingFallback={usingFallback}
+            lastSyncedAt={lastSyncedAt}
+            onRefresh={refreshRanking}
             selectedModel={selectedModel}
             onSelectModel={setSelectedModel}
             selectedForCompare={selectedForCompare}

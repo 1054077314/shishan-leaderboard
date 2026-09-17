@@ -7,6 +7,10 @@
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
+    "ranking:seed": "tsx scripts/generateSeed.ts",
+    "ranking:rebuild": "node scripts/rebuildRanking.mjs",
+    "sync": "python scripts/sync_bilibili.py && node scripts/rebuildRanking.mjs",
+    "prebuild": "node scripts/rebuildRanking.mjs",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"
   },

@@ -1,5 +1,5 @@
-import { KillLineRecord, StatusType, CostRecord } from "../types";
-import { KILL_LINE_DATA, COST_DATA } from "../data/shishanData";
+import { KillLineRecord, RankedKillLineRecord, StatusType } from "../types";
+import { COST_DATA } from "../data/shishanData";
 
 export interface ModelFilterOptions {
   searchQuery?: string;
@@ -10,36 +10,40 @@ export interface ModelFilterOptions {
 /**
  * 模型数据与排行榜业务服务
  * 负责模型列表聚合、多维度检索过滤、排序以及数据导出
+ *
+ * 注意：这里所有方法都是纯函数，数据一律由调用方传入。
+ * 把数据从模块常量改成入参之后，拿到新一版数据直接重排即可，
+ * 不必再改代码、不必重新构建。
  */
 export class ModelService {
   /**
-   * 获取所有斩杀线评测模型
-   */
-  static getAllModels(): KillLineRecord[] {
-    return KILL_LINE_DATA;
-  }
-
-  /**
    * 按 ID 查找指定模型
    */
-  static getModelById(id: string): KillLineRecord | undefined {
-    return KILL_LINE_DATA.find((m) => m.id === id);
+  static getModelById(
+    data: KillLineRecord[],
+    id: string
+  ): KillLineRecord | undefined {
+    return data.find((m) => m.id === id);
   }
 
   /**
    * 获取花费结算对比数据
    */
-  static getCostData(): CostRecord[] {
+  static getCostData() {
     return COST_DATA;
   }
 
   /**
-   * 综合检索与排序
+   * 综合检索与排序（纯函数）
+   * @param data 当前生效的模型数据，来自 rankingSource
    */
-  static filterAndSortModels(options: ModelFilterOptions = {}): KillLineRecord[] {
+  static filterAndSortModels(
+    data: RankedKillLineRecord[],
+    options: ModelFilterOptions = {}
+  ): RankedKillLineRecord[] {
     const { searchQuery = "", filterTier = "ALL", sortBy = "score" } = options;
 
-    return KILL_LINE_DATA.filter((item) => {
+    return data.filter((item) => {
       // 1. 关键词搜索
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase().trim();
@@ -84,8 +88,9 @@ export class ModelService {
   /**
    * 导出数据为 JSON 或 CSV 并自动触发下载
    */
-  static exportData(format: "json" | "csv"): void {
-    const blob = format === "json" ? this.exportToJson() : this.exportToCsv();
+  static exportData(data: KillLineRecord[], format: "json" | "csv"): void {
+    const blob =
+      format === "json" ? this.exportToJson(data) : this.exportToCsv(data);
     const filename = `shishan-benchmark-data.${format}`;
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -98,13 +103,13 @@ export class ModelService {
   /**
    * 导出数据为 JSON 格式 Blob
    */
-  static exportToJson(): Blob {
+  static exportToJson(data: KillLineRecord[]): Blob {
     const dataStr = JSON.stringify(
       {
         title: "屎山论剑全 12 期 · 难度斩杀线 × 花费全量对照",
         source: "B站: Token就是词元",
         exportedAt: new Date().toISOString(),
-        killLines: KILL_LINE_DATA,
+        killLines: data,
         costSettlements: COST_DATA,
       },
       null,
@@ -116,7 +121,7 @@ export class ModelService {
   /**
    * 导出数据为 CSV 格式 Blob（带 UTF-8 BOM 防止 Excel 乱码）
    */
-  static exportToCsv(): Blob {
+  static exportToCsv(data: KillLineRecord[]): Blob {
     const headers = [
       "模型名称",
       "天梯梯队",
@@ -124,16 +129,24 @@ export class ModelService {
       "钻石线",
       "王者线",
       "实测证言",
+      "战力指数",
+      "全榜名次",
     ];
-    const rows = KILL_LINE_DATA.map((d) => [
-      `"${d.model}"`,
-      `"${d.tier}"`,
-      `"${d.gold}"`,
-      `"${d.diamond}"`,
-      `"${d.king}"`,
-      `"${d.quote.replace(/"/g, '""')}"`,
-    ]);
-    const csvContent = "\uFEFF" + [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
+    const rows = data.map((d) => {
+      const ranked = d as RankedKillLineRecord;
+      return [
+        `"${d.model}"`,
+        `"${d.tier}"`,
+        `"${d.gold}"`,
+        `"${d.diamond}"`,
+        `"${d.king}"`,
+        `"${d.quote.replace(/"/g, '""')}"`,
+        `"${d.score}"`,
+        `"${ranked.rank ?? ""}"`,
+      ];
+    });
+    const csvContent =
+      "\uFEFF" + [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
     return new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
   }
 }

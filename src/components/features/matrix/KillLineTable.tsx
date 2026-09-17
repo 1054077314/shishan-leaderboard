@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { KillLineRecord, StatusType } from "../../../types";
+import { KillLineRecord, RankedKillLineRecord, RankingEpisode, StatusType } from "../../../types";
 import { Badge } from "../../ui/Badge";
 import {
   ArrowUpDown,
@@ -10,10 +10,20 @@ import {
   HelpCircle,
   ChevronsUpDown,
   Tv,
+  RefreshCw,
 } from "lucide-react";
 
 export interface KillLineTableProps {
-  data: KillLineRecord[];
+  data: RankedKillLineRecord[];
+  /** 数据版本，变化时说明榜单已重算 */
+  dataVersion?: string;
+  updatedAt?: string;
+  /** 已发布但结果未录入的期数 */
+  pendingEpisodes?: RankingEpisode[];
+  syncing?: boolean;
+  usingFallback?: boolean;
+  lastSyncedAt?: number | null;
+  onRefresh?: () => void;
   selectedModel: KillLineRecord;
   onSelectModel: (model: KillLineRecord) => void;
   selectedForCompare?: KillLineRecord[];
@@ -29,6 +39,13 @@ export interface KillLineTableProps {
 
 export const KillLineTable: React.FC<KillLineTableProps> = ({
   data,
+  dataVersion,
+  updatedAt,
+  pendingEpisodes = [],
+  syncing,
+  usingFallback,
+  lastSyncedAt,
+  onRefresh,
   selectedModel,
   onSelectModel,
   onOpenDetailModal,
@@ -114,6 +131,38 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
     );
   };
 
+  const formatUpdatedAt = (iso?: string) => {
+    if (!iso) return "—";
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return "—";
+    const pad = (n: number) => String(n).padStart(2, "0");
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(
+      d.getHours()
+    )}:${pad(d.getMinutes())}`;
+  };
+
+  const renderRank = (row: RankedKillLineRecord) => (
+    <div className="flex flex-col items-center leading-none gap-1">
+      <span className="font-mono-code text-sm font-bold text-white tabular-nums">
+        {row.rank}
+      </span>
+      {row.rankDelta !== 0 && (
+        <span
+          className={`font-mono-code text-[10px] tabular-nums ${
+            row.rankDelta > 0 ? "text-rose-400" : "text-zinc-500"
+          }`}
+          title={
+            row.rankDelta > 0
+              ? `较上一版上升 ${row.rankDelta} 位`
+              : `较上一版下降 ${Math.abs(row.rankDelta)} 位`
+          }
+        >
+          {row.rankDelta > 0 ? `↑${row.rankDelta}` : `↓${Math.abs(row.rankDelta)}`}
+        </span>
+      )}
+    </div>
+  );
+
   const renderTier = (tier: string) => {
     const colorMap: Record<string, string> = {
       T0: "text-rose-400 font-bold",
@@ -176,13 +225,55 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
         </div>
       </div>
 
+      {/* 数据同步状态：数据版本一变，榜单即自动重排 */}
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-3 font-mono-code text-[11px] text-zinc-500">
+        <span>
+          数据版本 <span className="text-zinc-300">{dataVersion || "—"}</span>
+        </span>
+        <span className="text-zinc-700">·</span>
+        <span>更新于 {formatUpdatedAt(updatedAt)}</span>
+        {pendingEpisodes.length > 0 && (
+          <>
+            <span className="text-zinc-700">·</span>
+            <span className="text-amber-400">
+              {pendingEpisodes.length} 期新视频待录入实测结果
+            </span>
+          </>
+        )}
+        {usingFallback && (
+          <>
+            <span className="text-zinc-700">·</span>
+            <span className="text-amber-500">线上数据不可用，展示内置兜底数据</span>
+          </>
+        )}
+        <button
+          onClick={onRefresh}
+          disabled={syncing}
+          className="inline-flex items-center gap-1 text-zinc-400 hover:text-white transition-colors disabled:opacity-50 cursor-pointer"
+          title="立即拉取最新排名数据并重排"
+        >
+          <RefreshCw className={`w-3 h-3 ${syncing ? "animate-spin" : ""}`} />
+          <span>{syncing ? "同步中" : "检查更新"}</span>
+        </button>
+      </div>
+
       {/* Modern High-Density Table */}
       <div className="border border-white/[0.08] rounded-xl overflow-hidden bg-[#050505] shadow-2xl relative">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="border-b border-white/[0.08] text-[11px] font-mono-code text-zinc-500 tracking-wider uppercase bg-white/[0.02]">
-              <th className="py-3 px-4 sm:px-6 w-12 text-center font-normal">
+              <th className="py-3 px-2 sm:px-3 w-12 text-center font-normal">
                 <span className="sr-only">展开</span>
+              </th>
+              <th
+                onClick={() => handleSortChange("score")}
+                className="py-3 px-2 sm:px-3 w-14 text-center font-normal hover:text-zinc-200 transition-colors cursor-pointer select-none"
+                title="全榜名次，按战力指数排序"
+              >
+                <div className="flex items-center justify-center gap-1">
+                  <span>#</span>
+                  <ArrowUpDown className="w-3 h-3 text-zinc-600" />
+                </div>
               </th>
               <th
                 onClick={() => handleSortChange("name")}
@@ -227,8 +318,11 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
               // Fast Skeleton state
               Array.from({ length: 4 }).map((_, idx) => (
                 <tr key={idx} className="animate-pulse">
-                  <td className="py-4 px-4 sm:px-6 text-center">
+                  <td className="py-4 px-2 sm:px-3 text-center">
                     <div className="w-4 h-4 bg-white/[0.05] rounded mx-auto" />
+                  </td>
+                  <td className="py-4 px-2 sm:px-3 text-center">
+                    <div className="w-5 h-4 bg-white/[0.05] rounded mx-auto" />
                   </td>
                   <td className="py-4 px-3 sm:px-4">
                     <div className="h-4 bg-white/[0.08] rounded w-32 mb-1.5" />
@@ -247,7 +341,7 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
               ))
             ) : data.length === 0 ? (
               <tr>
-                <td colSpan={5} className="py-12 text-center text-zinc-500 font-mono-code text-xs">
+                <td colSpan={6} className="py-12 text-center text-zinc-500 font-mono-code text-xs">
                   未找到符合筛选条件的模型
                 </td>
               </tr>
@@ -275,7 +369,7 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
                       }`}
                     >
                       {/* Expand / Collapse Caret */}
-                      <td className="py-3.5 px-4 sm:px-6 text-center align-middle">
+                      <td className="py-3.5 px-2 sm:px-3 text-center align-middle">
                         <button
                           onClick={(e) => toggleExpand(row.id, e)}
                           className="p-1 rounded hover:bg-white/[0.08] text-zinc-500 group-hover:text-zinc-300 transition-colors"
@@ -287,6 +381,11 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
                             <ChevronDown className="w-3.5 h-3.5" />
                           )}
                         </button>
+                      </td>
+
+                      {/* 全榜名次与升降 */}
+                      <td className="py-3.5 px-2 sm:px-3 text-center align-middle">
+                        {renderRank(row)}
                       </td>
 
                       {/* Model & Tier */}
@@ -322,7 +421,7 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
                     <AnimatePresence>
                       {isExpanded && (
                         <tr className="bg-black/40 border-b border-white/[0.06]">
-                          <td colSpan={5} className="p-0">
+                          <td colSpan={6} className="p-0">
                             <motion.div
                               initial={{ opacity: 0, height: 0 }}
                               animate={{ opacity: 1, height: "auto" }}
