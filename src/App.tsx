@@ -100,7 +100,11 @@ export default function App() {
   };
 
   const handleExportData = (format: "json" | "csv") => {
-    ModelService.exportData(allModels, format);
+    ModelService.exportData(allModels, format, {
+      episodesCovered: payload?.episodes?.length ?? 0,
+      videosFound: payload?.videos?.length ?? payload?.episodes?.length ?? 0,
+      pending: payload?.pendingEpisodes?.length ?? 0,
+    });
   };
 
   const handleSelectHighlight = (type: "ASTRA" | "DS_FLASH" | "DIAMOND" | "KING") => {
@@ -190,6 +194,8 @@ export default function App() {
             dataVersion={payload?.dataVersion ?? ""}
             updatedAt={payload?.updatedAt ?? ""}
             pendingEpisodes={payload?.pendingEpisodes ?? []}
+            episodesCovered={payload?.episodes?.length ?? 0}
+            videosFound={payload?.videos?.length ?? payload?.episodes?.length ?? 0}
             syncing={rankingLoading}
             usingFallback={usingFallback}
             lastSyncedAt={lastSyncedAt}

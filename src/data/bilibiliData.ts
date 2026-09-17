@@ -20,11 +20,14 @@ export const BILIBILI_UP_INFO = {
   spaceUrl: "https://space.bilibili.com/3546747185924773",
   seasonUrl: "https://space.bilibili.com/3546747185924773/channel/collectiondetail?sid=8474061",
   tagline: "中美AI！屎山论剑！专治各种大模型吹牛，用真实业务级遗留代码测出真底细",
-  videoCount: 55,
-  coreSeries: "合集·屎山论剑 (全12期)",
+  videoCount: 58,
+  // 只写合集名，不写期数：UP主一直在更新，期数由 scripts/sync_bilibili.py 采集后派生
+  coreSeries: "合集·屎山论剑",
 };
 
-// 完整真实对应 B站 UP主 “Token就是词元” (UID: 3546747185924773) 《屎山论剑》全12期实测视频
+// 对应 B站 UP主 “Token就是词元” (UID: 3546747185924773) 《屎山论剑》合集内的实测视频。
+// 注意：这**不是** UP主的全部相关视频——他还有一批没进合集的实测稿
+// （见 scripts/.cache/bilibili_season.json 的 extras）。期数一律以采集结果为准。
 export const BILIBILI_EPISODES: BilibiliVideoRecord[] = [
   {
     id: "ep01",

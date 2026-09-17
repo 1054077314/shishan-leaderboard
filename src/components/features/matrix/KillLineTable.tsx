@@ -20,6 +20,10 @@ export interface KillLineTableProps {
   updatedAt?: string;
   /** 已发布但结果未录入的期数 */
   pendingEpisodes?: RankingEpisode[];
+  /** 已录入结果的正片期数 */
+  episodesCovered?: number;
+  /** 采集到的全部相关视频条数（正片 + 未进合集的） */
+  videosFound?: number;
   syncing?: boolean;
   usingFallback?: boolean;
   lastSyncedAt?: number | null;
@@ -42,6 +46,8 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
   dataVersion,
   updatedAt,
   pendingEpisodes = [],
+  episodesCovered,
+  videosFound,
   syncing,
   usingFallback,
   lastSyncedAt,
@@ -227,6 +233,15 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
 
       {/* 数据同步状态：数据版本一变，榜单即自动重排 */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-3 font-mono-code text-[11px] text-zinc-500">
+        {episodesCovered !== undefined && videosFound !== undefined && (
+          <>
+            <span>
+              已录 <span className="text-zinc-300">{episodesCovered}</span> 期正片 / 共发现{" "}
+              <span className="text-zinc-300">{videosFound}</span> 条
+            </span>
+            <span className="text-zinc-700">·</span>
+          </>
+        )}
         <span>
           数据版本 <span className="text-zinc-300">{dataVersion || "—"}</span>
         </span>

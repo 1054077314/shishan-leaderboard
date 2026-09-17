@@ -87,10 +87,17 @@ export class ModelService {
 
   /**
    * 导出数据为 JSON 或 CSV 并自动触发下载
+   * @param scope 当前收录范围，用于生成标题。期数不再写死，UP主更新后自动跟着变
    */
-  static exportData(data: KillLineRecord[], format: "json" | "csv"): void {
+  static exportData(
+    data: KillLineRecord[],
+    format: "json" | "csv",
+    scope?: { episodesCovered: number; videosFound: number; pending: number }
+  ): void {
     const blob =
-      format === "json" ? this.exportToJson(data) : this.exportToCsv(data);
+      format === "json"
+        ? this.exportToJson(data, scope)
+        : this.exportToCsv(data);
     const filename = `shishan-benchmark-data.${format}`;
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -103,10 +110,16 @@ export class ModelService {
   /**
    * 导出数据为 JSON 格式 Blob
    */
-  static exportToJson(data: KillLineRecord[]): Blob {
+  static exportToJson(
+    data: KillLineRecord[],
+    scope?: { episodesCovered: number; videosFound: number; pending: number }
+  ): Blob {
+    const title = scope
+      ? `屎山论剑实测榜 · 已录 ${scope.episodesCovered} 期正片 / 共发现 ${scope.videosFound} 条视频（${scope.pending} 条待补录）`
+      : "屎山论剑实测榜 · 难度斩杀线 × 花费全量对照";
     const dataStr = JSON.stringify(
       {
-        title: "屎山论剑全 12 期 · 难度斩杀线 × 花费全量对照",
+        title,
         source: "B站: Token就是词元",
         exportedAt: new Date().toISOString(),
         killLines: data,
