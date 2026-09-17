@@ -56,6 +56,13 @@ const covered = new Set([
 // 已发布但没有任何模型结果引用的 -> 需要人工补录 rounds
 const pendingEpisodes = videos.filter((v) => !covered.has(v.bvid));
 
+// 三个时间必须分开，否则"更新于"会骗人：
+// 数据重建时间再新，也不代表最新一期的实测结果已经录进去了
+const maxPubdate = (list) =>
+  list.reduce((max, v) => Math.max(max, v.pubdate || 0), 0);
+const latestContentAt = maxPubdate(videos);
+const latestRecordedAt = maxPubdate(videos.filter((v) => covered.has(v.bvid)));
+
 const hash = (value) =>
   createHash("sha1").update(JSON.stringify(value)).digest("hex").slice(0, 12);
 
@@ -63,7 +70,14 @@ const payload = {
   schemaVersion: 1,
   scoreMode,
   dataVersion: hash({ models: seed.models, videos }),
+  /** 数据文件重建时间（跑脚本的时刻） */
   updatedAt: new Date().toISOString(),
+  /** UP主最新一条相关视频的发布时间 */
+  latestContentAt: latestContentAt ? new Date(latestContentAt * 1000).toISOString() : "",
+  /** 榜单已录入结果的最新一期发布时间 */
+  latestRecordedAt: latestRecordedAt
+    ? new Date(latestRecordedAt * 1000).toISOString()
+    : "",
   scoring: {
     weights: { gold: 0.2, diamond: 0.35, king: 0.45 },
     decay: 0.7,
@@ -77,10 +91,16 @@ const payload = {
 
 writeFileSync(outFile, JSON.stringify(payload, null, 2) + "\n", "utf8");
 
+const fmt = (iso) => (iso ? iso.slice(0, 16).replace("T", " ") + " (UTC)" : "—");
 console.log(
   `[rebuildRanking] ${payload.models.length} 条模型 / 正片 ${episodes.length} 期 / ` +
     `站外 ${extras.length} 条 / 待补录 ${pendingEpisodes.length} 条 · ` +
     `dataVersion=${payload.dataVersion} (${scoreMode})`
+);
+console.log(
+  `  UP主最新内容 ${fmt(payload.latestContentAt)} · 榜单已录至 ${fmt(
+    payload.latestRecordedAt
+  )} · 数据重建 ${fmt(payload.updatedAt)}`
 );
 if (pendingEpisodes.length > 0) {
   pendingEpisodes.forEach((ep) =>

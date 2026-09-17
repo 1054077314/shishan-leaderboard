@@ -193,6 +193,8 @@ export default function App() {
             data={filteredAndSortedData}
             dataVersion={payload?.dataVersion ?? ""}
             updatedAt={payload?.updatedAt ?? ""}
+            latestContentAt={payload?.latestContentAt ?? ""}
+            latestRecordedAt={payload?.latestRecordedAt ?? ""}
             pendingEpisodes={payload?.pendingEpisodes ?? []}
             episodesCovered={payload?.episodes?.length ?? 0}
             videosFound={payload?.videos?.length ?? payload?.episodes?.length ?? 0}

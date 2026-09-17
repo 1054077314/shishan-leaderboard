@@ -17,7 +17,12 @@ export interface KillLineTableProps {
   data: RankedKillLineRecord[];
   /** 数据版本，变化时说明榜单已重算 */
   dataVersion?: string;
+  /** 数据文件重建（同步）时间 */
   updatedAt?: string;
+  /** UP主最新一条相关视频的发布时间 */
+  latestContentAt?: string;
+  /** 榜单已录入结果的最新一期发布时间 */
+  latestRecordedAt?: string;
   /** 已发布但结果未录入的期数 */
   pendingEpisodes?: RankingEpisode[];
   /** 已录入结果的正片期数 */
@@ -45,6 +50,8 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
   data,
   dataVersion,
   updatedAt,
+  latestContentAt,
+  latestRecordedAt,
   pendingEpisodes = [],
   episodesCovered,
   videosFound,
@@ -137,14 +144,19 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
     );
   };
 
-  const formatUpdatedAt = (iso?: string) => {
+  /**
+   * 时间格式化。三个时间必须分开显示：
+   * 「同步于」是跑脚本的时刻，跟 UP主有没有更新、结果有没有录进去都没关系
+   */
+  const formatUpdatedAt = (iso?: string, withYear = true) => {
     if (!iso) return "—";
     const d = new Date(iso);
     if (Number.isNaN(d.getTime())) return "—";
     const pad = (n: number) => String(n).padStart(2, "0");
-    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(
-      d.getHours()
-    )}:${pad(d.getMinutes())}`;
+    const date = withYear
+      ? `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+      : `${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    return `${date} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
   };
 
   const renderRank = (row: RankedKillLineRecord) => (
@@ -233,34 +245,71 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
 
       {/* 数据同步状态：数据版本一变，榜单即自动重排 */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-3 font-mono-code text-[11px] text-zinc-500">
-        {episodesCovered !== undefined && videosFound !== undefined && (
+        {!dataVersion && <span className="text-zinc-500">正在同步排名数据…</span>}
+        {!!dataVersion && (
           <>
             <span>
               已录 <span className="text-zinc-300">{episodesCovered}</span> 期正片 / 共发现{" "}
               <span className="text-zinc-300">{videosFound}</span> 条
             </span>
             <span className="text-zinc-700">·</span>
-          </>
-        )}
-        <span>
-          数据版本 <span className="text-zinc-300">{dataVersion || "—"}</span>
-        </span>
-        <span className="text-zinc-700">·</span>
-        <span>更新于 {formatUpdatedAt(updatedAt)}</span>
-        {pendingEpisodes.length > 0 && (
-          <>
-            <span className="text-zinc-700">·</span>
-            <span className="text-amber-400" title={pendingEpisodes
-                .map((p) => `${p.pubdate ? new Date(p.pubdate * 1000).toLocaleDateString("zh-CN") : "—"}  ${p.title}`)
-                .join("\n")}>
-              {pendingEpisodes.length} 个新视频待录入实测结果
+            <span>
+              内容最新{" "}
+              <span
+                className={
+                  latestContentAt && latestRecordedAt && latestContentAt > latestRecordedAt
+                    ? "text-amber-400"
+                    : "text-zinc-300"
+                }
+                title="UP主最新一条相关视频的发布时间"
+              >
+                {formatUpdatedAt(latestContentAt, false)}
+              </span>
             </span>
-          </>
-        )}
-        {usingFallback && (
-          <>
             <span className="text-zinc-700">·</span>
-            <span className="text-amber-500">线上数据不可用，展示内置兜底数据</span>
+            <span>
+              已录至{" "}
+              <span className="text-zinc-300" title="榜单已录入实测结果的最新一期发布时间">
+                {formatUpdatedAt(latestRecordedAt, false)}
+              </span>
+            </span>
+            <span className="text-zinc-700">·</span>
+            <span>
+              数据版本 <span className="text-zinc-300">{dataVersion}</span>
+            </span>
+            <span className="text-zinc-700">·</span>
+            <span>
+              同步于{" "}
+              <span className="text-zinc-400" title="最近一次重建数据文件的时刻，不等于内容更新时间">
+                {formatUpdatedAt(updatedAt, false)}
+              </span>
+            </span>
+            {pendingEpisodes.length > 0 && (
+              <>
+                <span className="text-zinc-700">·</span>
+                <span
+                  className="text-amber-400"
+                  title={pendingEpisodes
+                    .map(
+                      (p) =>
+                        `${
+                          p.pubdate
+                            ? new Date(p.pubdate * 1000).toLocaleDateString("zh-CN")
+                            : "—"
+                        }  ${p.title}`
+                    )
+                    .join("\n")}
+                >
+                  {pendingEpisodes.length} 个新视频待录入实测结果
+                </span>
+              </>
+            )}
+            {usingFallback && (
+              <>
+                <span className="text-zinc-700">·</span>
+                <span className="text-amber-500">线上数据不可用，展示内置兜底数据</span>
+              </>
+            )}
           </>
         )}
         <button

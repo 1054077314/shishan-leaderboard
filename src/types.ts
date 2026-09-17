@@ -40,7 +40,12 @@ export interface RankingPayload {
   schemaVersion: number;
   scoreMode: ScoreMode;
   dataVersion: string;
+  /** 数据文件重建时间 */
   updatedAt: string;
+  /** UP主最新一条相关视频的发布时间 */
+  latestContentAt?: string;
+  /** 榜单已录入结果的最新一期发布时间 */
+  latestRecordedAt?: string;
   scoring: {
     weights: { gold: number; diamond: number; king: number };
     decay: number;

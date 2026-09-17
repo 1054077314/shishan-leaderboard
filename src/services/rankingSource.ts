@@ -22,7 +22,7 @@ const FALLBACK_PAYLOAD: RankingPayload = {
   schemaVersion: 1,
   scoreMode: DEFAULT_SCORING.mode,
   dataVersion: "seed",
-  updatedAt: new Date(0).toISOString(),
+  updatedAt: "",
   scoring: { weights: DEFAULT_SCORING.weights, decay: DEFAULT_SCORING.decay },
   source: {
     upName: (seed as any).source.upName,
