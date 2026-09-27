@@ -7,6 +7,11 @@ export interface ModelFilterOptions {
   sortBy?: "score" | "name" | "diamond" | "king";
 }
 
+function toyRankOf(m: RankedKillLineRecord): number {
+  const r = (m as any).toy?.rank;
+  return typeof r === "number" ? r : Number.MAX_SAFE_INTEGER;
+}
+
 /**
  * 模型数据与排行榜业务服务
  * 负责模型列表聚合、多维度检索过滤、排序以及数据导出
@@ -69,19 +74,19 @@ export class ModelService {
 
       return true;
     }).sort((a, b) => {
-      // 3. 多规则排序
+      // 3. 多规则排序：默认按官方名次（toy.rank），行为与主榜一致
       if (sortBy === "name") {
         return a.model.localeCompare(b.model);
       }
       if (sortBy === "diamond") {
         const weight: Record<StatusType, number> = { pass: 3, warn: 2, fail: 1, none: 0 };
-        return weight[b.diamondStatus] - weight[a.diamondStatus] || b.score - a.score;
+        return weight[b.diamondStatus] - weight[a.diamondStatus] || toyRankOf(a) - toyRankOf(b) || b.score - a.score;
       }
       if (sortBy === "king") {
         const weight: Record<StatusType, number> = { pass: 3, warn: 2, fail: 1, none: 0 };
-        return weight[b.kingStatus] - weight[a.kingStatus] || b.score - a.score;
+        return weight[b.kingStatus] - weight[a.kingStatus] || toyRankOf(a) - toyRankOf(b) || b.score - a.score;
       }
-      return b.score - a.score;
+      return toyRankOf(a) - toyRankOf(b) || b.score - a.score;
     });
   }
 
@@ -92,7 +97,7 @@ export class ModelService {
   static exportData(
     data: KillLineRecord[],
     format: "json" | "csv",
-    scope?: { episodesCovered: number; videosFound: number; pending: number }
+    scope?: { dataVersion: string }
   ): void {
     const blob =
       format === "json"
@@ -112,10 +117,10 @@ export class ModelService {
    */
   static exportToJson(
     data: KillLineRecord[],
-    scope?: { episodesCovered: number; videosFound: number; pending: number }
+    scope?: { dataVersion: string }
   ): Blob {
     const title = scope
-      ? `屎山论剑实测榜 · 已录 ${scope.episodesCovered} 期正片 / 共发现 ${scope.videosFound} 条视频（${scope.pending} 条待补录）`
+      ? `屎山论剑实测榜 · 挑战榜 ${data.length} 席 · 数据版本 ${scope.dataVersion} · 数据来源屎山英雄榜`
       : "屎山论剑实测榜 · 难度斩杀线 × 花费全量对照";
     const dataStr = JSON.stringify(
       {

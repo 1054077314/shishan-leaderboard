@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "scoreMode": "curated",
-  "dataVersion": "b85275b6ccd5",
-  "updatedAt": "2026-09-17T17:27:20.201Z",
-  "latestContentAt": "2026-09-17T08:46:13.000Z",
-  "latestRecordedAt": "2026-09-12T06:34:19.000Z",
+  "dataVersion": "346d4dd2cb30",
+  "updatedAt": "2026-09-27T04:32:05.852Z",
+  "latestContentAt": "2026-09-23T00:00:00.000Z",
+  "latestRecordedAt": "2026-09-23T00:00:00.000Z",
   "scoring": {
     "weights": {
       "gold": 0.2,
@@ -15,828 +15,1025 @@
   },
   "source": {
     "upName": "Token就是词元",
-    "mid": "3546747185924773",
-    "seasonId": "8474061"
+    "mid": "toy:bilibilitoy",
+    "seasonId": "toy-shishan",
+    "origin": "toy",
+    "sourceUrl": "https://www.bilibili.com/toy/shishan/index.html?spm_id_from=333.1387.0.0",
+    "fetchedAt": "2026-09-27T12:10:00+08:00"
   },
-  "episodes": [
-    {
-      "ep": 1,
-      "bvid": "BV1smTi6aE6J",
-      "title": "祖传BUG，屎山论剑｜国模AI选拔赛",
-      "pubdate": 1782922108,
-      "source": "season"
-    },
-    {
-      "ep": 2,
-      "bvid": "BV1okM86eEwi",
-      "title": "LongCat2.0发布：美团龙猫，请直面屎山代码！",
-      "pubdate": 1783417791,
-      "source": "season"
-    },
-    {
-      "ep": 3,
-      "bvid": "BV1etMJ6NEd4",
-      "title": "HY3.0！你终究还是要面对屎山代码的考验！",
-      "pubdate": 1783584818,
-      "source": "season"
-    },
-    {
-      "ep": 4,
-      "bvid": "BV1KeN76rEJ9",
-      "title": "Grok4.5！从火星来的AI！到屎山去改BUG！",
-      "pubdate": 1783675377,
-      "source": "season"
-    },
-    {
-      "ep": 5,
-      "bvid": "BV1QNKw6uE3L",
-      "title": "Kimi-K3｜实战祖传代码｜代表月亮！照亮屎山！",
-      "pubdate": 1784364686,
-      "source": "season"
-    },
-    {
-      "ep": 6,
-      "bvid": "BV1vrgQ6aEJU",
-      "title": "请接受《屎山》的检验｜Qwen3.8Max｜Gemini3.6Flash【B站AI创造公开赛】",
-      "pubdate": 1784797208,
-      "source": "season"
-    },
-    {
-      "ep": 7,
-      "bvid": "BV1893x6HE7s",
-      "title": "屎山论剑｜中美AI！决战屎山之巅！",
-      "pubdate": 1785411067,
-      "source": "season"
-    },
-    {
-      "ep": 8,
-      "bvid": "BV1fk3X6CEXb",
-      "title": "屎山论剑｜DeepSeekV4Flash：下一位！",
-      "pubdate": 1785645230,
-      "source": "season"
-    },
-    {
-      "ep": 9,
-      "bvid": "BV1HzbX6tEvR",
-      "title": "开源AI闭源AI决战屎山之巅｜屎山论剑",
-      "pubdate": 1786883169,
-      "source": "season"
-    },
-    {
-      "ep": 10,
-      "bvid": "BV1mu4X6cEkD",
-      "title": "谁是模型斩杀线，来看屎山大论剑｜屎山论剑",
-      "pubdate": 1788077468,
-      "source": "season"
-    },
-    {
-      "ep": 11,
-      "bvid": "BV1R2b56uEK7",
-      "title": "来屎山之巅，看GPT6和Fable5.1神仙打架｜屎山论剑",
-      "pubdate": 1788858159,
-      "source": "season"
-    },
-    {
-      "ep": 12,
-      "bvid": "BV1eCYD6QEqS",
-      "title": "四家Flash大乱斗，挑战屎山代码｜屎山论剑",
-      "pubdate": 1789194859,
-      "source": "season"
-    }
-  ],
-  "videos": [
-    {
-      "ep": 1,
-      "bvid": "BV1smTi6aE6J",
-      "title": "祖传BUG，屎山论剑｜国模AI选拔赛",
-      "pubdate": 1782922108,
-      "source": "season"
-    },
-    {
-      "ep": 2,
-      "bvid": "BV1okM86eEwi",
-      "title": "LongCat2.0发布：美团龙猫，请直面屎山代码！",
-      "pubdate": 1783417791,
-      "source": "season"
-    },
-    {
-      "ep": 3,
-      "bvid": "BV1etMJ6NEd4",
-      "title": "HY3.0！你终究还是要面对屎山代码的考验！",
-      "pubdate": 1783584818,
-      "source": "season"
-    },
-    {
-      "ep": 4,
-      "bvid": "BV1KeN76rEJ9",
-      "title": "Grok4.5！从火星来的AI！到屎山去改BUG！",
-      "pubdate": 1783675377,
-      "source": "season"
-    },
-    {
-      "ep": 5,
-      "bvid": "BV1QNKw6uE3L",
-      "title": "Kimi-K3｜实战祖传代码｜代表月亮！照亮屎山！",
-      "pubdate": 1784364686,
-      "source": "season"
-    },
-    {
-      "ep": 6,
-      "bvid": "BV1vrgQ6aEJU",
-      "title": "请接受《屎山》的检验｜Qwen3.8Max｜Gemini3.6Flash【B站AI创造公开赛】",
-      "pubdate": 1784797208,
-      "source": "season"
-    },
-    {
-      "ep": 7,
-      "bvid": "BV1893x6HE7s",
-      "title": "屎山论剑｜中美AI！决战屎山之巅！",
-      "pubdate": 1785411067,
-      "source": "season"
-    },
-    {
-      "ep": 8,
-      "bvid": "BV1fk3X6CEXb",
-      "title": "屎山论剑｜DeepSeekV4Flash：下一位！",
-      "pubdate": 1785645230,
-      "source": "season"
-    },
-    {
-      "ep": 9,
-      "bvid": "BV1HzbX6tEvR",
-      "title": "开源AI闭源AI决战屎山之巅｜屎山论剑",
-      "pubdate": 1786883169,
-      "source": "season"
-    },
-    {
-      "ep": 10,
-      "bvid": "BV1mu4X6cEkD",
-      "title": "谁是模型斩杀线，来看屎山大论剑｜屎山论剑",
-      "pubdate": 1788077468,
-      "source": "season"
-    },
-    {
-      "ep": 11,
-      "bvid": "BV1R2b56uEK7",
-      "title": "来屎山之巅，看GPT6和Fable5.1神仙打架｜屎山论剑",
-      "pubdate": 1788858159,
-      "source": "season"
-    },
-    {
-      "ep": 12,
-      "bvid": "BV1eCYD6QEqS",
-      "title": "四家Flash大乱斗，挑战屎山代码｜屎山论剑",
-      "pubdate": 1789194859,
-      "source": "season"
-    },
-    {
-      "bvid": "BV1zXj263E6X",
-      "title": "屎山BUG半决赛｜Qwen3.7Max和GPT5.5｜决战屎山之巅！",
-      "pubdate": 1782213199,
-      "source": "search:决战屎山之巅",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1p57s6QEYJ",
-      "title": "屎山BUG总决赛｜屎山之巅！起风了！",
-      "pubdate": 1782570300,
-      "source": "search:决战屎山之巅",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1ufNF6hEGN",
-      "title": "屎山论剑｜美区选拔赛｜Grok4.5｜Fable5｜GPT5.6",
-      "pubdate": 1783773048,
-      "source": "search:屎山论剑",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1NDMy6xE6i",
-      "title": "屎山考核｜Qwen3.8Max正式版｜再战祖传代码！",
-      "pubdate": 1785926390,
-      "source": "search:祖传代码",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1gggJ6eEdn",
-      "title": "十六路AI诸侯分组抽签| 祖传BUG挑战赛｜逐鹿中原",
-      "pubdate": 1786587593,
-      "source": "search:祖传BUG",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1x9h369EgD",
-      "title": "小扎的MuseSpark1.2踢馆祖传屎山代码｜祖传BUG挑战赛",
-      "pubdate": 1787654399,
-      "source": "search:祖传BUG",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1R7eg6gEnJ",
-      "title": "屎山留给DeepSeek的时间不多了｜B组第二轮",
-      "pubdate": 1789634773,
-      "source": "search:屎山",
-      "ep": 0
-    }
-  ],
-  "pendingEpisodes": [
-    {
-      "bvid": "BV1zXj263E6X",
-      "title": "屎山BUG半决赛｜Qwen3.7Max和GPT5.5｜决战屎山之巅！",
-      "pubdate": 1782213199,
-      "source": "search:决战屎山之巅",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1p57s6QEYJ",
-      "title": "屎山BUG总决赛｜屎山之巅！起风了！",
-      "pubdate": 1782570300,
-      "source": "search:决战屎山之巅",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1ufNF6hEGN",
-      "title": "屎山论剑｜美区选拔赛｜Grok4.5｜Fable5｜GPT5.6",
-      "pubdate": 1783773048,
-      "source": "search:屎山论剑",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1NDMy6xE6i",
-      "title": "屎山考核｜Qwen3.8Max正式版｜再战祖传代码！",
-      "pubdate": 1785926390,
-      "source": "search:祖传代码",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1gggJ6eEdn",
-      "title": "十六路AI诸侯分组抽签| 祖传BUG挑战赛｜逐鹿中原",
-      "pubdate": 1786587593,
-      "source": "search:祖传BUG",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1x9h369EgD",
-      "title": "小扎的MuseSpark1.2踢馆祖传屎山代码｜祖传BUG挑战赛",
-      "pubdate": 1787654399,
-      "source": "search:祖传BUG",
-      "ep": 0
-    },
-    {
-      "bvid": "BV1R7eg6gEnJ",
-      "title": "屎山留给DeepSeek的时间不多了｜B组第二轮",
-      "pubdate": 1789634773,
-      "source": "search:屎山",
-      "ep": 0
-    }
-  ],
+  "episodes": [],
+  "videos": [],
+  "pendingEpisodes": [],
+  "boards": {
+    "ladder": [
+      {
+        "rank": 1,
+        "name": "GPT6",
+        "org": "OpenAI",
+        "note": "2026-09-08 御三家三人赛 8 分满分夺魁，三题全部一轮命中",
+        "trend": "hold",
+        "delta": 0
+      },
+      {
+        "rank": 2,
+        "name": "Claude Fable5.1",
+        "org": "Anthropic",
+        "note": "2026-09-08 御三家三人赛 5 分，王者题三轮压哨拿下",
+        "trend": "hold",
+        "delta": 0
+      },
+      {
+        "rank": 3,
+        "name": "Opus5.5",
+        "org": "Anthropic",
+        "note": "2026-09-23 新版 AI 御三家大论剑 7 分夺魁，K005 二轮拿下且只改 10 个代码文件",
+        "trend": "new",
+        "delta": 0
+      },
+      {
+        "rank": 4,
+        "name": "GPT6 Sol",
+        "org": "OpenAI",
+        "note": "2026-09-23 新版 AI 御三家大论剑 7 分，K005 二轮拿下，两轮共改 24 个文件",
+        "trend": "new",
+        "delta": 0
+      },
+      {
+        "rank": 5,
+        "name": "Grok4.7",
+        "org": "xAI",
+        "note": "2026-09-23 新版 AI 御三家大论剑 6 分，K005 第三轮压哨拿下，D003 只改 4 个文件",
+        "trend": "new",
+        "delta": 0
+      },
+      {
+        "rank": 6,
+        "name": "GLM5.3",
+        "org": "智谱 AI",
+        "note": "",
+        "trend": "down",
+        "delta": -1
+      },
+      {
+        "rank": 7,
+        "name": "Kimi-K3",
+        "org": "月之暗面",
+        "note": "",
+        "trend": "hold",
+        "delta": 0
+      },
+      {
+        "rank": 8,
+        "name": "DeepSeek Flash",
+        "org": "DeepSeek",
+        "note": "2026-09-11 Flash 组第二次大乱斗 5 分夺魁，全场唯一拿下钻石题",
+        "trend": "up",
+        "delta": 1
+      },
+      {
+        "rank": 9,
+        "name": "Qwen3.8Max",
+        "org": "阿里巴巴",
+        "note": "",
+        "trend": "up",
+        "delta": 1
+      },
+      {
+        "rank": 10,
+        "name": "Qwen3.8Flash",
+        "org": "阿里巴巴",
+        "note": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石三轮失手未能卫冕",
+        "trend": "up",
+        "delta": 1
+      },
+      {
+        "rank": 11,
+        "name": "Gemini3.8Flash",
+        "org": "Google",
+        "note": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石与王者仍是零命中",
+        "trend": "up",
+        "delta": 1
+      },
+      {
+        "rank": 12,
+        "name": "GLM5.3Flash",
+        "org": "智谱 AI",
+        "note": "2026-09-11 Flash 组第二次大乱斗 3 分，上一场失手的 S002 一轮翻案",
+        "trend": "up",
+        "delta": 2
+      }
+    ],
+    "kaohe": [
+      {
+        "name": "GLM-5.3",
+        "total": 12,
+        "rank": 1,
+        "byTier": {
+          "bronze": 3,
+          "silver": 3,
+          "gold": 5,
+          "diamond": 1,
+          "king": 0
+        },
+        "unlock": {
+          "baseScore": 11,
+          "diamondUnlocked": true,
+          "kingUnlocked": true,
+          "reached": "king"
+        }
+      },
+      {
+        "name": "Grok 4.5",
+        "total": 11,
+        "rank": 2,
+        "byTier": {
+          "bronze": 3,
+          "silver": 2,
+          "gold": 6,
+          "diamond": 0,
+          "king": 0
+        },
+        "unlock": {
+          "baseScore": 11,
+          "diamondUnlocked": false,
+          "kingUnlocked": false,
+          "reached": "gold"
+        }
+      },
+      {
+        "name": "Step 5 Preview",
+        "total": 11,
+        "rank": 2,
+        "byTier": {
+          "bronze": 3,
+          "silver": 2,
+          "gold": 6,
+          "diamond": 0,
+          "king": 0
+        },
+        "unlock": {
+          "baseScore": 11,
+          "diamondUnlocked": true,
+          "kingUnlocked": false,
+          "reached": "diamond"
+        }
+      },
+      {
+        "name": "DeepSeek V4 Flash",
+        "total": 9,
+        "rank": 4,
+        "byTier": {
+          "bronze": 3,
+          "silver": 2,
+          "gold": 4,
+          "diamond": 0,
+          "king": 0
+        },
+        "unlock": {
+          "baseScore": 9,
+          "diamondUnlocked": false,
+          "kingUnlocked": false,
+          "reached": "gold"
+        }
+      },
+      {
+        "name": "Qwen3.8-Max",
+        "total": 9,
+        "rank": 4,
+        "byTier": {
+          "bronze": 3,
+          "silver": 2,
+          "gold": 4,
+          "diamond": 0,
+          "king": 0
+        },
+        "unlock": {
+          "baseScore": 9,
+          "diamondUnlocked": false,
+          "kingUnlocked": false,
+          "reached": "gold"
+        }
+      },
+      {
+        "name": "LongCat 2.0",
+        "total": 7,
+        "rank": 6,
+        "byTier": {
+          "bronze": 2,
+          "silver": 2,
+          "gold": 3,
+          "diamond": 0,
+          "king": 0
+        },
+        "unlock": {
+          "baseScore": 7,
+          "diamondUnlocked": false,
+          "kingUnlocked": false,
+          "reached": "gold"
+        }
+      },
+      {
+        "name": "混元 3.0",
+        "total": 6,
+        "rank": 7,
+        "byTier": {
+          "bronze": 3,
+          "silver": 1,
+          "gold": 2,
+          "diamond": 0,
+          "king": 0
+        },
+        "unlock": {
+          "baseScore": 6,
+          "diamondUnlocked": false,
+          "kingUnlocked": false,
+          "reached": "gold"
+        }
+      },
+      {
+        "name": "Claude Opus 4.6",
+        "total": 6,
+        "rank": 7,
+        "byTier": {
+          "bronze": 2,
+          "silver": 2,
+          "gold": 2,
+          "diamond": 0,
+          "king": 0
+        },
+        "unlock": {
+          "baseScore": 6,
+          "diamondUnlocked": false,
+          "kingUnlocked": false,
+          "reached": "gold"
+        }
+      },
+      {
+        "name": "Qwen3.8 27B",
+        "total": 6,
+        "rank": 7,
+        "byTier": {
+          "bronze": 2,
+          "silver": 2,
+          "gold": 2,
+          "diamond": 0,
+          "king": 0
+        },
+        "unlock": {
+          "baseScore": 6,
+          "diamondUnlocked": false,
+          "kingUnlocked": false,
+          "reached": "gold"
+        }
+      }
+    ],
+    "standingsGroups": [
+      {
+        "group": "A 组 组",
+        "state": "R2 已完赛",
+        "members": [
+          {
+            "name": "GPT-6 Astra",
+            "wdl": "2-0-0",
+            "pts": 4
+          },
+          {
+            "name": "Muse Spark 1.3",
+            "wdl": "1-1-0",
+            "pts": 3
+          },
+          {
+            "name": "Qwen3.8-Max",
+            "wdl": "0-1-1",
+            "pts": 1
+          },
+          {
+            "name": "MiniMax M3",
+            "wdl": "0-0-2",
+            "pts": 0
+          }
+        ]
+      },
+      {
+        "group": "B 组 组",
+        "state": "R2 已完赛",
+        "members": [
+          {
+            "name": "Claude Opus 5.5",
+            "wdl": "2-0-0",
+            "pts": 4
+          },
+          {
+            "name": "混元 4.0",
+            "wdl": "0-2-0",
+            "pts": 2
+          },
+          {
+            "name": "DeepSeek Flash",
+            "wdl": "0-1-1",
+            "pts": 1
+          },
+          {
+            "name": "Gemini 3.8 Flash",
+            "wdl": "0-1-1",
+            "pts": 1
+          }
+        ]
+      },
+      {
+        "group": "C 组 组",
+        "state": "R2 未开赛",
+        "members": [
+          {
+            "name": "Grok 4.7",
+            "wdl": "1-0-0",
+            "pts": 2
+          },
+          {
+            "name": "DeepSeek V4 Pro",
+            "wdl": "1-0-0",
+            "pts": 2
+          },
+          {
+            "name": "Kimi K3",
+            "wdl": "0-0-1",
+            "pts": 0
+          },
+          {
+            "name": "Step 5 Preview",
+            "wdl": "0-0-1",
+            "pts": 0
+          }
+        ]
+      },
+      {
+        "group": "D 组 组",
+        "state": "R2 未开赛",
+        "members": [
+          {
+            "name": "Claude Fable 5.1",
+            "wdl": "1-0-0",
+            "pts": 2
+          },
+          {
+            "name": "Doubao Seed 2.1",
+            "wdl": "1-0-0",
+            "pts": 2
+          },
+          {
+            "name": "GLM-5.3",
+            "wdl": "0-0-1",
+            "pts": 0
+          },
+          {
+            "name": "MiMo 2.6 Pro",
+            "wdl": "0-0-1",
+            "pts": 0
+          }
+        ]
+      }
+    ],
+    "standingsTotal": [
+      {
+        "rank": 1,
+        "name": "Claude Opus 5.5",
+        "org": "Anthropic",
+        "wdl": "2胜 0平 0负",
+        "pts": 4
+      },
+      {
+        "rank": 2,
+        "name": "GPT-6 Astra",
+        "org": "OpenAI",
+        "wdl": "2胜 0平 0负",
+        "pts": 4
+      },
+      {
+        "rank": 3,
+        "name": "Muse Spark 1.3",
+        "org": "Muse AI",
+        "wdl": "1胜 1平 0负",
+        "pts": 3
+      },
+      {
+        "rank": 4,
+        "name": "Claude Fable 5.1",
+        "org": "Anthropic",
+        "wdl": "1胜 0平 0负",
+        "pts": 2
+      },
+      {
+        "rank": 5,
+        "name": "DeepSeek V4 Pro",
+        "org": "DeepSeek",
+        "wdl": "1胜 0平 0负",
+        "pts": 2
+      },
+      {
+        "rank": 6,
+        "name": "Doubao Seed 2.1",
+        "org": "字节跳动",
+        "wdl": "1胜 0平 0负",
+        "pts": 2
+      },
+      {
+        "rank": 7,
+        "name": "Grok 4.7",
+        "org": "xAI",
+        "wdl": "1胜 0平 0负",
+        "pts": 2
+      },
+      {
+        "rank": 8,
+        "name": "混元 4.0",
+        "org": "腾讯",
+        "wdl": "0胜 2平 0负",
+        "pts": 2
+      },
+      {
+        "rank": 9,
+        "name": "DeepSeek Flash",
+        "org": "DeepSeek",
+        "wdl": "0胜 1平 1负",
+        "pts": 1
+      },
+      {
+        "rank": 10,
+        "name": "Gemini 3.8 Flash",
+        "org": "Google",
+        "wdl": "0胜 1平 1负",
+        "pts": 1
+      },
+      {
+        "rank": 11,
+        "name": "Qwen3.8-Max",
+        "org": "阿里巴巴",
+        "wdl": "0胜 1平 1负",
+        "pts": 1
+      },
+      {
+        "rank": 12,
+        "name": "GLM-5.3",
+        "org": "智谱 AI",
+        "wdl": "0胜 0平 1负",
+        "pts": 0
+      },
+      {
+        "rank": 13,
+        "name": "Kimi K3",
+        "org": "月之暗面",
+        "wdl": "0胜 0平 1负",
+        "pts": 0
+      },
+      {
+        "rank": 14,
+        "name": "MiMo 2.6 Pro",
+        "org": "小米",
+        "wdl": "0胜 0平 1负",
+        "pts": 0
+      },
+      {
+        "rank": 15,
+        "name": "MiniMax M3",
+        "org": "MiniMax",
+        "wdl": "0胜 0平 2负",
+        "pts": 0
+      },
+      {
+        "rank": 16,
+        "name": "Step 5 Preview",
+        "org": "阶跃星辰",
+        "wdl": "0胜 0平 1负",
+        "pts": 0
+      }
+    ],
+    "latestBoutDate": "2026-09-23"
+  },
   "models": [
     {
-      "id": "gpt-6-astra",
-      "model": "GPT-6 Astra",
+      "id": "gpt6",
+      "model": "GPT6",
       "tier": "T0",
       "category": "Flagship",
-      "gold": "一轮过",
-      "diamond": "一轮过",
-      "king": "一轮过",
-      "goldStatus": "pass",
-      "diamondStatus": "pass",
-      "kingStatus": "pass",
-      "quote": "钻石/王者均唯一一轮秒杀，断层第一成立。",
-      "timestamp": "09-12 08:55",
-      "episodesTested": "第 10–12 期",
-      "costEstimate": "高阶订阅配额",
-      "tokensConsumed": "中等消耗 (~4,500万)",
-      "analysis": "全场唯一能在钻石级和王者级两道最严苛屎山代码题目中均实现首轮一发入魂的模型。零死循环、逻辑对齐极为精准。",
-      "strengths": [
-        "全难度一轮秒杀",
-        "极低幻觉率",
-        "长上下文排错一次通过"
-      ],
-      "weaknesses": [
-        "调用门槛高",
-        "企业级配额限制"
-      ],
-      "bestFor": "极端复杂的生产级历史遗留代码重构与架构级排错",
-      "score": 99,
-      "bilibiliBvid": "BV1R2b56uEK7",
-      "sourceEpisodeTitle": "第11期 来屎山之巅，看GPT6和Fable5.1神仙打架",
-      "rounds": {
-        "gold": 1,
-        "diamond": 1,
-        "king": 1
-      },
-      "curatedScore": 99
-    },
-    {
-      "id": "grok-46",
-      "model": "Grok 4.6",
-      "tier": "T1",
-      "category": "Flagship",
-      "gold": "一轮过",
-      "diamond": "一轮过",
-      "king": "两轮过",
-      "goldStatus": "pass",
-      "diamondStatus": "pass",
-      "kingStatus": "warn",
-      "quote": "王者当时仅 Grok 4.6 与 V4 Pro 做对，应入 T1。",
-      "timestamp": "08-30 02:15",
-      "episodesTested": "第 08–12 期",
-      "costEstimate": "SuperGrok 周套餐",
-      "tokensConsumed": "中等偏高 (~6,200万)",
-      "analysis": "钻石一轮秒过，王者级别经过一轮轻微反馈后第二轮直接答对，与 DeepSeek V4 Pro 并列为少数攻破王者的非 Astra 模型。",
-      "strengths": [
-        "推理深度扎实",
-        "反馈纠错敏锐",
-        "钻石级通过率极稳"
-      ],
-      "weaknesses": [
-        "首轮偶有分支漏判",
-        "国内访问与额度限制"
-      ],
-      "bestFor": "高难度算法逻辑调试与复杂并发场景排错",
-      "score": 91,
-      "bilibiliBvid": "BV1mu4X6cEkD",
-      "sourceEpisodeTitle": "第10期 谁是模型斩杀线，来看屎山大论剑",
-      "rounds": {
-        "gold": 1,
-        "diamond": 1,
-        "king": 2
-      },
-      "curatedScore": 91
-    },
-    {
-      "id": "claude-fable-51",
-      "model": "Claude Fable 5.1",
-      "tier": "T1",
-      "category": "Flagship",
-      "gold": "一轮过",
-      "diamond": "一到两轮",
-      "king": "需三轮",
-      "goldStatus": "pass",
-      "diamondStatus": "warn",
-      "kingStatus": "warn",
-      "quote": "对线 Astra，钻石一轮对过、王者需三轮。",
-      "timestamp": "09-08 04:43",
-      "episodesTested": "第 06–12 期",
-      "costEstimate": "Pro 档消耗扣减",
-      "tokensConsumed": "常规消耗 (~5,800万)",
-      "analysis": "代码工整度和工程规范性极高，钻石题首轮曾多次通过；王者题目面对重重隐蔽陷阱需 3 轮提示才能彻底收敛。",
-      "strengths": [
-        "工程代码风格规范",
-        "长程状态推理扎实",
-        "多语言兼容性好"
-      ],
-      "weaknesses": [
-        "王者题攻坚轮次偏多",
-        "偶尔出现防御性过度封装"
-      ],
-      "bestFor": "大型工程项目规范重构与多文件联动调试",
-      "score": 88,
-      "bilibiliBvid": "BV1R2b56uEK7",
-      "sourceEpisodeTitle": "第11期 来屎山之巅，看GPT6和Fable5.1神仙打架",
-      "rounds": {
-        "gold": 1,
-        "diamond": 1.5,
-        "king": 3
-      },
-      "curatedScore": 88
-    },
-    {
-      "id": "deepseek-v4-pro",
-      "model": "DeepSeek V4 Pro",
-      "tier": "T2",
-      "category": "Thinking",
-      "gold": "无记录",
-      "diamond": "常卡住",
-      "king": "两轮过",
-      "goldStatus": "none",
+      "gold": "多轮通过 26/36",
+      "diamond": "仅 9/17",
+      "king": "多轮通过 2/3",
+      "goldStatus": "warn",
       "diamondStatus": "fail",
       "kingStatus": "warn",
-      "quote": "曾两轮做对王者题，但钻石常卡住不稳定。",
-      "timestamp": "09-12 12:22",
-      "episodesTested": "第 07–12 期",
-      "costEstimate": "¥18–25 左右",
-      "tokensConsumed": "深度思考链庞大",
-      "analysis": "具备极高的智力上限，曾在王者题实现两轮漂亮攻克；但在钻石级中等陷阱题上偶有进入思维死胡同或长考超时现象，波动性大。",
-      "strengths": [
-        "极限深度思考能力",
-        "王者题二轮攻破证明上限",
-        "国产旗舰顶尖智力"
-      ],
-      "weaknesses": [
-        "稳定性欠佳",
-        "钻石题偶发死循环长考"
-      ],
-      "bestFor": "关键死锁难题深度探索与离线深度攻坚",
-      "score": 83,
-      "bilibiliBvid": "BV1893x6HE7s",
-      "sourceEpisodeTitle": "第07期 屎山论剑｜中美AI！决战屎山之巅！",
+      "quote": "2026-09-08 御三家三人赛 8 分满分夺魁，三题全部一轮命中",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 1 名",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 56 场",
+      "analysis": "2026-09-08 御三家三人赛 8 分满分夺魁，三题全部一轮命中",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 45.5,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-08 御三家三人赛 8 分满分夺魁，三题全部一轮命中",
       "rounds": {
-        "gold": "none",
+        "gold": 2,
         "diamond": "fail",
         "king": 2
       },
-      "curatedScore": 83
+      "curatedScore": 45.5,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 1,
+        "org": "OpenAI",
+        "trend": "hold",
+        "delta": 0,
+        "family": "GPT",
+        "version": "GPT6",
+        "assessmentTotal": null,
+        "hasRealAssess": false,
+        "groupWdl": null,
+        "groupPts": null
+      }
     },
     {
-      "id": "deepseek-v41-flash",
-      "model": "DeepSeek V4.1 Flash",
-      "tier": "T3",
-      "category": "Flash",
-      "gold": "一轮过",
-      "diamond": "一轮过",
-      "king": "全灭",
-      "goldStatus": "pass",
-      "diamondStatus": "pass",
-      "kingStatus": "fail",
-      "quote": "钻石一轮秒过弹幕刷屏，王者全灭；全场性价比第一。",
-      "timestamp": "09-12 09:59",
-      "episodesTested": "第 11–12 期",
-      "costEstimate": "¥6.10 实付",
-      "tokensConsumed": "1.17 亿词元消耗",
-      "analysis": "全场最大黑马与性价比之神！狂烧 1.17 亿 Tokens 官方最终结算仅 ¥6.10，且以极速在钻石分水岭一轮秒杀通过，引发全屏弹幕狂欢；止步于全灭的王者题。",
-      "strengths": [
-        "超低价格（¥6.10）",
-        "吞吐惊人",
-        "钻石题一轮秒通关",
-        "绝对性价比之王"
-      ],
-      "weaknesses": [
-        "无法逾越王者级代码地雷",
-        "极限长程状态易丢失"
-      ],
-      "bestFor": "中高难度日常开发、高并发测试、CI/CD 自动化审核",
-      "score": 81,
-      "bilibiliBvid": "BV1fk3X6CEXb",
-      "sourceEpisodeTitle": "第08期 屎山论剑｜DeepSeekV4Flash：下一位！",
-      "rounds": {
-        "gold": 1,
-        "diamond": 1,
-        "king": "fail"
-      },
-      "curatedScore": 81
-    },
-    {
-      "id": "glm-53-flash",
-      "model": "GLM 5.3 Flash",
-      "tier": "T3",
-      "category": "Flash",
-      "gold": "一轮过",
-      "diamond": "卡住",
-      "king": "全灭",
-      "goldStatus": "pass",
-      "diamondStatus": "fail",
-      "kingStatus": "fail",
-      "quote": "Token 效率极佳，但钻石卡住，时间效率拉跨。",
-      "timestamp": "09-12 15:31",
-      "episodesTested": "第 10–12 期",
-      "costEstimate": "Lite 13% 额度 (约¥2)",
-      "tokensConsumed": "3,365 万词元",
-      "analysis": "Token 压缩与能效比极佳，3365 万词元在四家 Flash 中消耗最少，换算仅约 2 元人民币；但面对钻石级代码陷入长考卡顿，时间效率严重拉跨。",
-      "strengths": [
-        "Token 能效比优秀",
-        "成本低廉",
-        "黄金门槛稳妥"
-      ],
-      "weaknesses": [
-        "钻石级直接卡死",
-        "耗时冗长影响开发流"
-      ],
-      "bestFor": "轻量文本与基础语法修复等低时延非攻坚场景",
-      "score": 65,
-      "bilibiliBvid": "BV1eCYD6QEqS",
-      "sourceEpisodeTitle": "第12期 四家Flash大乱斗，挑战屎山代码",
-      "rounds": {
-        "gold": 1,
-        "diamond": "fail",
-        "king": "fail"
-      },
-      "curatedScore": 65
-    },
-    {
-      "id": "qwen-38-flash",
-      "model": "Qwen 3.8 Flash",
-      "tier": "T3",
-      "category": "Flash",
-      "gold": "一轮过",
-      "diamond": "长考未成",
-      "king": "重写未过",
-      "goldStatus": "pass",
-      "diamondStatus": "fail",
-      "kingStatus": "fail",
-      "quote": "老爷爷大思考近 2 小时仍卡钻石，成本过高。",
-      "timestamp": "09-12 12:56",
-      "episodesTested": "第 09–12 期",
-      "costEstimate": "Std 13.6% 额度",
-      "tokensConsumed": "9,500 万词元",
-      "analysis": "大思考模式陷入沉思近两小时，即使缓存命中率高达 99.7%，但巨大的长考重试与重写导致开销剧烈，且依然未通过钻石线。",
-      "strengths": [
-        "中文语境理解深",
-        "缓存命中机制强大 (99.7%)"
-      ],
-      "weaknesses": [
-        "耗时严重超标（2小时）",
-        "长考依然无法突围钻石"
-      ],
-      "bestFor": "中文特定算法教学与基础单模块补丁",
-      "score": 62,
-      "bilibiliBvid": "BV1eCYD6QEqS",
-      "sourceEpisodeTitle": "第12期 四家Flash大乱斗，挑战屎山代码",
-      "rounds": {
-        "gold": 1,
-        "diamond": "fail",
-        "king": "fail"
-      },
-      "curatedScore": 62
-    },
-    {
-      "id": "gemini-38",
-      "model": "Gemini 3.8",
-      "tier": "T3",
+      "id": "claudefable51",
+      "model": "Claude Fable5.1",
+      "tier": "T1",
       "category": "Flagship",
-      "gold": "三轮全对",
-      "diamond": "从未做对",
-      "king": "从未做对",
-      "goldStatus": "pass",
-      "diamondStatus": "fail",
-      "kingStatus": "fail",
-      "quote": "黄金三轮稳定全对，但钻石以上跨期从未做对。",
-      "timestamp": "09-08 09:36",
-      "episodesTested": "全 12 期",
-      "costEstimate": "Pro 37.35% 剧烈扣减",
-      "tokensConsumed": "Pro 配额严重缩水",
-      "analysis": "测试全 12 期黄金题表现良好（三轮全对），但在面对包含隐式副作用与内存状态陷阱的钻石级及以上恶劣工况时，连续 12 期全部翻车做错，且额度扣减最狠。",
-      "strengths": [
-        "黄金基础题表现可靠",
-        "多模态与长上下文吞吐"
-      ],
-      "weaknesses": [
-        "跨 12 期钻石题 0 通过率",
-        "Pro 配额扣减异常剧烈"
-      ],
-      "bestFor": "通用知识检索、文档问答与黄金级常规业务代码",
-      "score": 58,
-      "bilibiliBvid": "BV1vrgQ6aEJU",
-      "sourceEpisodeTitle": "第06期 请接受《屎山》的检验｜Qwen3.8Max｜Gemini3.6Flash",
-      "rounds": {
-        "gold": 3,
-        "diamond": "fail",
-        "king": "fail"
-      },
-      "curatedScore": 58
-    },
-    {
-      "id": "glm-53-full",
-      "model": "GLM 5.3 完整版",
-      "tier": "T4",
-      "category": "Thinking",
-      "gold": "无记录",
-      "diamond": "卡住",
-      "king": "全灭",
-      "goldStatus": "none",
-      "diamondStatus": "fail",
-      "kingStatus": "fail",
-      "quote": "与 K3 双双天黑，花费是 V4 Pro 两倍以上。",
-      "timestamp": "08-16 16:19",
-      "episodesTested": "第 05–08 期",
-      "costEstimate": "花费为 V4 Pro 两倍以上",
-      "tokensConsumed": "数千万深度词元",
-      "analysis": "在恶劣代码工况下容易陷入发散推理，与 Kimi K3 双双出现'天黑'长考卡死，且开销显著高于同类国产旗舰。",
-      "strengths": [
-        "完整版通识水平全面"
-      ],
-      "weaknesses": [
-        "恶劣工况易发散超时",
-        "成本效益比低"
-      ],
-      "bestFor": "学术推演、复杂论述与非极端工况开发",
-      "score": 46,
-      "bilibiliBvid": "BV1HzbX6tEvR",
-      "sourceEpisodeTitle": "第09期 开源AI闭源AI决战屎山之巅",
-      "rounds": {
-        "gold": "none",
-        "diamond": "fail",
-        "king": "fail"
-      },
-      "curatedScore": 46
-    },
-    {
-      "id": "kimi-k3",
-      "model": "Kimi K3",
-      "tier": "T4",
-      "category": "Thinking",
-      "gold": "无记录",
-      "diamond": "常卡住",
-      "king": "无记录",
-      "goldStatus": "none",
-      "diamondStatus": "fail",
-      "kingStatus": "none",
-      "quote": "44 分钟烧几百万 token，无王者记录。",
-      "timestamp": "09-12 10:14",
-      "episodesTested": "第 04–09 期",
-      "costEstimate": "数倍溢价估算",
-      "tokensConsumed": "44分钟数百万Token",
-      "analysis": "长文本与长考时在多层间接调用的深层 Bug 中迷失，死循环长考 44 分钟耗尽巨额 Token，最终无法收敛至可编译状态。",
-      "strengths": [
-        "超长上下文检索与整理"
-      ],
-      "weaknesses": [
-        "代码死锁排错死循环",
-        "Token 爆炸失控"
-      ],
-      "bestFor": "海量文献研读、长文总结与知识库检索",
-      "score": 42,
-      "bilibiliBvid": "BV1QNKw6uE3L",
-      "sourceEpisodeTitle": "第05期 Kimi-K3｜实战祖传代码｜代表月亮！照亮屎山！",
-      "rounds": {
-        "gold": "none",
-        "diamond": "fail",
-        "king": "none"
-      },
-      "curatedScore": 42
-    },
-    {
-      "id": "opus-48",
-      "model": "Opus 4.8",
-      "tier": "T4",
-      "category": "Flagship",
-      "gold": "无记录",
-      "diamond": "翻车",
-      "king": "做不到",
-      "goldStatus": "none",
-      "diamondStatus": "fail",
-      "kingStatus": "fail",
-      "quote": "在屎山论剑恶劣工况下高频翻车。",
-      "timestamp": "08-02 07:18",
-      "episodesTested": "第 01–04 期",
-      "costEstimate": "顶级昂贵单价",
-      "tokensConsumed": "高单价 Token",
-      "analysis": "学术评测跑分极高，但面对缺乏类型定义、历史补丁叠加的典型'屎山'业务逻辑，其防御性推导导致过度改写原有依赖，频频引发回归 Bug。",
-      "strengths": [
-        "学术跑分卓越",
-        "文笔与长篇推理流畅"
-      ],
-      "weaknesses": [
-        "实战重构过度引入破坏性改动",
-        "单价过于昂贵"
-      ],
-      "bestFor": "系统架构初版设计与学术论文写作",
-      "score": 40,
-      "bilibiliBvid": "BV1smTi6aE6J",
-      "sourceEpisodeTitle": "第01期 祖传BUG挑战赛·开幕仪式与初赛实录",
-      "rounds": {
-        "gold": "none",
-        "diamond": "fail",
-        "king": "fail"
-      },
-      "curatedScore": 40
-    },
-    {
-      "id": "longcat-20",
-      "model": "美团龙猫 LongCat 2.0",
-      "tier": "T3",
-      "category": "OpenSource",
-      "gold": "一轮过",
-      "diamond": "两轮卡顿",
-      "king": "全灭",
-      "goldStatus": "pass",
+      "gold": "多轮通过 8/11",
+      "diamond": "多轮通过 3/4",
+      "king": "仅 1/3",
+      "goldStatus": "warn",
       "diamondStatus": "warn",
       "kingStatus": "fail",
-      "quote": "美团龙猫首次下山论剑，黄金稳过，钻石险收敛。",
-      "timestamp": "08-08 14:20",
-      "episodesTested": "第 07 期",
-      "costEstimate": "美团 API 赠额覆盖",
-      "tokensConsumed": "4,200 万词元",
-      "analysis": "美团全模态大模型龙猫 LongCat 实测出人意料地稳妥！黄金基础语法排错一次秒过；钻石级复杂的模块间隐式调用需两次提示收敛，展现出务实的企业级代码底蕴。",
-      "strengths": [
-        "黄金级通过率稳",
-        "工业业务代码敏锐度高",
-        "长上下文语义保真"
-      ],
-      "weaknesses": [
-        "王者极限死锁无能为力",
-        "开源环境部署参数敏感"
-      ],
-      "bestFor": "本地生活、电商物流等高并发业务代码排错与重构",
-      "score": 74,
-      "bilibiliBvid": "BV1okM86eEwi",
-      "sourceEpisodeTitle": "第02期 LongCat2.0发布：美团龙猫，请直面屎山代码！",
+      "quote": "2026-09-08 御三家三人赛 5 分，王者题三轮压哨拿下",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 2 名",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 18 场",
+      "analysis": "2026-09-08 御三家三人赛 5 分，王者题三轮压哨拿下",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 38.5,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-08 御三家三人赛 5 分，王者题三轮压哨拿下",
       "rounds": {
-        "gold": 1,
+        "gold": 2,
         "diamond": 2,
         "king": "fail"
       },
-      "curatedScore": 74
+      "curatedScore": 38.5,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 2,
+        "org": "Anthropic",
+        "trend": "hold",
+        "delta": 0,
+        "family": "Claude Fable",
+        "version": "Claude Fable5.1",
+        "assessmentTotal": null,
+        "hasRealAssess": false,
+        "groupWdl": "1胜 0平 0负",
+        "groupPts": 2
+      }
     },
     {
-      "id": "qwen-38-max",
-      "model": "Qwen 3.8 Max",
-      "tier": "T2",
+      "id": "opus55",
+      "model": "Opus5.5",
+      "tier": "T1",
       "category": "Flagship",
-      "gold": "一轮过",
-      "diamond": "一轮过",
-      "king": "三轮微偏",
-      "goldStatus": "pass",
-      "diamondStatus": "pass",
-      "kingStatus": "warn",
-      "quote": "通义千问超大杯稳过钻石，王者第三轮微偏未全收敛。",
-      "timestamp": "09-12 11:30",
-      "episodesTested": "第 07–12 期",
-      "costEstimate": "企业级高阶套餐",
-      "tokensConsumed": "约 7,800 万词元",
-      "analysis": "阿里旗舰超大杯，相比 Flash 展现出截然不同的攻坚韧性。黄金、钻石均首轮直接通过，王者级经过 3 轮交互后已定位 90% 故障，仅差一处边界死循环未解。",
-      "strengths": [
-        "钻石线一轮秒杀",
-        "中文业务语境深度适配",
-        "上下文理解全面"
-      ],
-      "weaknesses": [
-        "王者终局处理略有微偏",
-        "并发极限调试消耗大"
-      ],
-      "bestFor": "中大型企业复杂微服务链路调试与老代码迁移",
-      "score": 86,
-      "bilibiliBvid": "BV1vrgQ6aEJU",
-      "sourceEpisodeTitle": "第06期 请接受《屎山》的检验｜Qwen3.8Max｜Gemini3.6Flash",
-      "rounds": {
-        "gold": 1,
-        "diamond": 1,
-        "king": 3
-      },
-      "curatedScore": 86
-    },
-    {
-      "id": "grok-45",
-      "model": "Grok 4.5",
-      "tier": "T2",
-      "category": "Flagship",
-      "gold": "一轮过",
-      "diamond": "两轮过",
-      "king": "全灭",
-      "goldStatus": "pass",
-      "diamondStatus": "warn",
-      "kingStatus": "fail",
-      "quote": "直面祖传代码，钻石第二轮补刀成功。",
-      "timestamp": "08-30 01:10",
-      "episodesTested": "第 10 期",
-      "costEstimate": "xAI API 官方单价",
-      "tokensConsumed": "约 5,100 万词元",
-      "analysis": "第10期专场考核中直面祖传代码，第一轮漏掉了深层竞态条件，第二轮在提示后敏锐修正并通过钻石线；止步于全灭的王者题。",
-      "strengths": [
-        "代码审查敏锐",
-        "纠错反馈响应快"
-      ],
-      "weaknesses": [
-        "首轮对隐式副作用警惕不足",
-        "王者级别力不从心"
-      ],
-      "bestFor": "自动化代码审计与复杂逻辑单测生成",
-      "score": 79,
-      "bilibiliBvid": "BV1KeN76rEJ9",
-      "sourceEpisodeTitle": "第04期 Grok4.5！从火星来的AI！到屎山去改BUG！",
-      "rounds": {
-        "gold": 1,
-        "diamond": 2,
-        "king": "fail"
-      },
-      "curatedScore": 79
-    },
-    {
-      "id": "musespark-12",
-      "model": "MuseSpark 1.2",
-      "tier": "T4",
-      "category": "OpenSource",
-      "gold": "两轮过",
-      "diamond": "卡死",
-      "king": "全灭",
+      "gold": "多轮通过 17/22",
+      "diamond": "仅 4/9",
+      "king": "仅 1/5",
       "goldStatus": "warn",
       "diamondStatus": "fail",
       "kingStatus": "fail",
-      "quote": "初赛黑马但止步钻石，复杂依赖下逻辑自洽崩塌。",
-      "timestamp": "08-16 10:45",
-      "episodesTested": "第 08 期",
-      "costEstimate": "开源自建算力",
-      "tokensConsumed": "开源权重自推",
-      "analysis": "在简单函数与算法题表现灵动，但在真实生产级缺少依赖声明的祖传工程中，面对循环导入直接陷入死循环卡死。",
-      "strengths": [
-        "开源小体积",
-        "基础算法通过快"
-      ],
-      "weaknesses": [
-        "缺乏跨文件大型工程追踪能力",
-        "钻石题无一生还"
-      ],
-      "bestFor": "单文件算法脚本与辅助工具脚本编写",
-      "score": 51,
-      "bilibiliBvid": "BV1etMJ6NEd4",
-      "sourceEpisodeTitle": "第03期 HY3.0！你终究还是要面对屎山代码的考验！",
+      "quote": "2026-09-23 新版 AI 御三家大论剑 7 分夺魁，K005 二轮拿下且只改 10 个代码文件",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 3 名（new）",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 36 场",
+      "analysis": "2026-09-23 新版 AI 御三家大论剑 7 分夺魁，K005 二轮拿下且只改 10 个代码文件",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 14,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-23 新版 AI 御三家大论剑 7 分夺魁，K005 二轮拿下且只改 10 个代码文件",
       "rounds": {
         "gold": 2,
         "diamond": "fail",
         "king": "fail"
       },
-      "curatedScore": 51
+      "curatedScore": 14,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 3,
+        "org": "Anthropic",
+        "trend": "new",
+        "delta": 0,
+        "family": "Claude Opus",
+        "version": "Opus5.5",
+        "assessmentTotal": null,
+        "hasRealAssess": false,
+        "groupWdl": null,
+        "groupPts": null
+      }
+    },
+    {
+      "id": "gpt6sol",
+      "model": "GPT6 Sol",
+      "tier": "T2",
+      "category": "Flagship",
+      "gold": "多轮通过 26/36",
+      "diamond": "仅 9/17",
+      "king": "多轮通过 2/3",
+      "goldStatus": "warn",
+      "diamondStatus": "fail",
+      "kingStatus": "warn",
+      "quote": "2026-09-23 新版 AI 御三家大论剑 7 分，K005 二轮拿下，两轮共改 24 个文件",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 4 名（new）",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 56 场",
+      "analysis": "2026-09-23 新版 AI 御三家大论剑 7 分，K005 二轮拿下，两轮共改 24 个文件",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 45.5,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-23 新版 AI 御三家大论剑 7 分，K005 二轮拿下，两轮共改 24 个文件",
+      "rounds": {
+        "gold": 2,
+        "diamond": "fail",
+        "king": 2
+      },
+      "curatedScore": 45.5,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 4,
+        "org": "OpenAI",
+        "trend": "new",
+        "delta": 0,
+        "family": "GPT",
+        "version": "GPT6 Sol",
+        "assessmentTotal": null,
+        "hasRealAssess": false,
+        "groupWdl": null,
+        "groupPts": null
+      }
+    },
+    {
+      "id": "grok47",
+      "model": "Grok4.7",
+      "tier": "T2",
+      "category": "Flagship",
+      "gold": "多轮通过 18/19",
+      "diamond": "仅 5/10",
+      "king": "仅 2/9",
+      "goldStatus": "warn",
+      "diamondStatus": "fail",
+      "kingStatus": "fail",
+      "quote": "2026-09-23 新版 AI 御三家大论剑 6 分，K005 第三轮压哨拿下，D003 只改 4 个文件",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 5 名（new）",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 38 场",
+      "analysis": "2026-09-23 新版 AI 御三家大论剑 6 分，K005 第三轮压哨拿下，D003 只改 4 个文件",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 14,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-23 新版 AI 御三家大论剑 6 分，K005 第三轮压哨拿下，D003 只改 4 个文件",
+      "rounds": {
+        "gold": 2,
+        "diamond": "fail",
+        "king": "fail"
+      },
+      "curatedScore": 14,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 5,
+        "org": "xAI",
+        "trend": "new",
+        "delta": 0,
+        "family": "Grok",
+        "version": "Grok4.7",
+        "assessmentTotal": null,
+        "hasRealAssess": false,
+        "groupWdl": "1胜 0平 0负",
+        "groupPts": 2
+      }
+    },
+    {
+      "id": "glm53",
+      "model": "GLM5.3",
+      "tier": "T2",
+      "category": "Thinking",
+      "gold": "多轮通过 35/46",
+      "diamond": "仅 7/26",
+      "king": "仅 1/13",
+      "goldStatus": "warn",
+      "diamondStatus": "fail",
+      "kingStatus": "fail",
+      "quote": "智谱 AI · 挑战榜第 6 名",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 6 名（down）",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 86 场",
+      "analysis": "",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 66.7,
+      "sourceEpisodeTitle": "屎山英雄榜 · ",
+      "rounds": {
+        "gold": 2,
+        "diamond": "fail",
+        "king": "fail"
+      },
+      "curatedScore": 66.7,
+      "autoEvidence": [
+        {
+          "score": 66.7,
+          "kind": "hero",
+          "bvid": "toy:kaohe",
+          "raw": "GLM-5.3 12/18"
+        }
+      ],
+      "toy": {
+        "rank": 6,
+        "org": "智谱 AI",
+        "trend": "down",
+        "delta": -1,
+        "family": "GLM",
+        "version": "GLM5.3",
+        "assessmentTotal": 12,
+        "hasRealAssess": true,
+        "groupWdl": "0胜 0平 1负",
+        "groupPts": 0
+      }
+    },
+    {
+      "id": "kimik3",
+      "model": "Kimi-K3",
+      "tier": "T3",
+      "category": "OpenSource",
+      "gold": "仅 18/32",
+      "diamond": "仅 5/15",
+      "king": "仅 1/7",
+      "goldStatus": "fail",
+      "diamondStatus": "fail",
+      "kingStatus": "fail",
+      "quote": "月之暗面 · 挑战榜第 7 名",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 7 名",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 55 场",
+      "analysis": "",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 0,
+      "sourceEpisodeTitle": "屎山英雄榜 · ",
+      "rounds": {
+        "gold": "fail",
+        "diamond": "fail",
+        "king": "fail"
+      },
+      "curatedScore": 0,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 7,
+        "org": "月之暗面",
+        "trend": "hold",
+        "delta": 0,
+        "family": "Kimi",
+        "version": "Kimi-K3",
+        "assessmentTotal": null,
+        "hasRealAssess": false,
+        "groupWdl": "0胜 0平 1负",
+        "groupPts": 0
+      }
+    },
+    {
+      "id": "deepseekflash",
+      "model": "DeepSeek Flash",
+      "tier": "T3",
+      "category": "Flash",
+      "gold": "多轮通过 31/50",
+      "diamond": "仅 7/21",
+      "king": "全灭 0/6",
+      "goldStatus": "warn",
+      "diamondStatus": "fail",
+      "kingStatus": "fail",
+      "quote": "2026-09-11 Flash 组第二次大乱斗 5 分夺魁，全场唯一拿下钻石题",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 8 名（up）",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 77 场",
+      "analysis": "2026-09-11 Flash 组第二次大乱斗 5 分夺魁，全场唯一拿下钻石题",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 50,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 5 分夺魁，全场唯一拿下钻石题",
+      "rounds": {
+        "gold": 2,
+        "diamond": "fail",
+        "king": "fail"
+      },
+      "curatedScore": 50,
+      "autoEvidence": [
+        {
+          "score": 50,
+          "kind": "hero",
+          "bvid": "toy:kaohe",
+          "raw": "DeepSeek V4 Flash 9/18"
+        }
+      ],
+      "toy": {
+        "rank": 8,
+        "org": "DeepSeek",
+        "trend": "up",
+        "delta": 1,
+        "family": "DeepSeek Flash",
+        "version": "DeepSeek Flash",
+        "assessmentTotal": 9,
+        "hasRealAssess": true,
+        "groupWdl": "0胜 1平 1负",
+        "groupPts": 1
+      }
+    },
+    {
+      "id": "qwen38max",
+      "model": "Qwen3.8Max",
+      "tier": "T3",
+      "category": "Flagship",
+      "gold": "多轮通过 37/53",
+      "diamond": "仅 4/25",
+      "king": "全灭 0/6",
+      "goldStatus": "warn",
+      "diamondStatus": "fail",
+      "kingStatus": "fail",
+      "quote": "阿里巴巴 · 挑战榜第 9 名",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 9 名（up）",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 84 场",
+      "analysis": "",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 50,
+      "sourceEpisodeTitle": "屎山英雄榜 · ",
+      "rounds": {
+        "gold": 2,
+        "diamond": "fail",
+        "king": "fail"
+      },
+      "curatedScore": 50,
+      "autoEvidence": [
+        {
+          "score": 50,
+          "kind": "hero",
+          "bvid": "toy:kaohe",
+          "raw": "Qwen3.8-Max 9/18"
+        }
+      ],
+      "toy": {
+        "rank": 9,
+        "org": "阿里巴巴",
+        "trend": "up",
+        "delta": 1,
+        "family": "Qwen 千问",
+        "version": "Qwen3.8Max Preview",
+        "assessmentTotal": 9,
+        "hasRealAssess": true,
+        "groupWdl": "0胜 1平 1负",
+        "groupPts": 1
+      }
+    },
+    {
+      "id": "qwen38flash",
+      "model": "Qwen3.8Flash",
+      "tier": "T4",
+      "category": "Flash",
+      "gold": "多轮通过 37/53",
+      "diamond": "仅 4/25",
+      "king": "全灭 0/6",
+      "goldStatus": "warn",
+      "diamondStatus": "fail",
+      "kingStatus": "fail",
+      "quote": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石三轮失手未能卫冕",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 10 名（up）",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 84 场",
+      "analysis": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石三轮失手未能卫冕",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 14,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 3 分，钻石三轮失手未能卫冕",
+      "rounds": {
+        "gold": 2,
+        "diamond": "fail",
+        "king": "fail"
+      },
+      "curatedScore": 14,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 10,
+        "org": "阿里巴巴",
+        "trend": "up",
+        "delta": 1,
+        "family": "Qwen 千问",
+        "version": "Qwen3.8Flash",
+        "assessmentTotal": null,
+        "hasRealAssess": false,
+        "groupWdl": null,
+        "groupPts": null
+      }
+    },
+    {
+      "id": "gemini38flash",
+      "model": "Gemini3.8Flash",
+      "tier": "T4",
+      "category": "Flash",
+      "gold": "多轮通过 23/30",
+      "diamond": "仅 1/23",
+      "king": "全灭 0/12",
+      "goldStatus": "warn",
+      "diamondStatus": "fail",
+      "kingStatus": "fail",
+      "quote": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石与王者仍是零命中",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 11 名（up）",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 65 场",
+      "analysis": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石与王者仍是零命中",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 14,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 3 分，钻石与王者仍是零命中",
+      "rounds": {
+        "gold": 2,
+        "diamond": "fail",
+        "king": "fail"
+      },
+      "curatedScore": 14,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 11,
+        "org": "Google",
+        "trend": "up",
+        "delta": 1,
+        "family": "Gemini Flash",
+        "version": "Gemini3.8Flash",
+        "assessmentTotal": null,
+        "hasRealAssess": false,
+        "groupWdl": "0胜 1平 1负",
+        "groupPts": 1
+      }
+    },
+    {
+      "id": "glm53flash",
+      "model": "GLM5.3Flash",
+      "tier": "T4",
+      "category": "Flash",
+      "gold": "多轮通过 35/46",
+      "diamond": "仅 7/26",
+      "king": "仅 1/13",
+      "goldStatus": "warn",
+      "diamondStatus": "fail",
+      "kingStatus": "fail",
+      "quote": "2026-09-11 Flash 组第二次大乱斗 3 分，上一场失手的 S002 一轮翻案",
+      "timestamp": "2026-09-23",
+      "episodesTested": "英雄榜第 12 名（up）",
+      "costEstimate": "",
+      "tokensConsumed": "生涯 86 场",
+      "analysis": "2026-09-11 Flash 组第二次大乱斗 3 分，上一场失手的 S002 一轮翻案",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": 14,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 3 分，上一场失手的 S002 一轮翻案",
+      "rounds": {
+        "gold": 2,
+        "diamond": "fail",
+        "king": "fail"
+      },
+      "curatedScore": 14,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 12,
+        "org": "智谱 AI",
+        "trend": "up",
+        "delta": 2,
+        "family": "GLM",
+        "version": "GLM5.3Flash",
+        "assessmentTotal": null,
+        "hasRealAssess": false,
+        "groupWdl": null,
+        "groupPts": null
+      }
     }
   ]
 }

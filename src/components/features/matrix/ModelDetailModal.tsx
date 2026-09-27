@@ -11,8 +11,6 @@ import {
   Lightbulb,
   ShieldAlert,
   Award,
-  Tv,
-  ExternalLink,
 } from "lucide-react";
 
 export interface ModelDetailModalProps {
@@ -44,7 +42,7 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
       maxWidth="2xl"
       title={
         <div className="flex items-center gap-3">
-          <span className="font-bold text-lg text-white">{model.model}</span>
+          <span className="font-bold text-lg text-ink">{model.model}</span>
           <Badge
             variant={
               model.tier === "T0"
@@ -63,10 +61,13 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
       subtitle={
         <div className="flex items-center gap-3">
           <span>
-            战力指数: <strong className="text-white">{model.score}</strong> / 100
+            考核分: <strong className="text-ink">{model.score}</strong> / 100
+            {(model as any).toy?.assessmentTotal != null
+              ? `（官方考核 ${(model as any).toy.assessmentTotal}/18）`
+              : "（生涯推导分）"}
           </span>
-          {model.sourceEpisode && (
-            <span className="text-[#00aeec]">出镜实测: {model.sourceEpisode}</span>
+          {(model as any).toy?.rank != null && (
+            <span className="text-ink-muted">挑战榜第 {(model as any).toy.rank} 名</span>
           )}
         </div>
       }
@@ -74,27 +75,27 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
       <div className="space-y-6">
         {/* Core Kill-Line Performance */}
         <div>
-          <h4 className="text-xs font-mono-code text-zinc-400 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-            <Award className="w-3.5 h-3.5 text-rose-400" />
+          <h4 className="text-xs font-mono-code text-ink-muted uppercase tracking-wider mb-3 flex items-center gap-1.5">
+            <Award className="w-3.5 h-3.5 text-rose-700" />
             <span>三大天梯考核线表现</span>
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
-              <div className="text-[10px] font-mono-code text-zinc-500 uppercase">
+            <div className="p-3.5 rounded-xl bg-surface-soft border border-stone-200 space-y-1">
+              <div className="text-[10px] font-mono-code text-ink-subtle uppercase">
                 黄金线 (基础语法/单文件)
               </div>
               <div>{renderBadge(model.goldStatus, model.gold)}</div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
-              <div className="text-[10px] font-mono-code text-zinc-500 uppercase">
+            <div className="p-3.5 rounded-xl bg-surface-soft border border-stone-200 space-y-1">
+              <div className="text-[10px] font-mono-code text-ink-subtle uppercase">
                 钻石线 (并发死锁/多模块)
               </div>
               <div>{renderBadge(model.diamondStatus, model.diamond)}</div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
-              <div className="text-[10px] font-mono-code text-zinc-500 uppercase">
+            <div className="p-3.5 rounded-xl bg-surface-soft border border-stone-200 space-y-1">
+              <div className="text-[10px] font-mono-code text-ink-subtle uppercase">
                 王者线 (绝壁攻坚/一票否决)
               </div>
               <div>{renderBadge(model.kingStatus, model.king)}</div>
@@ -104,12 +105,12 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
 
         {/* Authentic Quote */}
         {model.quote && (
-          <div className="p-4 rounded-xl bg-amber-500/[0.05] border border-amber-500/20">
-            <div className="text-[11px] font-mono-code text-amber-400 font-semibold mb-1 flex items-center gap-1.5">
+          <div className="p-4 rounded-xl bg-amber-50 border border-amber-200">
+            <div className="text-[11px] font-mono-code text-amber-800 font-semibold mb-1 flex items-center gap-1.5">
               <Lightbulb className="w-3.5 h-3.5" />
               <span>UP 主实测原话证言:</span>
             </div>
-            <p className="text-xs font-serif italic text-amber-200/90 leading-relaxed">
+            <p className="text-xs font-serif italic text-amber-800 leading-relaxed">
               “{model.quote}”
             </p>
           </div>
@@ -118,11 +119,11 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
         {/* Detailed Assessment */}
         {model.detailNote && (
           <div className="space-y-2">
-            <h4 className="text-xs font-mono-code text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-              <ShieldAlert className="w-3.5 h-3.5 text-zinc-400" />
+            <h4 className="text-xs font-mono-code text-ink-muted uppercase tracking-wider flex items-center gap-1.5">
+              <ShieldAlert className="w-3.5 h-3.5 text-ink-muted" />
               <span>硬核工况与诊断记录</span>
             </h4>
-            <div className="p-4 rounded-xl bg-black/40 border border-white/[0.06] text-xs font-mono-code text-zinc-300 leading-relaxed space-y-2">
+            <div className="p-4 rounded-xl bg-stone-100 border border-stone-200 text-xs font-mono-code text-ink-muted leading-relaxed space-y-2">
               <p>{model.detailNote}</p>
             </div>
           </div>
@@ -131,20 +132,20 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
         {/* Cost & Tokens if available */}
         {(model.totalCostCNY !== undefined || model.tokensUsed) && (
           <div>
-            <h4 className="text-xs font-mono-code text-zinc-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <Coins className="w-3.5 h-3.5 text-emerald-400" />
+            <h4 className="text-xs font-mono-code text-ink-muted uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <Coins className="w-3.5 h-3.5 text-emerald-700" />
               <span>实测成本与吞吐量</span>
             </h4>
-            <div className="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] font-mono-code text-xs">
+            <div className="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-surface-soft border border-stone-200 font-mono-code text-xs">
               <div>
-                <span className="text-zinc-500 text-[11px]">实测官方账单:</span>
-                <div className="text-base font-bold text-white mt-0.5">
+                <span className="text-ink-subtle text-[11px]">实测官方账单:</span>
+                <div className="text-base font-bold text-ink mt-0.5">
                   ¥{model.totalCostCNY?.toFixed(2) ?? "--"}
                 </div>
               </div>
               <div>
-                <span className="text-zinc-500 text-[11px]">消耗 Token 总量:</span>
-                <div className="text-base font-bold text-zinc-200 mt-0.5">
+                <span className="text-ink-subtle text-[11px]">消耗 Token 总量:</span>
+                <div className="text-base font-bold text-ink mt-0.5">
                   {model.tokensUsed ?? "--"}
                 </div>
               </div>
@@ -153,23 +154,11 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
         )}
 
         {/* Action Footer */}
-        <div className="pt-4 border-t border-white/[0.08] flex items-center justify-between flex-wrap gap-3">
-          {model.sourceEpisodeTitle && (
-            <a
-              href={
-                model.bilibiliBvid
-                  ? `https://www.bilibili.com/video/${model.bilibiliBvid}`
-                  : "https://space.bilibili.com/3546747185924773"
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-lg bg-[#00aeec]/10 hover:bg-[#00aeec]/20 text-[#00aeec] border border-[#00aeec]/30 font-mono-code text-xs flex items-center gap-1.5 transition-colors"
-            >
-              <Tv className="w-3.5 h-3.5" />
-              <span>前往观看: {model.sourceEpisodeTitle}</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          )}
+        <div className="pt-4 border-t border-stone-200 flex items-center justify-between flex-wrap gap-3">
+          <span className="font-mono-code text-[11px] text-ink-subtle">
+            来源：屎山英雄榜（toy 官方）
+            {(model as any).toy?.org ? ` · ${(model as any).toy.org}` : ""}
+          </span>
 
           <div className="flex items-center gap-2 ml-auto">
             <button
@@ -177,13 +166,13 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
                 onAddToCompare(model);
                 onClose();
               }}
-              className="px-3 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-zinc-200 hover:text-white border border-white/[0.1] font-mono-code text-xs transition-colors cursor-pointer"
+              className="px-3 py-1.5 rounded-lg bg-stone-50 hover:bg-stone-100 text-ink hover:text-ink border border-stone-300 font-mono-code text-xs transition-colors cursor-pointer"
             >
               加入双雄对照
             </button>
             <button
               onClick={onClose}
-              className="px-3.5 py-1.5 rounded-lg bg-white text-black font-semibold font-mono-code text-xs hover:bg-zinc-200 transition-colors cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg bg-stone-900 text-white font-semibold font-mono-code text-xs hover:bg-stone-700 transition-colors cursor-pointer"
             >
               完成阅读
             </button>

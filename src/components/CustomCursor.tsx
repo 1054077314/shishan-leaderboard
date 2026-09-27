@@ -65,17 +65,17 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({
           width: `${size}px`,
           height: `${size}px`,
           border: isLens
-            ? "1px solid rgba(244, 63, 94, 0.45)"
+            ? "1px solid rgba(190, 18, 60, 0.35)"
             : isButton
-            ? "1px solid rgba(255, 255, 255, 0.4)"
-            : "1px solid rgba(255, 255, 255, 0.25)",
+            ? "1px solid rgba(28, 25, 23, 0.28)"
+            : "1px solid rgba(190, 18, 60, 0.2)",
           backgroundColor: isLens
-            ? "rgba(244, 63, 94, 0.04)"
+            ? "rgba(190, 18, 60, 0.08)"
             : isButton
-            ? "rgba(255, 255, 255, 0.06)"
+            ? "rgba(255, 255, 255, 0.7)"
             : "transparent",
-          backdropFilter: isLens ? "invert(0.08) contrast(1.1)" : "none",
-          boxShadow: isLens ? "0 0 20px rgba(244, 63, 94, 0.2)" : "none",
+          backdropFilter: "none",
+          boxShadow: isLens ? "0 8px 20px rgba(28, 25, 23, 0.1)" : "none",
         }}
       />
       {/* Precision inner center dot */}
@@ -86,7 +86,7 @@ export const CustomCursor: React.FC<CustomCursorProps> = ({
           top: `${pos.y}px`,
           width: isLens ? "6px" : "4px",
           height: isLens ? "6px" : "4px",
-          backgroundColor: isLens ? "#f43f5e" : "#ffffff",
+          backgroundColor: isLens ? "#be123c" : "#1c1917",
         }}
       />
     </>

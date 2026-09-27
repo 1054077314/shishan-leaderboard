@@ -2,7 +2,7 @@
   "mid": "3546747185924773",
   "upName": "Token就是词元",
   "seasonId": "8474061",
-  "fetchedAt": 1789664246,
+  "fetchedAt": 1790305993,
   "episodes": [
     {
       "ep": 1,
@@ -87,6 +87,13 @@
       "title": "四家Flash大乱斗，挑战屎山代码｜屎山论剑",
       "pubdate": 1789194859,
       "source": "season"
+    },
+    {
+      "ep": 13,
+      "bvid": "BV1a5aA6GEGe",
+      "title": "Opus5.5对战GPT6 Sol｜AI御三家，屎山大乱斗｜屎山论剑",
+      "pubdate": 1790245633,
+      "source": "season"
     }
   ],
   "extras": [
@@ -130,6 +137,12 @@
       "bvid": "BV1R7eg6gEnJ",
       "title": "屎山留给DeepSeek的时间不多了｜B组第二轮",
       "pubdate": 1789634773,
+      "source": "search:屎山"
+    },
+    {
+      "bvid": "BV19Mh76UEtj",
+      "title": "Step5 Preview｜站在屎山，遥望星辰｜屎山考核",
+      "pubdate": 1790060442,
       "source": "search:屎山"
     }
   ]

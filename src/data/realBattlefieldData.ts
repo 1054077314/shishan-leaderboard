@@ -147,7 +147,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "GPT-6 Astra",
     tier: "T0",
     category: "Flagship",
-    color: "#fb7185", // rose-400
+    color: "#be123c", // rose-400
     debutEpisode: "第07期",
     testedEpisodes: ["E07", "E09", "E10", "E11"],
     records: {
@@ -170,7 +170,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "Grok 4.6",
     tier: "T1",
     category: "Flagship",
-    color: "#fbbf24", // amber-400
+    color: "#b45309", // amber-400
     debutEpisode: "第04期",
     testedEpisodes: ["E04", "E10"],
     records: {
@@ -193,7 +193,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "Claude Fable 5.1",
     tier: "T1",
     category: "Flagship",
-    color: "#f59e0b", // amber-500
+    color: "#b45309", // amber-500
     debutEpisode: "第07期",
     testedEpisodes: ["E07", "E09", "E11"],
     records: {
@@ -216,7 +216,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "DeepSeek V4 Pro",
     tier: "T2",
     category: "Thinking",
-    color: "#60a5fa", // blue-400
+    color: "#2563eb", // blue-400
     debutEpisode: "第01期",
     testedEpisodes: ["E01", "E03", "E07"],
     records: {
@@ -239,7 +239,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "DeepSeek V4.1 Flash",
     tier: "T3",
     category: "Flash",
-    color: "#38bdf8", // sky-400
+    color: "#0369a1", // sky-400
     debutEpisode: "第08期",
     testedEpisodes: ["E08", "E09", "E10", "E12"],
     records: {
@@ -262,7 +262,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "美团龙猫 LongCat 2.0",
     tier: "T3",
     category: "Thinking",
-    color: "#06b6d4", // cyan-500
+    color: "#0e7490", // cyan-500
     debutEpisode: "第02期",
     testedEpisodes: ["E02"],
     records: {
@@ -285,7 +285,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "Kimi K3",
     tier: "T4",
     category: "Thinking",
-    color: "#a855f7", // purple-500
+    color: "#7e22ce", // purple-500
     debutEpisode: "第05期",
     testedEpisodes: ["E05", "E10"],
     records: {
@@ -308,7 +308,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "Qwen 3.8 Max",
     tier: "T2",
     category: "Flagship",
-    color: "#3b82f6", // blue-500
+    color: "#1d4ed8", // blue-500
     debutEpisode: "第06期",
     testedEpisodes: ["E06", "E09"],
     records: {
@@ -331,7 +331,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "GLM 5.3 Flash",
     tier: "T3",
     category: "Flash",
-    color: "#34d399", // emerald-400
+    color: "#047857", // emerald-400
     debutEpisode: "第01期",
     testedEpisodes: ["E01", "E03", "E12"],
     records: {
@@ -354,7 +354,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "Qwen 3.8 Flash",
     tier: "T3",
     category: "Flash",
-    color: "#10b981", // emerald-500
+    color: "#047857", // emerald-500
     debutEpisode: "第01期",
     testedEpisodes: ["E01", "E12"],
     records: {
@@ -377,7 +377,7 @@ export const REAL_MODEL_HISTORIES: Record<string, ModelHistoryData> = {
     modelName: "Gemini 3.8",
     tier: "T4",
     category: "Flagship",
-    color: "#a1a1aa", // zinc-400
+    color: "#78716c", // zinc-400
     debutEpisode: "第06期",
     testedEpisodes: ["E06", "E12"],
     records: {

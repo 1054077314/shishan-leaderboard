@@ -8,13 +8,13 @@ export interface BadgeProps {
 }
 
 const variantStyles: Record<string, string> = {
-  emerald: "bg-emerald-500/10 text-emerald-300 border-emerald-500/30",
-  amber: "bg-amber-500/10 text-amber-300 border-amber-500/30",
-  rose: "bg-rose-500/10 text-rose-300 border-rose-500/30",
-  blue: "bg-blue-500/10 text-blue-300 border-blue-500/30",
-  cyan: "bg-cyan-500/10 text-cyan-300 border-cyan-500/30",
-  purple: "bg-purple-500/10 text-purple-300 border-purple-500/30",
-  zinc: "bg-white/[0.05] text-zinc-300 border-white/10",
+  emerald: "bg-emerald-50 text-emerald-700 border-emerald-200",
+  amber: "bg-amber-50 text-amber-800 border-amber-200",
+  rose: "bg-rose-50 text-rose-700 border-rose-200",
+  blue: "bg-blue-50 text-blue-700 border-blue-200",
+  cyan: "bg-cyan-50 text-cyan-700 border-cyan-200",
+  purple: "bg-purple-50 text-purple-700 border-purple-200",
+  zinc: "bg-stone-100 text-ink-muted border-stone-200",
 };
 
 export const Badge: React.FC<BadgeProps> = ({
@@ -27,9 +27,7 @@ export const Badge: React.FC<BadgeProps> = ({
   const style = variantStyles[variant] || variantStyles.zinc;
 
   return (
-    <span
-      className={`inline-flex items-center gap-1 font-mono-code font-semibold rounded-md border ${style} ${sizeStyle} ${className}`}
-    >
+    <span className={`inline-flex items-center gap-1 font-mono-code font-semibold rounded-md border ${style} ${sizeStyle} ${className}`}>
       {children}
     </span>
   );

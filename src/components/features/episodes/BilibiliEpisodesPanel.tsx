@@ -69,30 +69,30 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
       className="mb-20 sm:mb-28"
     >
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-white/[0.08] pb-4 mb-6 gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-stone-200 pb-4 mb-6 gap-3">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="inline-flex items-center gap-1 font-mono-code text-[11px] px-2 py-0.5 rounded bg-[#00aeec]/10 text-[#00aeec] border border-[#00aeec]/20">
+            <span className="inline-flex items-center gap-1 font-mono-code text-[11px] px-2 py-0.5 rounded bg-bilibili/10 text-bilibili border border-bilibili/20">
               <Tv className="w-3 h-3" />
               <span>BILIBILI SOURCE · 100% 真实原生视频 & 评论溯源</span>
             </span>
           </div>
-          <h2 className="font-serif-title italic text-3xl sm:text-4xl text-white font-normal leading-tight">
+          <h2 className="font-serif-title italic text-3xl sm:text-4xl text-ink font-normal leading-tight">
             Original Battlegrounds
           </h2>
-          <span className="font-mono-code text-[11px] text-zinc-400 tracking-wider block mt-1">
+          <span className="font-mono-code text-[11px] text-ink-muted tracking-wider block mt-1">
             全 12 期《屎山论剑》原片视频档案、分集高光及真实开发者实测评论区
           </span>
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex items-center gap-1 p-1 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+        <div className="flex items-center gap-1 p-1 rounded-xl bg-stone-50 border border-stone-200">
           <button
             onClick={() => setActiveTab("comments")}
             className={`px-3 py-1.5 rounded-lg text-xs font-mono-code transition-colors flex items-center gap-1.5 cursor-pointer ${
               activeTab === "comments"
-                ? "bg-[#00aeec] text-white font-bold shadow-md shadow-[#00aeec]/20"
-                : "text-zinc-400 hover:text-white"
+                ? "bg-bilibili text-white font-bold shadow-md shadow-bilibili/20"
+                : "text-ink-muted hover:text-ink"
             }`}
           >
             <MessageSquare className="w-3.5 h-3.5" />
@@ -102,8 +102,8 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
             onClick={() => setActiveTab("episodes")}
             className={`px-3 py-1.5 rounded-lg text-xs font-mono-code transition-colors flex items-center gap-1.5 cursor-pointer ${
               activeTab === "episodes"
-                ? "bg-white text-black font-bold shadow-md"
-                : "text-zinc-400 hover:text-white"
+                ? "bg-stone-900 text-white font-bold shadow-md"
+                : "text-ink-muted hover:text-ink"
             }`}
           >
             <Film className="w-3.5 h-3.5" />
@@ -113,23 +113,23 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
       </div>
 
       {/* Up Creator Hero Card */}
-      <div className="p-4 sm:p-6 rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-md mb-8">
+      <div className="p-4 sm:p-6 rounded-2xl border border-stone-200 bg-surface-soft backdrop-blur-md mb-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#00aeec]/20 border border-[#00aeec]/40 flex items-center justify-center shrink-0 shadow-lg shadow-[#00aeec]/10">
-              <Tv className="w-7 h-7 text-[#00aeec]" />
+            <div className="w-14 h-14 rounded-2xl bg-bilibili/20 border border-bilibili/40 flex items-center justify-center shrink-0 shadow-lg shadow-bilibili/10">
+              <Tv className="w-7 h-7 text-bilibili" />
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="font-bold text-lg text-white">{upInfo.name}</span>
-                <span className="text-[10px] font-mono-code px-2 py-0.5 rounded bg-pink-500/20 text-pink-300 border border-pink-500/30">
+                <span className="font-bold text-lg text-ink">{upInfo.name}</span>
+                <span className="text-[10px] font-mono-code px-2 py-0.5 rounded bg-pink-50 text-pink-700 border border-pink-200">
                   B 站知名硬核科技 UP 主
                 </span>
-                <span className="text-[10px] font-mono-code px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20">
+                <span className="text-[10px] font-mono-code px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">
                   UID: {upInfo.mid}
                 </span>
               </div>
-              <p className="text-xs text-zinc-400 font-sans mt-1 leading-relaxed">
+              <p className="text-xs text-ink-muted font-sans mt-1 leading-relaxed">
                 {upInfo.tagline}
               </p>
             </div>
@@ -140,17 +140,17 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
               href={upInfo.seasonUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-zinc-200 hover:text-white border border-white/[0.1] font-mono-code text-xs transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 rounded-xl bg-stone-50 hover:bg-stone-100 text-ink border border-stone-300 font-mono-code text-xs transition-colors flex items-center gap-1.5"
             >
-              <Film className="w-3.5 h-3.5 text-[#00aeec]" />
+              <Film className="w-3.5 h-3.5 text-bilibili" />
               <span>查看 B 站官方合集</span>
-              <ExternalLink className="w-3 h-3 text-zinc-500" />
+              <ExternalLink className="w-3 h-3 text-ink-subtle" />
             </a>
             <a
               href={upInfo.spaceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 rounded-xl bg-[#00aeec] hover:bg-[#00aeec]/90 text-white font-mono-code text-xs font-bold transition-all shadow-lg shadow-[#00aeec]/25 hover:shadow-[#00aeec]/40 flex items-center gap-1.5"
+              className="px-3.5 py-2 rounded-xl bg-bilibili hover:bg-bilibili/90 text-white font-mono-code text-xs font-bold transition-all shadow-lg shadow-bilibili/25 hover:shadow-bilibili/40 flex items-center gap-1.5"
             >
               <span>关注 UP 主主页</span>
               <ExternalLink className="w-3 h-3" />
@@ -165,9 +165,9 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
       ) : (
         <div className="space-y-6">
           {/* Controls Bar */}
-          <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs font-mono-code">
+          <div className="p-4 rounded-xl bg-surface-soft border border-stone-200 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs font-mono-code">
             <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
-              <span className="text-zinc-500 shrink-0 mr-1 flex items-center gap-1">
+              <span className="text-ink-subtle shrink-0 mr-1 flex items-center gap-1">
                 <Filter className="w-3 h-3" />
                 <span>参测模型:</span>
               </span>
@@ -177,8 +177,8 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
                   onClick={() => setSelectedModel(m)}
                   className={`px-2.5 py-1 rounded-lg transition-colors shrink-0 cursor-pointer ${
                     selectedModel === m
-                      ? "bg-white text-black font-semibold shadow-sm"
-                      : "bg-white/[0.04] text-zinc-400 hover:text-zinc-200 hover:bg-white/[0.08]"
+                      ? "bg-stone-900 text-white font-semibold shadow-sm"
+                      : "bg-stone-50 text-ink-muted hover:text-ink hover:bg-stone-100"
                   }`}
                 >
                   {m === "ALL" ? "全部 (12期)" : m}
@@ -187,7 +187,7 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
             </div>
 
             <div className="flex items-center gap-3 self-end md:self-auto shrink-0">
-              <span className="text-zinc-500">排序:</span>
+              <span className="text-ink-subtle">排序:</span>
               <div className="flex items-center gap-1">
                 {[
                   { id: "asc", label: "第1-12期" },
@@ -199,8 +199,8 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
                     onClick={() => setSortOrder(s.id as any)}
                     className={`px-2 py-1 rounded text-[11px] transition-colors cursor-pointer ${
                       sortOrder === s.id
-                        ? "bg-[#00aeec]/20 text-[#00aeec] font-bold border border-[#00aeec]/30"
-                        : "text-zinc-400 hover:text-white"
+                        ? "bg-bilibili/20 text-bilibili font-bold border border-bilibili/30"
+                        : "text-ink-muted hover:text-ink"
                     }`}
                   >
                     {s.label}
@@ -219,22 +219,22 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                className="rounded-2xl border border-white/[0.08] bg-white/[0.015] hover:bg-white/[0.03] hover:border-white/20 transition-all p-4 flex flex-col justify-between group relative overflow-hidden"
+                className="rounded-2xl border border-stone-200 bg-surface-soft hover:bg-stone-50 hover:border-stone-300 transition-all p-4 flex flex-col justify-between group relative overflow-hidden"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2 font-mono-code text-xs">
-                    <span className="px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 font-bold border border-blue-500/20">
+                    <span className="px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-bold border border-blue-200">
                       {ep.episode}
                     </span>
                     <button
                       onClick={(e) => handleCopyBvid(ep.bvid, e)}
-                      className="text-[10px] text-zinc-500 hover:text-zinc-300 transition-colors flex items-center gap-1 cursor-pointer"
+                      className="text-[10px] text-ink-subtle hover:text-ink-muted transition-colors flex items-center gap-1 cursor-pointer"
                       title="复制 BVID"
                     >
                       {copiedBvid === ep.bvid ? (
                         <>
-                          <Check className="w-2.5 h-2.5 text-emerald-400" />
-                          <span className="text-emerald-400">已复制</span>
+                          <Check className="w-2.5 h-2.5 text-emerald-700" />
+                          <span className="text-emerald-700">已复制</span>
                         </>
                       ) : (
                         <>
@@ -245,17 +245,17 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
                     </button>
                   </div>
 
-                  <h3 className="font-sans font-bold text-white text-sm leading-snug group-hover:text-[#00aeec] transition-colors mb-2">
+                  <h3 className="font-sans font-bold text-ink text-sm leading-snug group-hover:text-bilibili transition-colors mb-2">
                     {ep.title}
                   </h3>
 
-                  <p className="text-xs text-zinc-400 font-sans leading-relaxed mb-3 line-clamp-2">
+                  <p className="text-xs text-ink-muted font-sans leading-relaxed mb-3 line-clamp-2">
                     {ep.summary}
                   </p>
 
-                  <div className="p-2.5 rounded-xl bg-amber-500/[0.05] border border-amber-500/20 text-amber-200/90 text-xs font-mono-code leading-relaxed mb-3">
-                    <div className="text-[10px] text-amber-400/80 mb-0.5 flex items-center gap-1 font-semibold">
-                      <Sparkles className="w-3 h-3 text-amber-400" />
+                  <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 text-xs font-mono-code leading-relaxed mb-3">
+                    <div className="text-[10px] text-amber-800/80 mb-0.5 flex items-center gap-1 font-semibold">
+                      <Sparkles className="w-3 h-3 text-amber-800" />
                       <span>实测名场面 / 核心考点:</span>
                     </div>
                     {ep.keyHighlight}
@@ -265,7 +265,7 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
                     {ep.keyModels.map((m) => (
                       <span
                         key={m}
-                        className="text-[10px] font-mono-code px-2 py-0.5 rounded bg-white/[0.05] text-zinc-300 border border-white/[0.08]"
+                        className="text-[10px] font-mono-code px-2 py-0.5 rounded bg-stone-50 text-ink-muted border border-stone-200"
                       >
                         {m}
                       </span>
@@ -273,13 +273,13 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono-code text-zinc-400">
+                <div className="pt-3 border-t border-stone-200 flex items-center justify-between text-xs font-mono-code text-ink-muted">
                   <div className="flex items-center gap-3 text-[11px]">
-                    <span className="flex items-center gap-1 text-zinc-300">
-                      <Eye className="w-3 h-3 text-zinc-400" />
+                    <span className="flex items-center gap-1 text-ink-muted">
+                      <Eye className="w-3 h-3 text-ink-muted" />
                       {ep.playCount}
                     </span>
-                    <span className="flex items-center gap-1 text-zinc-400">
+                    <span className="flex items-center gap-1 text-ink-muted">
                       <MessageSquare className="w-3 h-3" />
                       {ep.danmakuCount}
                     </span>
@@ -289,7 +289,7 @@ export const BilibiliEpisodesPanel: React.FC<BilibiliEpisodesPanelProps> = ({
                     href={ep.videoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1.5 rounded-lg bg-[#00aeec] hover:bg-[#00aeec]/90 text-white font-semibold text-xs transition-colors flex items-center gap-1 shadow-md shadow-[#00aeec]/20"
+                    className="px-3 py-1.5 rounded-lg bg-bilibili hover:bg-bilibili/90 text-white font-semibold text-xs transition-colors flex items-center gap-1 shadow-md shadow-bilibili/20"
                   >
                     <Play className="w-3 h-3 fill-current" />
                     <span>原片播放</span>

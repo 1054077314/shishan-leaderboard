@@ -73,10 +73,12 @@ export function withScores(
 ): Array<RankedKillLineRecord & { rank: number; rankDelta: number }> {
   return models.map((m) => {
     const computedScore = computeScore(m.rounds, config);
+    // 结尾板自动识别的结果直接生效：那是 UP 主自己公布的分数，比人工分数新
+    const base = config.mode === "computed" ? computedScore : m.curatedScore;
     return {
       ...m,
       computedScore,
-      score: config.mode === "computed" ? computedScore : m.curatedScore,
+      score: m.autoScore ?? base,
       rank: 0,
       rankDelta: 0,
     };
@@ -84,8 +86,8 @@ export function withScores(
 }
 
 /**
- * 名次比较器：分数降序 → 王者轮次升序 → 钻石轮次升序 → 名称
- * 轮次越小越好，同为 "fail"/"none" 时按固定权重兜底，保证排序稳定可复现
+ * 名次比较器：toy 主源下按官方挑战榜名次（toy.rank）排序；
+ * 非 toy 记录回退到旧口径：分数降序 → 王者轮次升序 → 钻石轮次升序 → 名称
  */
 function roundRank(round: RoundResult): number {
   if (round === "none") return 99;
@@ -97,6 +99,13 @@ export function compareForRank(
   a: RankedKillLineRecord,
   b: RankedKillLineRecord
 ): number {
+  const ar = (a as any).toy?.rank;
+  const br = (b as any).toy?.rank;
+  if (typeof ar === "number" && typeof br === "number" && ar !== br) {
+    return ar - br;
+  }
+  if (typeof ar === "number" && typeof br !== "number") return -1;
+  if (typeof br === "number" && typeof ar !== "number") return 1;
   if (b.score !== a.score) return b.score - a.score;
   const king = roundRank(a.rounds.king) - roundRank(b.rounds.king);
   if (king !== 0) return king;
@@ -123,7 +132,8 @@ export function applyRanking(
 
   const ranks: RankMap = {};
   const ranked = scored.map((m, index) => {
-    const rank = index + 1;
+    // toy 主源：名次即官方挑战榜名次，不按 sort 下标重编
+    const rank = typeof (m as any).toy?.rank === "number" ? (m as any).toy.rank : index + 1;
     ranks[m.id] = rank;
     const prev = previous?.[m.id];
     return {

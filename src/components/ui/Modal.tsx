@@ -50,39 +50,35 @@ export const Modal: React.FC<ModalProps> = ({
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-y-auto">
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity"
+            className="fixed inset-0 bg-stone-950/50 backdrop-blur-md transition-opacity"
           />
-
-          {/* Modal Container */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className={`relative w-full ${maxWidthMap[maxWidth]} my-auto z-10 bg-[#0e0e14] border border-white/20 rounded-2xl shadow-2xl shadow-black/90 overflow-hidden flex flex-col max-h-[90vh] ${className}`}
+            className={`relative w-full ${maxWidthMap[maxWidth]} my-auto z-10 bg-surface border border-stone-200 rounded-2xl shadow-[0_25px_70px_rgba(28,25,23,0.18)] overflow-hidden flex flex-col max-h-[90vh] ${className}`}
           >
             {(title || subtitle) && (
-              <div className="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between gap-4 bg-white/[0.02]">
+              <div className="p-4 sm:p-5 border-b border-stone-200 flex items-center justify-between gap-4 bg-surface-soft">
                 <div>
-                  {title && <h3 className="text-lg font-bold text-white tracking-tight">{title}</h3>}
-                  {subtitle && <p className="text-xs text-zinc-400 font-mono-code mt-0.5">{subtitle}</p>}
+                  {title && <h3 className="text-lg font-bold text-ink tracking-tight">{title}</h3>}
+                  {subtitle && <p className="text-xs text-ink-muted font-mono-code mt-0.5">{subtitle}</p>}
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-1.5 rounded-lg bg-white/5 hover:bg-white/15 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                  className="p-1.5 rounded-lg bg-white text-ink-muted hover:bg-stone-100 hover:text-ink transition-colors cursor-pointer"
                   title="关闭 (Esc)"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
             )}
-
             <div className="p-4 sm:p-6 overflow-y-auto">{children}</div>
           </motion.div>
         </div>

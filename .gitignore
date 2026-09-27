@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+# B站采集缓存与自动抓分结果（本地生成）
+scripts/.cache/
+
+# B站登录凭证（仅本地，勿提交）
+scripts/.bilibili_auth
