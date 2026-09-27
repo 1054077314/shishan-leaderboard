@@ -6,8 +6,7 @@ import {
   RankMap,
   ScoringConfig,
 } from "./scoreEngine";
-import { RankedKillLineRecord, RankingPayload, KillLineSeedRecord } from "../types";
-import seed from "../data/killLineSeed.json";
+import { RankedKillLineRecord, RankingPayload } from "../types";
 
 /** 运行时数据源：放在 public/ 下，改数据不用重新构建 */
 export const RANKING_DATA_URL = "/rankingData.json";
@@ -17,22 +16,25 @@ const SNAPSHOT_KEY = "shishan.ranking.snapshot.v1";
 /** 默认轮询间隔：5 分钟。UP主更新后最多 5 分钟内前端自动重排 */
 export const DEFAULT_POLL_MS = 5 * 60 * 1000;
 
-/** 构建期兜底：rankingData.json 拉取失败时用仓库内的种子数据顶上 */
+/** 拉取失败时的空兜底：保持 toy 三榜形状，models 为空不断链 */
 const FALLBACK_PAYLOAD: RankingPayload = {
   schemaVersion: 1,
   scoreMode: DEFAULT_SCORING.mode,
-  dataVersion: "seed",
+  dataVersion: "empty",
   updatedAt: "",
   scoring: { weights: DEFAULT_SCORING.weights, decay: DEFAULT_SCORING.decay },
   source: {
-    upName: (seed as any).source.upName,
-    mid: (seed as any).source.mid,
-    seasonId: (seed as any).source.seasonId,
+    upName: "Token就是词元",
+    mid: "toy:bilibilitoy",
+    seasonId: "toy-shishan",
+    origin: "toy",
+    sourceUrl: "https://www.bilibili.com/toy/shishan/index.html?spm_id_from=333.1387.0.0",
   },
-  episodes: (seed as any).episodes,
-  videos: (seed as any).episodes,
+  episodes: [],
+  videos: [],
   pendingEpisodes: [],
-  models: (seed as any).models as KillLineSeedRecord[],
+  boards: { ladder: [], standingsGroups: [], standingsTotal: [], latestBoutDate: "" },
+  models: [],
 };
 
 function readSnapshot(): RankMap | null {

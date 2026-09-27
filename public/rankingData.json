@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "scoreMode": "curated",
-  "dataVersion": "346d4dd2cb30",
-  "updatedAt": "2026-09-27T04:32:05.852Z",
+  "dataVersion": "c764eba30d49",
+  "updatedAt": "2026-09-27T04:51:31.071Z",
   "latestContentAt": "2026-09-23T00:00:00.000Z",
   "latestRecordedAt": "2026-09-23T00:00:00.000Z",
   "scoring": {
@@ -530,14 +530,14 @@
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
-      "score": 45.5,
+      "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-08 御三家三人赛 8 分满分夺魁，三题全部一轮命中",
       "rounds": {
         "gold": 2,
         "diamond": "fail",
         "king": 2
       },
-      "curatedScore": 45.5,
+      "curatedScore": null,
       "autoEvidence": [],
       "toy": {
         "rank": 1,
@@ -572,14 +572,14 @@
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
-      "score": 38.5,
+      "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-08 御三家三人赛 5 分，王者题三轮压哨拿下",
       "rounds": {
         "gold": 2,
         "diamond": 2,
         "king": "fail"
       },
-      "curatedScore": 38.5,
+      "curatedScore": null,
       "autoEvidence": [],
       "toy": {
         "rank": 2,
@@ -614,14 +614,14 @@
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
-      "score": 14,
+      "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-23 新版 AI 御三家大论剑 7 分夺魁，K005 二轮拿下且只改 10 个代码文件",
       "rounds": {
         "gold": 2,
         "diamond": "fail",
         "king": "fail"
       },
-      "curatedScore": 14,
+      "curatedScore": null,
       "autoEvidence": [],
       "toy": {
         "rank": 3,
@@ -656,14 +656,14 @@
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
-      "score": 45.5,
+      "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-23 新版 AI 御三家大论剑 7 分，K005 二轮拿下，两轮共改 24 个文件",
       "rounds": {
         "gold": 2,
         "diamond": "fail",
         "king": 2
       },
-      "curatedScore": 45.5,
+      "curatedScore": null,
       "autoEvidence": [],
       "toy": {
         "rank": 4,
@@ -698,14 +698,14 @@
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
-      "score": 14,
+      "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-23 新版 AI 御三家大论剑 6 分，K005 第三轮压哨拿下，D003 只改 4 个文件",
       "rounds": {
         "gold": 2,
         "diamond": "fail",
         "king": "fail"
       },
-      "curatedScore": 14,
+      "curatedScore": null,
       "autoEvidence": [],
       "toy": {
         "rank": 5,
@@ -789,14 +789,14 @@
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
-      "score": 0,
+      "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · ",
       "rounds": {
         "gold": "fail",
         "diamond": "fail",
         "king": "fail"
       },
-      "curatedScore": 0,
+      "curatedScore": null,
       "autoEvidence": [],
       "toy": {
         "rank": 7,
@@ -929,14 +929,14 @@
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
-      "score": 14,
+      "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 3 分，钻石三轮失手未能卫冕",
       "rounds": {
         "gold": 2,
         "diamond": "fail",
         "king": "fail"
       },
-      "curatedScore": 14,
+      "curatedScore": null,
       "autoEvidence": [],
       "toy": {
         "rank": 10,
@@ -971,14 +971,14 @@
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
-      "score": 14,
+      "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 3 分，钻石与王者仍是零命中",
       "rounds": {
         "gold": 2,
         "diamond": "fail",
         "king": "fail"
       },
-      "curatedScore": 14,
+      "curatedScore": null,
       "autoEvidence": [],
       "toy": {
         "rank": 11,
@@ -1013,14 +1013,14 @@
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
-      "score": 14,
+      "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 3 分，上一场失手的 S002 一轮翻案",
       "rounds": {
         "gold": 2,
         "diamond": "fail",
         "king": "fail"
       },
-      "curatedScore": 14,
+      "curatedScore": null,
       "autoEvidence": [],
       "toy": {
         "rank": 12,

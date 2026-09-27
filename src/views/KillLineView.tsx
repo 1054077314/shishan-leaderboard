@@ -6,7 +6,6 @@ import { useRankingData } from "../services/rankingSource";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { CustomCursor } from "../components/CustomCursor";
-import { TierHierarchy } from "../components/TierHierarchy";
 import {
   BentoStats,
   KillLineTable,
@@ -14,8 +13,7 @@ import {
   ModelComparatorModal,
   ToyBoards,
 } from "../components/features/matrix";
-import { ScoreTrendChart } from "../components/features/trajectory";
-import { CostVisualizer } from "../components/features/cost";
+
 
 export default function KillLineView() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -157,6 +155,7 @@ export default function KillLineView() {
           transition={{ duration: 0.45, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
         >
           <BentoStats
+            payload={payload}
             onSelectHighlight={handleSelectHighlight}
             onMouseEnter={handleMouseEnterLens}
             onMouseLeave={handleMouseLeaveCursor}
@@ -193,37 +192,6 @@ export default function KillLineView() {
             onMouseEnter={handleMouseEnterLens}
             onMouseLeave={handleMouseLeaveCursor}
           />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <ScoreTrendChart
-            selectedModel={selectedModel}
-            onMouseEnter={handleMouseEnterLens}
-            onMouseLeave={handleMouseLeaveCursor}
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <CostVisualizer onMouseEnter={handleMouseEnterLens} onMouseLeave={handleMouseLeaveCursor} />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <TierHierarchy onMouseEnter={handleMouseEnterLens} onMouseLeave={handleMouseLeaveCursor} />
         </motion.div>
 
         <motion.div

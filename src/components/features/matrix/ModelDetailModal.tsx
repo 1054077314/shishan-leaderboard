@@ -3,11 +3,7 @@ import { KillLineRecord, StatusType } from "../../../types";
 import { Modal } from "../../ui/Modal";
 import { Badge } from "../../ui/Badge";
 import {
-  Clock,
   Coins,
-  CheckCircle2,
-  XCircle,
-  AlertTriangle,
   Lightbulb,
   ShieldAlert,
   Award,
@@ -61,10 +57,13 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
       subtitle={
         <div className="flex items-center gap-3">
           <span>
-            考核分: <strong className="text-ink">{model.score}</strong> / 100
+            考核分:{" "}
+            <strong className="text-ink">
+              {model.score != null ? `${model.score} / 100` : "—"}
+            </strong>
             {(model as any).toy?.assessmentTotal != null
               ? `（官方考核 ${(model as any).toy.assessmentTotal}/18）`
-              : "（生涯推导分）"}
+              : "（暂无官方考核记录）"}
           </span>
           {(model as any).toy?.rank != null && (
             <span className="text-ink-muted">挑战榜第 {(model as any).toy.rank} 名</span>
@@ -129,26 +128,15 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
           </div>
         )}
 
-        {/* Cost & Tokens if available */}
-        {(model.totalCostCNY !== undefined || model.tokensUsed) && (
+        {/* 生涯场次（toy 官方 player-data） */}
+        {model.tokensConsumed && (
           <div>
             <h4 className="text-xs font-mono-code text-ink-muted uppercase tracking-wider mb-2 flex items-center gap-1.5">
               <Coins className="w-3.5 h-3.5 text-emerald-700" />
-              <span>实测成本与吞吐量</span>
+              <span>生涯场次</span>
             </h4>
-            <div className="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-surface-soft border border-stone-200 font-mono-code text-xs">
-              <div>
-                <span className="text-ink-subtle text-[11px]">实测官方账单:</span>
-                <div className="text-base font-bold text-ink mt-0.5">
-                  ¥{model.totalCostCNY?.toFixed(2) ?? "--"}
-                </div>
-              </div>
-              <div>
-                <span className="text-ink-subtle text-[11px]">消耗 Token 总量:</span>
-                <div className="text-base font-bold text-ink mt-0.5">
-                  {model.tokensUsed ?? "--"}
-                </div>
-              </div>
+            <div className="p-3.5 rounded-xl bg-surface-soft border border-stone-200 font-mono-code text-xs text-ink">
+              {model.tokensConsumed}
             </div>
           </div>
         )}

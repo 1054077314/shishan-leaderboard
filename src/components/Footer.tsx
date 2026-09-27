@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="pt-8 pb-12 border-t border-stone-200 flex flex-col sm:flex-row justify-between items-center font-mono-code text-[11px] text-ink-subtle gap-3">
       <div className="flex items-center gap-2">
-        <span>EPISODES 01–12 AUDIT</span>
+        <span>TOY 官方三榜 AUDIT</span>
         <span className="text-stone-400">·</span>
         <a
           href="https://space.bilibili.com/3546747185924773"
@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
           <ExternalLink className="w-2.5 h-2.5" />
         </a>
       </div>
-      <div>基于 12 期公开视频实测回放、弹幕交叉检验与官方结算账单</div>
+      <div>基于 toy 官方挑战榜、考核榜与赛事积分榜实时同步</div>
     </footer>
   );
 };

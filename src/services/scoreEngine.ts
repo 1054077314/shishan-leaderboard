@@ -73,7 +73,7 @@ export function withScores(
 ): Array<RankedKillLineRecord & { rank: number; rankDelta: number }> {
   return models.map((m) => {
     const computedScore = computeScore(m.rounds, config);
-    // 结尾板自动识别的结果直接生效：那是 UP 主自己公布的分数，比人工分数新
+    // toy 主源：curatedScore 即官方考核分（无考核为 null）；autoScore 覆盖逻辑保留
     const base = config.mode === "computed" ? computedScore : m.curatedScore;
     return {
       ...m,
@@ -106,7 +106,10 @@ export function compareForRank(
   }
   if (typeof ar === "number" && typeof br !== "number") return -1;
   if (typeof br === "number" && typeof ar !== "number") return 1;
-  if (b.score !== a.score) return b.score - a.score;
+  // null 分（无官方考核）排在有分之后
+  const as = a.score ?? -1;
+  const bs = b.score ?? -1;
+  if (bs !== as) return bs - as;
   const king = roundRank(a.rounds.king) - roundRank(b.rounds.king);
   if (king !== 0) return king;
   const diamond = roundRank(a.rounds.diamond) - roundRank(b.rounds.diamond);

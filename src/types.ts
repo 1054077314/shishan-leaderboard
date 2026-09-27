@@ -18,10 +18,10 @@ export interface AutoEvidence {
   raw: string;
 }
 
-/** 种子数据：原始记录 + 可计算的结构化轮次 + 人工分数 */
+/** 种子数据：原始记录 + 可计算的结构化轮次 + 官方考核分（无官方考核为 null） */
 export interface KillLineSeedRecord extends KillLineRecord {
   rounds: RoundTriple;
-  curatedScore: number;
+  curatedScore: number | null;
   /** 结尾板自动识别折算的分数，存在时直接生效（覆盖 curatedScore） */
   autoScore?: number;
   autoEvidence?: AutoEvidence[];
@@ -31,8 +31,8 @@ export interface KillLineSeedRecord extends KillLineRecord {
 export interface RankedKillLineRecord extends KillLineSeedRecord {
   /** 由 rounds 推导出的分数 */
   computedScore: number;
-  /** 当前生效分数（取决于 scoreMode） */
-  score: number;
+  /** 当前生效分数（toy 主源 = 官方考核分，无考核为 null，前端显示 —） */
+  score: number | null;
   /** 全量榜中的名次，从 1 开始 */
   rank: number;
   /** 相对上一次数据版本的名次变动，正数为上升 */
@@ -46,7 +46,7 @@ export interface RankingEpisode {
   pubdate?: number;
   /** season = 合集正片；search:xxx = 靠关键词搜索兜底捞到的 */
   source?: string;
-  /** 视频结尾官方结算板的自动识别结果（extractEndingScores.py），仅供人工确认参考 */
+  /** 视频元信息（toy 主源下 episodes/videos 为空，仅保留类型兼容） */
   autoResults?: AutoResults;
 }
 
@@ -128,7 +128,8 @@ export interface KillLineRecord {
   strengths: string[];
   weaknesses: string[];
   bestFor: string;
-  score: number; // 0 - 100 benchmark performance score
+  /** 官方考核分（total/18×100）；无官方考核为 null，前端统一显示 — */
+  score: number | null; // null = 无官方考核记录
   bilibiliAid?: string;
   bilibiliBvid?: string;
   sourceEpisodeTitle?: string;

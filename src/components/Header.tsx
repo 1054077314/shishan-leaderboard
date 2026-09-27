@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-2.5">
           <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-50 text-rose-700 border border-rose-200 text-[11px] font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
-            EPISODES 01–12
+            TOY 官方三榜
           </span>
           <span className="text-stone-400">/</span>
           <a
@@ -114,10 +114,10 @@ export const Header: React.FC<HeaderProps> = ({
             BENCHMARK AUDIT
           </div>
           <h1 className="font-serif-title italic text-4xl sm:text-6xl lg:text-7xl font-normal text-ink leading-none tracking-tight">
-            屎山论剑全 12 期
+            屎山英雄榜
           </h1>
           <p className="text-ink-muted text-xs sm:text-sm mt-3 font-light font-mono-code">
-            难度斩杀线 × 花费全量对照 · 实战避坑总账单
+            挑战榜 × 考核榜 × 赛事积分榜 · toy 官方实时同步
           </p>
         </div>
 

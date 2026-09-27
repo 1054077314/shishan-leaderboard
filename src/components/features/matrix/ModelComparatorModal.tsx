@@ -2,7 +2,10 @@ import React from "react";
 import { KillLineRecord, StatusType } from "../../../types";
 import { Modal } from "../../ui/Modal";
 import { Badge } from "../../ui/Badge";
-import { GitCompare, Check, AlertTriangle, Coins, ShieldCheck, Zap } from "lucide-react";
+import { GitCompare, Coins, Zap } from "lucide-react";
+
+const kaoheLabel = (m: KillLineRecord): string =>
+  m.score != null ? `${m.score}分` : "—";
 
 export interface ModelComparatorModalProps {
   isOpen: boolean;
@@ -62,7 +65,7 @@ export const ModelComparatorModal: React.FC<ModelComparatorModalProps> = ({
             >
               {allModels.map((m) => (
                 <option key={m.id} value={m.id}>
-                  {m.model} ({m.tier} · {m.score}分)
+                  {m.model} ({m.tier} · {kaoheLabel(m)})
                 </option>
               ))}
             </select>
@@ -83,7 +86,7 @@ export const ModelComparatorModal: React.FC<ModelComparatorModalProps> = ({
             >
               {allModels.map((m) => (
                 <option key={m.id} value={m.id}>
-                  {m.model} ({m.tier} · {m.score}分)
+                  {m.model} ({m.tier} · {kaoheLabel(m)})
                 </option>
               ))}
             </select>
@@ -96,15 +99,19 @@ export const ModelComparatorModal: React.FC<ModelComparatorModalProps> = ({
           <div className="grid grid-cols-3 border-b border-stone-200 bg-surface-soft">
             <div className="p-3.5 text-ink-muted flex items-center gap-1.5">
               <Zap className="w-3.5 h-3.5 text-amber-800" />
-              <span>综合战力指数</span>
+              <span>官方考核分（total/18）</span>
             </div>
             <div className="p-3.5 font-bold text-ink border-x border-stone-200 text-base">
-              {modelA.score}{" "}
-              <span className="text-xs text-ink-subtle font-normal">分 ({modelA.tier})</span>
+              {modelA.score ?? "—"}{" "}
+              <span className="text-xs text-ink-subtle font-normal">
+                {modelA.score != null ? `分 (${modelA.tier})` : `(${modelA.tier})`}
+              </span>
             </div>
             <div className="p-3.5 font-bold text-ink text-base">
-              {modelB.score}{" "}
-              <span className="text-xs text-ink-subtle font-normal">分 ({modelB.tier})</span>
+              {modelB.score ?? "—"}{" "}
+              <span className="text-xs text-ink-subtle font-normal">
+                {modelB.score != null ? `分 (${modelB.tier})` : `(${modelB.tier})`}
+              </span>
             </div>
           </div>
 
@@ -135,27 +142,29 @@ export const ModelComparatorModal: React.FC<ModelComparatorModalProps> = ({
             <div className="p-3.5">{renderBadge(modelB.kingStatus, modelB.king)}</div>
           </div>
 
-          {/* Row: Cost */}
+          {/* Row: 生涯场次（toy 官方 player-data） */}
           <div className="grid grid-cols-3 border-b border-stone-200 bg-surface-soft">
             <div className="p-3.5 text-ink-muted flex items-center gap-1.5">
               <Coins className="w-3.5 h-3.5 text-emerald-700" />
-              <span>官方实测花费</span>
+              <span>生涯场次</span>
             </div>
             <div className="p-3.5 font-bold text-ink border-x border-stone-200">
-              {modelA.totalCostCNY ? `¥${modelA.totalCostCNY.toFixed(2)}` : "未抽检花费"}
+              {modelA.tokensConsumed || "—"}
             </div>
             <div className="p-3.5 font-bold text-ink">
-              {modelB.totalCostCNY ? `¥${modelB.totalCostCNY.toFixed(2)}` : "未抽检花费"}
+              {modelB.tokensConsumed || "—"}
             </div>
           </div>
 
-          {/* Row: Token Consumption */}
+          {/* Row: 挑战榜名次 */}
           <div className="grid grid-cols-3 border-b border-stone-200">
-            <div className="p-3.5 text-ink-muted">Token 吞吐量</div>
+            <div className="p-3.5 text-ink-muted">挑战榜名次</div>
             <div className="p-3.5 border-x border-stone-200 text-ink-muted">
-              {modelA.tokensUsed || "--"}
+              {(modelA as any).toy?.rank != null ? `第 ${(modelA as any).toy.rank} 名` : "—"}
             </div>
-            <div className="p-3.5 text-ink-muted">{modelB.tokensUsed || "--"}</div>
+            <div className="p-3.5 text-ink-muted">
+              {(modelB as any).toy?.rank != null ? `第 ${(modelB as any).toy.rank} 名` : "—"}
+            </div>
           </div>
 
           {/* Row: UP Testimony */}

@@ -14,8 +14,8 @@
  * 映射约定（用户已确认）：
  *   - KillLine 主排名 = ladder 挑战榜（名次只靠挑战易位，原样采用，不重算）；
  *     前端排序一律按 toy.rank（官方名次），不再按 score 排序；
- *     score/curatedScore 只用官方真实分：考核 total/18 × 100，无考核记录的
- *     用生涯 byHardness 推导分兜底（computeScore 口径），绝不按名次线性伪造
+ *     score/curatedScore 只用官方真实分：有考核记录 = total/18 × 100，
+ *     无官方考核的一律 null，前端显示 —，绝不按名次线性伪造、不做生涯推导
  *   - 五档折三档：青铜+白银+黄金合并为 gold（ok/total 相加），钻石/王者不变
  *   - 考核 total/18 与小组 WDL/积分作为 autoEvidence 留档展示，curatedScore
  *     仍是主分数（由 ladder 名次 + 考核成绩派生），scoreEngine 逻辑不变
@@ -110,21 +110,6 @@ function slugify(name, index) {
   return slug || `toy-${index}`;
 }
 
-/** 生涯兜底分：与前端 scoreEngine.computeScore 同口径（weights 0.2/0.35/0.45，decay 0.7） */
-function fallbackScore(rounds) {
-  const weights = { gold: 0.2, diamond: 0.35, king: 0.45 };
-  const decay = 0.7;
-  let weighted = 0, total = 0;
-  for (const [tier, round] of Object.entries(rounds)) {
-    if (round === "none") continue;
-    const s = round === "fail" ? 0 : 100 * Math.pow(decay, round - 1);
-    weighted += weights[tier] * s;
-    total += weights[tier];
-  }
-  if (!total) return 0;
-  return Math.round((weighted / total) * 10) / 10;
-}
-
 function main() {
   if (!existsSync(toyCacheFile)) {
     throw new Error(`toy 缓存缺失，请先跑 python scripts/sync_toy.py：${toyCacheFile}`);
@@ -165,12 +150,11 @@ function main() {
     const assess = findAssess(row.name);
     const groupEntry = (toy.standingsTotal ?? []).find((s) => norm(s.name) === norm(row.name));
 
-    // 真实分：考核 total/18 × 100（官方数据）；无考核记录的用生涯 byHardness
-    // 推导分兜底（与 scoreEngine.computeScore 同口径）。不按名次伪造分数。
+    // 真实分：有官方考核 = total/18 × 100；无官方考核的一律 null（前端显示 —）
     const rounds = { gold: folded.gold.round, diamond: folded.diamond.round, king: folded.king.round };
     const curatedScore = assess
       ? Math.round(((assess.total / 18) * 100) * 10) / 10
-      : fallbackScore(rounds);
+      : null;
     const hasRealAssess = !!assess;
 
     const autoEvidence = [];

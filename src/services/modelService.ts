@@ -1,5 +1,4 @@
 import { KillLineRecord, RankedKillLineRecord, StatusType } from "../types";
-import { COST_DATA } from "../data/shishanData";
 
 export interface ModelFilterOptions {
   searchQuery?: string;
@@ -10,6 +9,10 @@ export interface ModelFilterOptions {
 function toyRankOf(m: RankedKillLineRecord): number {
   const r = (m as any).toy?.rank;
   return typeof r === "number" ? r : Number.MAX_SAFE_INTEGER;
+}
+
+function scoreOf(m: RankedKillLineRecord): number {
+  return m.score ?? -1;
 }
 
 /**
@@ -29,13 +32,6 @@ export class ModelService {
     id: string
   ): KillLineRecord | undefined {
     return data.find((m) => m.id === id);
-  }
-
-  /**
-   * 获取花费结算对比数据
-   */
-  static getCostData() {
-    return COST_DATA;
   }
 
   /**
@@ -80,13 +76,13 @@ export class ModelService {
       }
       if (sortBy === "diamond") {
         const weight: Record<StatusType, number> = { pass: 3, warn: 2, fail: 1, none: 0 };
-        return weight[b.diamondStatus] - weight[a.diamondStatus] || toyRankOf(a) - toyRankOf(b) || b.score - a.score;
+        return weight[b.diamondStatus] - weight[a.diamondStatus] || toyRankOf(a) - toyRankOf(b) || scoreOf(b) - scoreOf(a);
       }
       if (sortBy === "king") {
         const weight: Record<StatusType, number> = { pass: 3, warn: 2, fail: 1, none: 0 };
-        return weight[b.kingStatus] - weight[a.kingStatus] || toyRankOf(a) - toyRankOf(b) || b.score - a.score;
+        return weight[b.kingStatus] - weight[a.kingStatus] || toyRankOf(a) - toyRankOf(b) || scoreOf(b) - scoreOf(a);
       }
-      return toyRankOf(a) - toyRankOf(b) || b.score - a.score;
+      return toyRankOf(a) - toyRankOf(b) || scoreOf(b) - scoreOf(a);
     });
   }
 
@@ -125,10 +121,9 @@ export class ModelService {
     const dataStr = JSON.stringify(
       {
         title,
-        source: "B站: Token就是词元",
+        source: "屎山英雄榜（toy 官方）",
         exportedAt: new Date().toISOString(),
         killLines: data,
-        costSettlements: COST_DATA,
       },
       null,
       2
@@ -147,7 +142,7 @@ export class ModelService {
       "钻石线",
       "王者线",
       "实测证言",
-      "战力指数",
+      "考核分",
       "全榜名次",
     ];
     const rows = data.map((d) => {
@@ -159,7 +154,7 @@ export class ModelService {
         `"${d.diamond}"`,
         `"${d.king}"`,
         `"${d.quote.replace(/"/g, '""')}"`,
-        `"${d.score}"`,
+        `"${d.score ?? ""}"`,
         `"${ranked.rank ?? ""}"`,
       ];
     });

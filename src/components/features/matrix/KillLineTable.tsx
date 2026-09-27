@@ -329,7 +329,7 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
               <th
                 onClick={() => handleSortChange("score")}
                 className="py-3 px-4 sm:px-6 font-normal text-right hover:text-ink transition-colors cursor-pointer select-none"
-                title="官方考核分（total/18×100），无考核记录为生涯推导分"
+                title="官方考核分（total/18×100），无官方考核记录显示—"
               >
                 <div className="flex items-center justify-end gap-1.5">
                   <span>考核分</span>
@@ -436,13 +436,13 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
                         {renderStatus(row.kingStatus, row.king)}
                       </td>
 
-                      {/* 官方考核分（total/18×100），无考核记录为生涯推导分 */}
+                      {/* 官方考核分（total/18×100），无官方考核显示 — */}
                       <td className="py-3.5 px-4 sm:px-6 text-right font-mono-code text-xs text-ink align-middle">
-                        <span className="font-bold text-sm tracking-tight">{row.score}</span>
+                        <span className="font-bold text-sm tracking-tight">{row.score ?? "—"}</span>
                         <span className="block text-[10px] text-ink-subtle font-normal">
                           {(row as any).toy?.assessmentTotal != null
                             ? `考核 ${(row as any).toy.assessmentTotal}/18`
-                            : "生涯推导"}
+                            : "无官方考核"}
                         </span>
                       </td>
                     </tr>
@@ -498,10 +498,13 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
                                 <div className="pt-2 flex flex-wrap items-center justify-between gap-2 text-xs font-mono-code">
                                   <div className="flex items-center gap-3">
                                     <span className="text-ink-subtle text-[11px]">
-                                      考核分: <strong className="text-ink font-bold">{row.score}</strong> 分
+                                      考核分:{" "}
+                                      <strong className="text-ink font-bold">
+                                        {row.score != null ? `${row.score} 分` : "—"}
+                                      </strong>
                                       {(row as any).toy?.assessmentTotal != null
                                         ? `（官方考核 ${(row as any).toy.assessmentTotal}/18）`
-                                        : "（生涯推导分，该模型暂无官方考核记录）"}
+                                        : "（该模型暂无官方考核记录）"}
                                     </span>
                                   </div>
                                   <button
