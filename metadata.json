@@ -1,6 +1,6 @@
 {
   "name": "The Decision Ledger",
-  "description": "屎山论剑实测系列难度斩杀线 × 花费全量对照，涵盖 GPT-6 Astra、Grok 4.6、DeepSeek V4.1 Flash 等模型实战战绩与成本账单；榜单随 UP主更新自动重排。",
+  "description": "屎山论剑实测系列难度斩杀线 × 官方考核分对照，涵盖 GPT-6 Astra、Grok 4.6、DeepSeek V4.1 Flash 等模型实战战绩；榜单随 UP主更新自动重排。",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

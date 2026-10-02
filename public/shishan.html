@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>屎山论剑实测档案 · 难度斩杀线 × 花费 全量对照</title>
+  <title>屎山论剑实测档案（手工快照）· 难度斩杀线 × 01–12 期实录</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -137,6 +137,38 @@
       border: 1px solid var(--border);
       padding: 6px 14px;
       border-radius: 9999px;
+    }
+
+    /* 手工快照声明：本页口径与现行榜单不同源，必须先声明再读数据 */
+    .snapshot-alert {
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      border-left: 3px solid var(--accent);
+      background: rgba(244, 63, 94, 0.05);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 56px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.9;
+      color: var(--text-muted);
+    }
+
+    .snapshot-alert b {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .snapshot-alert ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .snapshot-alert em {
+      font-style: normal;
+      color: var(--accent);
     }
 
     /* Hero */
@@ -590,18 +622,28 @@
       <div class="meta-release">DATA: 2026.07.02 – 09.12</div>
     </header>
 
+    <div class="snapshot-alert">
+      <b>手工快照 · 与现行榜单不同口径，勿混用</b>
+      <ul>
+        <li>本页成文于榜单化流水线（<em>sync_toy.py → rankingData.json</em>）之前，只覆盖正片 01–12 期，数据截止 2026.09.12；现行榜以官方三榜结构化数据为准。</li>
+        <li>本页 <em>T0–T4</em> 是按实录手写的能力排序；现行榜的梯队一律由官方挑战榜名次派生，模型名也按榜面写法（本页「GPT-6 Astra」在挑战榜写作「GPT6」）。</li>
+        <li>下方成本段只有 3 张卡（09-12 期官方成本结算），<em>不是全量花费对照</em>；结构化数据里没有各版本词元用量，无法复原，现行榜已撤掉「花费」话术。</li>
+        <li>档案件为弹幕时间轴与视频元数据手工交叉整理，未经逐条复算，也不与现行榜的「首轮通过率」口径互换。</li>
+      </ul>
+    </div>
+
     <!-- Hero -->
     <section class="hero interact-lens">
       <div class="hero-eyebrow">MAIN SEASON 01–12 DOSSIER</div>
       <h1>The Bug Kill-Line <br>& Cost Ledger.</h1>
       <div class="hero-meta">
         <p class="hero-desc">
-          屎山论剑合集正片全量弹幕（6,075 条时间轴逐秒解析）与实测元数据重构：横跨 20+ 款大模型的难度斩杀线、真实 Token 成本账单与十强战绩订正。合集之外 UP主仍有实测稿未纳入本档案，以榜单数据版本为准。
+          屎山论剑合集正片全量弹幕（6,075 条时间轴逐秒解析）与实测元数据重构：横跨 20+ 款大模型的难度斩杀线、3 款模型的官方成本结算抽样与十强战绩订正。合集之外 UP主仍有实测稿未纳入本档案，以榜单数据版本为准。
         </p>
         <div class="audit-spec">
           <b>CONFIDENTIAL BENCHMARK AUDIT</b>
           <span>UP 主: Token就是词元 ｜ 全量弹幕交叉验证</span>
-          <div style="color: #f43f5e; margin-top: 6px;">Zero Hallucination Verified</div>
+          <div style="color: #f43f5e; margin-top: 6px;">口径：弹幕时间轴 × 官方元数据手工交叉，未逐条复算</div>
         </div>
       </div>
     </section>
@@ -665,7 +707,7 @@
     <section class="matrix-wrap">
       <div class="section-head">
         <h2>The Kill-Line Matrix</h2>
-        <span class="section-sub">难度体系与过审轮次全量对照</span>
+        <span class="section-sub">01–12 期实录 · 难度体系与过审轮次</span>
       </div>
 
       <div style="overflow-x: auto;">
@@ -766,7 +808,7 @@
     <section>
       <div class="section-head">
         <h2>The Cost of Truth</h2>
-        <span class="section-sub">确切 Token 账单与官方花费结算</span>
+        <span class="section-sub">官方成本结算抽样 · 仅 09-12 期 3 款，非全量花费对照</span>
       </div>
 
       <div class="cards-grid">
@@ -821,7 +863,7 @@
     <section>
       <div class="section-head">
         <h2>The Verified Hierarchy</h2>
-        <span class="section-sub">合集正片实录交叉订正后的大模型实战梯队</span>
+        <span class="section-sub">合集正片实录交叉订正后的大模型实战梯队（本页手写能力序，≠ 现行榜由名次派生的梯队）</span>
       </div>
 
       <div class="tier-list">
@@ -875,6 +917,7 @@
     <footer>
       <div>PROPRIETARY BENCHMARK AUDIT · EPISODES 01–12</div>
       <div>基于 B 站公开弹幕时间轴与官方视频元数据整理</div>
+      <div>手工快照，数据截止 2026.09.12；现行榜见 index.html（toy 三榜结构化数据）</div>
     </footer>
   </div>
 

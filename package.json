@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "ranking:rebuild": "node scripts/rebuildRanking.mjs",
     "evaluation:rebuild": "node scripts/rebuildEvaluation.mjs",
+    "test": "node --test \"tests/**/*.test.mjs\"",
     "sync": "python scripts/sync_toy.py && node scripts/rebuildRanking.mjs",
     "prebuild": "node scripts/rebuildRanking.mjs",
     "clean": "rm -rf dist server.js",

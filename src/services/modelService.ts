@@ -7,8 +7,7 @@ export interface ModelFilterOptions {
 }
 
 function toyRankOf(m: RankedKillLineRecord): number {
-  const r = (m as any).toy?.rank;
-  return typeof r === "number" ? r : Number.MAX_SAFE_INTEGER;
+  return m.toy?.rank ?? Number.MAX_SAFE_INTEGER;
 }
 
 function scoreOf(m: RankedKillLineRecord): number {
@@ -117,7 +116,7 @@ export class ModelService {
   ): Blob {
     const title = scope
       ? `屎山论剑实测榜 · 挑战榜 ${data.length} 席 · 数据版本 ${scope.dataVersion} · 数据来源屎山英雄榜`
-      : "屎山论剑实测榜 · 难度斩杀线 × 花费全量对照";
+      : "屎山论剑实测榜 · 难度斩杀线 × 官方考核分";
     const dataStr = JSON.stringify(
       {
         title,

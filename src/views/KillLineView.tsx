@@ -29,7 +29,7 @@ export default function KillLineView() {
     refresh: refreshRanking,
   } = useRankingData();
 
-  const [selectedModel, setSelectedModel] = useState<KillLineRecord>(allModels[0]);
+  const [selectedModel, setSelectedModel] = useState<KillLineRecord | null>(allModels[0] ?? null);
   const [selectedForCompare, setSelectedForCompare] = useState<KillLineRecord[]>([]);
   const [isComparatorOpen, setIsComparatorOpen] = useState(false);
   const [detailModalModel, setDetailModalModel] = useState<KillLineRecord | null>(null);

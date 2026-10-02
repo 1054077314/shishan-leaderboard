@@ -95,15 +95,58 @@ export interface RankingPayload {
   videos?: RankingEpisode[];
   /** 已发布但结果尚未录入的期数，需要人工补录 rounds */
   pendingEpisodes: RankingEpisode[];
-  /** toy 三榜全量（挑战榜/考核榜/小组/总积分），直供前端多榜展示 */
+  /** toy 三榜原始透出（挑战榜/考核榜/小组/总积分），字段名沿用官方口径 */
   boards?: {
     ladder: Array<{ rank: number; name: string; org: string; note: string; trend: string; delta: number }>;
-    kaohe?: Array<{ name: string; total: number; rank: number | null; byTier: Record<string, number> | null; unlock: { baseScore: number; diamondUnlocked: boolean; kingUnlocked: boolean; reached: string } | null }>;
+    kaohe?: Array<{
+      name: string;
+      total: number;
+      rank: number | null;
+      date?: string | null;
+      duration?: string | null;
+      byTier: Record<string, number> | null;
+      unlock: { baseScore: number; diamondUnlocked: boolean; kingUnlocked: boolean; reached: string } | null;
+      /** 官方声明本场成绩存疑（如疑似作弊）时的原话，非空即不可作为可靠参照 */
+      disputed?: string | null;
+      highlights?: string[];
+    }>;
     standingsGroups: Array<{ group: string; state: string; members: Array<{ name: string; wdl: string; pts: number }> }>;
     standingsTotal: Array<{ rank: number; name: string; org: string; wdl: string; pts: number }>;
     latestBoutDate: string;
   };
   models: KillLineSeedRecord[];
+}
+
+/**
+ * 屎山英雄榜（toy 官方）逐版本扩展字段，由 scripts/rebuildRanking.mjs 直出。
+ *
+ * ⚠️ statsScope 是这一整块数据的取数口径声明：挑战榜每行是一个具体版本，
+ * 斩杀线只能来自 players[slug].byVersion[version]（"version"）。
+ * 曾经实现误用了家族生涯累计（career），导致 GLM5.3 与 GLM5.3Flash
+ * 显示同一列数据；现在前端与 tests 都按该字段校验。
+ */
+export interface ToyModelMeta {
+  /** 官方挑战榜名次，前端排序唯一依据 */
+  rank: number;
+  org: string;
+  trend: string;
+  delta: number;
+  family: string | null;
+  /** player-data 里的版本 label；未解析出则为 null */
+  version: string | null;
+  statsScope: "version" | "family" | "none";
+  /** 本版出战场次（byVersion.volume），未解析为 null */
+  versionVolume: number | null;
+  /** 挂靠的官方考核场次名，无官方考核为 null */
+  assessmentName: string | null;
+  assessmentTotal: number | null;
+  hasRealAssess: boolean;
+  /** 官方对该考核场次的存疑声明原话，非空即成绩不可作为可靠参照 */
+  assessmentDisputed: string | null;
+  /** 总积分榜对齐结果：exact=两榜名一致，alias=按登记表关联，null=未对上 */
+  groupMatch: "exact" | "alias" | null;
+  groupWdl: string | null;
+  groupPts: number | null;
 }
 
 export type ScoreMode = "curated" | "computed";
@@ -122,37 +165,18 @@ export interface KillLineRecord {
   quote: string;
   timestamp: string;
   episodesTested: string;
-  costEstimate: string;
-  tokensConsumed: string;
+  /** 出战场次标签（如「本版 25 场」），口径见 toy.statsScope；无口径为空串 */
+  volumeLabel: string;
   analysis: string;
   strengths: string[];
   weaknesses: string[];
   bestFor: string;
   /** 官方考核分（total/18×100）；无官方考核为 null，前端统一显示 — */
   score: number | null; // null = 无官方考核记录
+  /** 屎山英雄榜逐版本扩展字段（toy 主源专有），详见 ToyModelMeta */
+  toy?: ToyModelMeta;
   bilibiliAid?: string;
   bilibiliBvid?: string;
   sourceEpisodeTitle?: string;
 }
 
-export interface CostRecord {
-  id: string;
-  model: string;
-  cost: string;
-  tokens: string;
-  source: string;
-  verdict: string;
-  badge: string;
-  costColor: string;
-  estimatedCostYuan: number;
-  tokenMillions: number;
-  efficiencyRating: "S" | "A" | "B" | "C" | "F";
-}
-
-export interface TierRecord {
-  tier: "T0" | "T1" | "T2" | "T3" | "T4";
-  models: string;
-  desc: string;
-  badgeColor: string;
-  summary: string;
-}

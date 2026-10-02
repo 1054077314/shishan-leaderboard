@@ -2,7 +2,7 @@ import React from "react";
 import { KillLineRecord, StatusType } from "../../../types";
 import { Modal } from "../../ui/Modal";
 import { Badge } from "../../ui/Badge";
-import { GitCompare, Coins, Zap } from "lucide-react";
+import { GitCompare, Trophy, Zap } from "lucide-react";
 
 const kaoheLabel = (m: KillLineRecord): string =>
   m.score != null ? `${m.score}分` : "—";
@@ -142,17 +142,17 @@ export const ModelComparatorModal: React.FC<ModelComparatorModalProps> = ({
             <div className="p-3.5">{renderBadge(modelB.kingStatus, modelB.king)}</div>
           </div>
 
-          {/* Row: 生涯场次（toy 官方 player-data） */}
+          {/* Row: 出战场次（toy player-data，口径由 statsScope 声明） */}
           <div className="grid grid-cols-3 border-b border-stone-200 bg-surface-soft">
             <div className="p-3.5 text-ink-muted flex items-center gap-1.5">
-              <Coins className="w-3.5 h-3.5 text-emerald-700" />
-              <span>生涯场次</span>
+              <Trophy className="w-3.5 h-3.5 text-emerald-700" />
+              <span>出战场次</span>
             </div>
             <div className="p-3.5 font-bold text-ink border-x border-stone-200">
-              {modelA.tokensConsumed || "—"}
+              {modelA.volumeLabel || "—"}
             </div>
             <div className="p-3.5 font-bold text-ink">
-              {modelB.tokensConsumed || "—"}
+              {modelB.volumeLabel || "—"}
             </div>
           </div>
 
@@ -160,10 +160,10 @@ export const ModelComparatorModal: React.FC<ModelComparatorModalProps> = ({
           <div className="grid grid-cols-3 border-b border-stone-200">
             <div className="p-3.5 text-ink-muted">挑战榜名次</div>
             <div className="p-3.5 border-x border-stone-200 text-ink-muted">
-              {(modelA as any).toy?.rank != null ? `第 ${(modelA as any).toy.rank} 名` : "—"}
+              {modelA.toy?.rank != null ? `第 ${modelA.toy.rank} 名` : "—"}
             </div>
             <div className="p-3.5 text-ink-muted">
-              {(modelB as any).toy?.rank != null ? `第 ${(modelB as any).toy.rank} 名` : "—"}
+              {modelB.toy?.rank != null ? `第 ${modelB.toy.rank} 名` : "—"}
             </div>
           </div>
 

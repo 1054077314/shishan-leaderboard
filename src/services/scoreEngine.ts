@@ -99,8 +99,8 @@ export function compareForRank(
   a: RankedKillLineRecord,
   b: RankedKillLineRecord
 ): number {
-  const ar = (a as any).toy?.rank;
-  const br = (b as any).toy?.rank;
+  const ar = a.toy?.rank;
+  const br = b.toy?.rank;
   if (typeof ar === "number" && typeof br === "number" && ar !== br) {
     return ar - br;
   }
@@ -136,7 +136,7 @@ export function applyRanking(
   const ranks: RankMap = {};
   const ranked = scored.map((m, index) => {
     // toy 主源：名次即官方挑战榜名次，不按 sort 下标重编
-    const rank = typeof (m as any).toy?.rank === "number" ? (m as any).toy.rank : index + 1;
+    const rank = m.toy?.rank ?? index + 1;
     ranks[m.id] = rank;
     const prev = previous?.[m.id];
     return {

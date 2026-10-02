@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "scoreMode": "curated",
-  "dataVersion": "c764eba30d49",
-  "updatedAt": "2026-09-27T04:51:31.071Z",
-  "latestContentAt": "2026-09-23T00:00:00.000Z",
-  "latestRecordedAt": "2026-09-23T00:00:00.000Z",
+  "dataVersion": "0dbbb27adb56",
+  "updatedAt": "2026-10-02T10:05:51.597Z",
+  "latestContentAt": "2026-09-28T00:00:00.000Z",
+  "latestRecordedAt": "2026-09-28T00:00:00.000Z",
   "scoring": {
     "weights": {
       "gold": 0.2,
@@ -19,7 +19,7 @@
     "seasonId": "toy-shishan",
     "origin": "toy",
     "sourceUrl": "https://www.bilibili.com/toy/shishan/index.html?spm_id_from=333.1387.0.0",
-    "fetchedAt": "2026-09-27T12:10:00+08:00"
+    "fetchedAt": "2026-10-02T18:05:51+08:00"
   },
   "episodes": [],
   "videos": [],
@@ -47,7 +47,7 @@
         "name": "Opus5.5",
         "org": "Anthropic",
         "note": "2026-09-23 新版 AI 御三家大论剑 7 分夺魁，K005 二轮拿下且只改 10 个代码文件",
-        "trend": "new",
+        "trend": "hold",
         "delta": 0
       },
       {
@@ -55,7 +55,7 @@
         "name": "GPT6 Sol",
         "org": "OpenAI",
         "note": "2026-09-23 新版 AI 御三家大论剑 7 分，K005 二轮拿下，两轮共改 24 个文件",
-        "trend": "new",
+        "trend": "hold",
         "delta": 0
       },
       {
@@ -63,7 +63,7 @@
         "name": "Grok4.7",
         "org": "xAI",
         "note": "2026-09-23 新版 AI 御三家大论剑 6 分，K005 第三轮压哨拿下，D003 只改 4 个文件",
-        "trend": "new",
+        "trend": "hold",
         "delta": 0
       },
       {
@@ -71,8 +71,8 @@
         "name": "GLM5.3",
         "org": "智谱 AI",
         "note": "",
-        "trend": "down",
-        "delta": -1
+        "trend": "hold",
+        "delta": 0
       },
       {
         "rank": 7,
@@ -86,41 +86,57 @@
         "rank": 8,
         "name": "DeepSeek Flash",
         "org": "DeepSeek",
-        "note": "2026-09-11 Flash 组第二次大乱斗 5 分夺魁，全场唯一拿下钻石题",
-        "trend": "up",
-        "delta": 1
+        "note": "2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 第三轮 10 个文件拿下",
+        "trend": "hold",
+        "delta": 0
       },
       {
         "rank": 9,
         "name": "Qwen3.8Max",
         "org": "阿里巴巴",
         "note": "",
-        "trend": "up",
-        "delta": 1
+        "trend": "hold",
+        "delta": 0
       },
       {
         "rank": 10,
         "name": "Qwen3.8Flash",
         "org": "阿里巴巴",
-        "note": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石三轮失手未能卫冕",
-        "trend": "up",
-        "delta": 1
+        "note": "2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 三轮共改 17 个文件压哨拿下",
+        "trend": "hold",
+        "delta": 0
       },
       {
         "rank": 11,
-        "name": "Gemini3.8Flash",
-        "org": "Google",
-        "note": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石与王者仍是零命中",
+        "name": "GLM5.3Flash",
+        "org": "智谱 AI",
+        "note": "2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 第三轮拿下，该版本首次在钻石题得分",
         "trend": "up",
         "delta": 1
       },
       {
         "rank": 12,
-        "name": "GLM5.3Flash",
-        "org": "智谱 AI",
-        "note": "2026-09-11 Flash 组第二次大乱斗 3 分，上一场失手的 S002 一轮翻案",
-        "trend": "up",
-        "delta": 2
+        "name": "Gemini3.8Flash",
+        "org": "Google",
+        "note": "2026-09-28 第三场 Flash 大乱斗 3 分，钻石 D001 第二轮耗时 82 分钟仍未通过",
+        "trend": "down",
+        "delta": -1
+      },
+      {
+        "rank": 13,
+        "name": "MiniMax M3.1 Flash",
+        "org": "MiniMax",
+        "note": "2026-09-28 第三场 Flash 大乱斗首战 3 分，白银与黄金均一轮过、钻石三轮全失手",
+        "trend": "new",
+        "delta": 0
+      },
+      {
+        "rank": 14,
+        "name": "MiMo2.6Flash",
+        "org": "小米",
+        "note": "2026-09-28 第三场 Flash 大乱斗首战 2 分，黄金 G002 首轮失手是全场唯一的黄金失分",
+        "trend": "new",
+        "delta": 0
       }
     ],
     "kaohe": [
@@ -128,6 +144,8 @@
         "name": "GLM-5.3",
         "total": 12,
         "rank": 1,
+        "date": "2026-08-14",
+        "duration": "9 道基础题约 11 分钟",
         "byTier": {
           "bronze": 3,
           "silver": 3,
@@ -140,12 +158,21 @@
           "diamondUnlocked": true,
           "kingUnlocked": true,
           "reached": "king"
-        }
+        },
+        "disputed": null,
+        "highlights": [
+          "史上第一位打穿钻石、摸到王者的选手，12 分刷新考核最高分。",
+          "9 道基础题一口气拿下 11 分，白银三题全部一轮通过——包括那道拦下过无数人的 S001。",
+          "钻石第二轮修复时顺手报了 10 个安全漏洞，可惜考的不是安全测试。",
+          "王者 K005 三轮未果，第四轮加练改对，虽不计分但也是该题少有的通过记录。"
+        ]
       },
       {
         "name": "Grok 4.5",
         "total": 11,
         "rank": 2,
+        "date": "2026-07-09",
+        "duration": "9 道基础题不到 10 分钟",
         "byTier": {
           "bronze": 3,
           "silver": 2,
@@ -158,12 +185,20 @@
           "diamondUnlocked": false,
           "kingUnlocked": false,
           "reached": "gold"
-        }
+        },
+        "disputed": "本场成绩存疑：视频发布后有观众在评论区指出该场次存在疑似作弊的迹象。成绩按原始记录保留，但不作为可靠参照。",
+        "highlights": [
+          "三道黄金全部一轮通过，是考核历史上唯一做到这一点的选手。",
+          "首次大规模使用子代理排查，与前代一波流的打法完全不同。",
+          "只差 S001 一分就能解锁钻石。"
+        ]
       },
       {
         "name": "Step 5 Preview",
         "total": 11,
         "rank": 2,
+        "date": "2026-09-21",
+        "duration": "9 道基础题约 1 小时",
         "byTier": {
           "bronze": 3,
           "silver": 2,
@@ -176,12 +211,22 @@
           "diamondUnlocked": true,
           "kingUnlocked": false,
           "reached": "diamond"
-        }
+        },
+        "disputed": null,
+        "highlights": [
+          "9 道基础题 8 道一轮命中，基础分 11 分与 GLM5.3 并列基础题历史最高。",
+          "唯一失手的是公认最难的白银 S001：耗时 91 分 23 秒，最后只改了 1 个文件，验证未通过，1 分之差错失基础题满分。",
+          "钻石 D003 三轮都点出了 CAS 等关键疑点，却三轮都没能通过，止步钻石、未摸到王者。",
+          "11 分与 Grok 4.5 并列历史第二，仅次于 GLM5.3 的 12 分——而 Grok 4.5 那场成绩存疑。",
+          "相比上一代参赛版本 Step 3.7 Flash 是一次大幅跃升，同一条产品线接手了秋季赛 C 组席位。"
+        ]
       },
       {
         "name": "DeepSeek V4 Flash",
         "total": 9,
         "rank": 4,
+        "date": "2026-08-03",
+        "duration": "8 道题 5 分钟内定位完，S001 单题耗时 16:44",
         "byTier": {
           "bronze": 3,
           "silver": 2,
@@ -194,12 +239,20 @@
           "diamondUnlocked": false,
           "kingUnlocked": false,
           "reached": "gold"
-        }
+        },
+        "disputed": null,
+        "highlights": [
+          "2840 亿参数，是当时拿到 9 分的选手里体量最小的一个。",
+          "9 道题中的 8 道在 5 分钟内全部定位完成，只有 S001 独自耗掉 16 分 44 秒。",
+          "两个月前的预览版在同样规则下得 7 分，本次正式版进步 2 分。"
+        ]
       },
       {
         "name": "Qwen3.8-Max",
         "total": 9,
         "rank": 4,
+        "date": "2026-08-06",
+        "duration": "9 道题耗掉两轮 5 小时额度",
         "byTier": {
           "bronze": 3,
           "silver": 2,
@@ -212,12 +265,20 @@
           "diamondUnlocked": false,
           "kingUnlocked": false,
           "reached": "gold"
-        }
+        },
+        "disputed": null,
+        "highlights": [
+          "江湖人称「白银杀手」，但本场仍未拿下 S001。",
+          "G002 与 G004 都是一轮通过，只差 G003 一题就能解锁钻石。",
+          "全场耗时最长：9 道题烧掉了两轮 5 小时额度。"
+        ]
       },
       {
         "name": "LongCat 2.0",
         "total": 7,
         "rank": 6,
+        "date": "2026-07-06",
+        "duration": "9 道基础题约 45 分钟，S001 单题近 50 分钟",
         "byTier": {
           "bronze": 2,
           "silver": 2,
@@ -230,12 +291,21 @@
           "diamondUnlocked": false,
           "kingUnlocked": false,
           "reached": "gold"
-        }
+        },
+        "disputed": null,
+        "highlights": [
+          "S001 苦战近 50 分钟，中途一度陷入「wait / actually / but wait」的自我循环，最终仍然拿下——正是当初把它挡在 16 强外的那道题。",
+          "9 道题全部先启动子代理排查，打法保守。",
+          "三道黄金都是第二轮改对，稳定但不快。",
+          "B003 是唯一因回归测试被改坏而判失败的题，BUG 本身其实改对了。"
+        ]
       },
       {
         "name": "混元 3.0",
         "total": 6,
         "rank": 7,
+        "date": "2026-07-08",
+        "duration": "9 道题定位加修复共约 7 分钟",
         "byTier": {
           "bronze": 3,
           "silver": 1,
@@ -248,12 +318,20 @@
           "diamondUnlocked": false,
           "kingUnlocked": false,
           "reached": "gold"
-        }
+        },
+        "disputed": null,
+        "highlights": [
+          "考核历史上最快的一场：9 道题定位加修复总共约 7 分钟，其中还有 3 分钟是主持人复制提示词的时间。",
+          "G003 第二轮只用了 53 秒，加上第一轮全程不到 3 分钟解决一道黄金。",
+          "两个月前首次挑战时一道题都没做对，本场三道青铜全部一轮通过。"
+        ]
       },
       {
         "name": "Claude Opus 4.6",
         "total": 6,
         "rank": 7,
+        "date": null,
+        "duration": null,
         "byTier": {
           "bronze": 2,
           "silver": 2,
@@ -266,12 +344,16 @@
           "diamondUnlocked": false,
           "kingUnlocked": false,
           "reached": "gold"
-        }
+        },
+        "disputed": null,
+        "highlights": []
       },
       {
         "name": "Qwen3.8 27B",
         "total": 6,
         "rank": 7,
+        "date": null,
+        "duration": null,
         "byTier": {
           "bronze": 2,
           "silver": 2,
@@ -284,13 +366,15 @@
           "diamondUnlocked": false,
           "kingUnlocked": false,
           "reached": "gold"
-        }
+        },
+        "disputed": null,
+        "highlights": []
       }
     ],
     "standingsGroups": [
       {
         "group": "A 组 组",
-        "state": "R2 已完赛",
+        "state": "R3 未开赛",
         "members": [
           {
             "name": "GPT-6 Astra",
@@ -316,7 +400,7 @@
       },
       {
         "group": "B 组 组",
-        "state": "R2 已完赛",
+        "state": "R3 未开赛",
         "members": [
           {
             "name": "Claude Opus 5.5",
@@ -342,52 +426,52 @@
       },
       {
         "group": "C 组 组",
-        "state": "R2 未开赛",
+        "state": "R3 未开赛",
         "members": [
           {
             "name": "Grok 4.7",
-            "wdl": "1-0-0",
+            "wdl": "2-0-0",
+            "pts": 4
+          },
+          {
+            "name": "Kimi K3",
+            "wdl": "1-0-1",
             "pts": 2
           },
           {
             "name": "DeepSeek V4 Pro",
-            "wdl": "1-0-0",
+            "wdl": "1-0-1",
             "pts": 2
           },
           {
-            "name": "Kimi K3",
-            "wdl": "0-0-1",
-            "pts": 0
-          },
-          {
             "name": "Step 5 Preview",
-            "wdl": "0-0-1",
+            "wdl": "0-0-2",
             "pts": 0
           }
         ]
       },
       {
         "group": "D 组 组",
-        "state": "R2 未开赛",
+        "state": "R3 未开赛",
         "members": [
           {
             "name": "Claude Fable 5.1",
-            "wdl": "1-0-0",
+            "wdl": "2-0-0",
+            "pts": 4
+          },
+          {
+            "name": "GLM-5.3",
+            "wdl": "1-0-1",
             "pts": 2
           },
           {
             "name": "Doubao Seed 2.1",
-            "wdl": "1-0-0",
+            "wdl": "1-0-1",
             "pts": 2
           },
           {
-            "name": "GLM-5.3",
-            "wdl": "0-0-1",
-            "pts": 0
-          },
-          {
             "name": "MiMo 2.6 Pro",
-            "wdl": "0-0-1",
+            "wdl": "0-0-2",
             "pts": 0
           }
         ]
@@ -396,100 +480,100 @@
     "standingsTotal": [
       {
         "rank": 1,
-        "name": "Claude Opus 5.5",
+        "name": "Claude Fable 5.1",
         "org": "Anthropic",
         "wdl": "2胜 0平 0负",
         "pts": 4
       },
       {
         "rank": 2,
+        "name": "Claude Opus 5.5",
+        "org": "Anthropic",
+        "wdl": "2胜 0平 0负",
+        "pts": 4
+      },
+      {
+        "rank": 3,
         "name": "GPT-6 Astra",
         "org": "OpenAI",
         "wdl": "2胜 0平 0负",
         "pts": 4
       },
       {
-        "rank": 3,
+        "rank": 4,
+        "name": "Grok 4.7",
+        "org": "xAI",
+        "wdl": "2胜 0平 0负",
+        "pts": 4
+      },
+      {
+        "rank": 5,
         "name": "Muse Spark 1.3",
         "org": "Muse AI",
         "wdl": "1胜 1平 0负",
         "pts": 3
       },
       {
-        "rank": 4,
-        "name": "Claude Fable 5.1",
-        "org": "Anthropic",
-        "wdl": "1胜 0平 0负",
-        "pts": 2
-      },
-      {
-        "rank": 5,
+        "rank": 6,
         "name": "DeepSeek V4 Pro",
         "org": "DeepSeek",
-        "wdl": "1胜 0平 0负",
-        "pts": 2
-      },
-      {
-        "rank": 6,
-        "name": "Doubao Seed 2.1",
-        "org": "字节跳动",
-        "wdl": "1胜 0平 0负",
+        "wdl": "1胜 0平 1负",
         "pts": 2
       },
       {
         "rank": 7,
-        "name": "Grok 4.7",
-        "org": "xAI",
-        "wdl": "1胜 0平 0负",
+        "name": "Doubao Seed 2.1",
+        "org": "字节跳动",
+        "wdl": "1胜 0平 1负",
         "pts": 2
       },
       {
         "rank": 8,
+        "name": "GLM-5.3",
+        "org": "智谱 AI",
+        "wdl": "1胜 0平 1负",
+        "pts": 2
+      },
+      {
+        "rank": 9,
+        "name": "Kimi K3",
+        "org": "月之暗面",
+        "wdl": "1胜 0平 1负",
+        "pts": 2
+      },
+      {
+        "rank": 10,
         "name": "混元 4.0",
         "org": "腾讯",
         "wdl": "0胜 2平 0负",
         "pts": 2
       },
       {
-        "rank": 9,
+        "rank": 11,
         "name": "DeepSeek Flash",
         "org": "DeepSeek",
         "wdl": "0胜 1平 1负",
         "pts": 1
       },
       {
-        "rank": 10,
+        "rank": 12,
         "name": "Gemini 3.8 Flash",
         "org": "Google",
         "wdl": "0胜 1平 1负",
         "pts": 1
       },
       {
-        "rank": 11,
+        "rank": 13,
         "name": "Qwen3.8-Max",
         "org": "阿里巴巴",
         "wdl": "0胜 1平 1负",
         "pts": 1
       },
       {
-        "rank": 12,
-        "name": "GLM-5.3",
-        "org": "智谱 AI",
-        "wdl": "0胜 0平 1负",
-        "pts": 0
-      },
-      {
-        "rank": 13,
-        "name": "Kimi K3",
-        "org": "月之暗面",
-        "wdl": "0胜 0平 1负",
-        "pts": 0
-      },
-      {
         "rank": 14,
         "name": "MiMo 2.6 Pro",
         "org": "小米",
-        "wdl": "0胜 0平 1负",
+        "wdl": "0胜 0平 2负",
         "pts": 0
       },
       {
@@ -503,11 +587,11 @@
         "rank": 16,
         "name": "Step 5 Preview",
         "org": "阶跃星辰",
-        "wdl": "0胜 0平 1负",
+        "wdl": "0胜 0平 2负",
         "pts": 0
       }
     ],
-    "latestBoutDate": "2026-09-23"
+    "latestBoutDate": "2026-09-28"
   },
   "models": [
     {
@@ -515,17 +599,16 @@
       "model": "GPT6",
       "tier": "T0",
       "category": "Flagship",
-      "gold": "多轮通过 26/36",
-      "diamond": "仅 9/17",
-      "king": "多轮通过 2/3",
-      "goldStatus": "warn",
-      "diamondStatus": "fail",
-      "kingStatus": "warn",
+      "gold": "一轮过",
+      "diamond": "首轮通过 3/4",
+      "king": "一轮过",
+      "goldStatus": "pass",
+      "diamondStatus": "warn",
+      "kingStatus": "pass",
       "quote": "2026-09-08 御三家三人赛 8 分满分夺魁，三题全部一轮命中",
-      "timestamp": "2026-09-23",
+      "timestamp": "2026-09-28",
       "episodesTested": "英雄榜第 1 名",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 56 场",
+      "volumeLabel": "本版 10 场",
       "analysis": "2026-09-08 御三家三人赛 8 分满分夺魁，三题全部一轮命中",
       "strengths": [],
       "weaknesses": [],
@@ -533,9 +616,9 @@
       "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-08 御三家三人赛 8 分满分夺魁，三题全部一轮命中",
       "rounds": {
-        "gold": 2,
-        "diamond": "fail",
-        "king": 2
+        "gold": 1,
+        "diamond": 2,
+        "king": 1
       },
       "curatedScore": null,
       "autoEvidence": [],
@@ -546,10 +629,15 @@
         "delta": 0,
         "family": "GPT",
         "version": "GPT6",
+        "statsScope": "version",
+        "versionVolume": 10,
         "assessmentTotal": null,
+        "assessmentName": null,
         "hasRealAssess": false,
-        "groupWdl": null,
-        "groupPts": null
+        "assessmentDisputed": null,
+        "groupWdl": "2胜 0平 0负",
+        "groupPts": 4,
+        "groupMatch": "alias"
       }
     },
     {
@@ -557,17 +645,16 @@
       "model": "Claude Fable5.1",
       "tier": "T1",
       "category": "Flagship",
-      "gold": "多轮通过 8/11",
-      "diamond": "多轮通过 3/4",
-      "king": "仅 1/3",
-      "goldStatus": "warn",
+      "gold": "一轮过",
+      "diamond": "首轮通过 3/5",
+      "king": "首轮仅过 1/3",
+      "goldStatus": "pass",
       "diamondStatus": "warn",
       "kingStatus": "fail",
       "quote": "2026-09-08 御三家三人赛 5 分，王者题三轮压哨拿下",
-      "timestamp": "2026-09-23",
+      "timestamp": "2026-09-28",
       "episodesTested": "英雄榜第 2 名",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 18 场",
+      "volumeLabel": "本版 13 场",
       "analysis": "2026-09-08 御三家三人赛 5 分，王者题三轮压哨拿下",
       "strengths": [],
       "weaknesses": [],
@@ -575,7 +662,7 @@
       "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-08 御三家三人赛 5 分，王者题三轮压哨拿下",
       "rounds": {
-        "gold": 2,
+        "gold": 1,
         "diamond": 2,
         "king": "fail"
       },
@@ -588,10 +675,15 @@
         "delta": 0,
         "family": "Claude Fable",
         "version": "Claude Fable5.1",
+        "statsScope": "version",
+        "versionVolume": 13,
         "assessmentTotal": null,
+        "assessmentName": null,
         "hasRealAssess": false,
-        "groupWdl": "1胜 0平 0负",
-        "groupPts": 2
+        "assessmentDisputed": null,
+        "groupWdl": "2胜 0平 0负",
+        "groupPts": 4,
+        "groupMatch": "exact"
       }
     },
     {
@@ -599,17 +691,16 @@
       "model": "Opus5.5",
       "tier": "T1",
       "category": "Flagship",
-      "gold": "多轮通过 17/22",
-      "diamond": "仅 4/9",
-      "king": "仅 1/5",
-      "goldStatus": "warn",
-      "diamondStatus": "fail",
+      "gold": "一轮过",
+      "diamond": "一轮过",
+      "king": "首轮仅过 1/2",
+      "goldStatus": "pass",
+      "diamondStatus": "pass",
       "kingStatus": "fail",
       "quote": "2026-09-23 新版 AI 御三家大论剑 7 分夺魁，K005 二轮拿下且只改 10 个代码文件",
-      "timestamp": "2026-09-23",
-      "episodesTested": "英雄榜第 3 名（new）",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 36 场",
+      "timestamp": "2026-09-28",
+      "episodesTested": "英雄榜第 3 名",
+      "volumeLabel": "本版 4 场",
       "analysis": "2026-09-23 新版 AI 御三家大论剑 7 分夺魁，K005 二轮拿下且只改 10 个代码文件",
       "strengths": [],
       "weaknesses": [],
@@ -617,8 +708,8 @@
       "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-23 新版 AI 御三家大论剑 7 分夺魁，K005 二轮拿下且只改 10 个代码文件",
       "rounds": {
-        "gold": 2,
-        "diamond": "fail",
+        "gold": 1,
+        "diamond": 1,
         "king": "fail"
       },
       "curatedScore": null,
@@ -626,14 +717,19 @@
       "toy": {
         "rank": 3,
         "org": "Anthropic",
-        "trend": "new",
+        "trend": "hold",
         "delta": 0,
         "family": "Claude Opus",
         "version": "Opus5.5",
+        "statsScope": "version",
+        "versionVolume": 4,
         "assessmentTotal": null,
+        "assessmentName": null,
         "hasRealAssess": false,
-        "groupWdl": null,
-        "groupPts": null
+        "assessmentDisputed": null,
+        "groupWdl": "2胜 0平 0负",
+        "groupPts": 4,
+        "groupMatch": "alias"
       }
     },
     {
@@ -641,17 +737,16 @@
       "model": "GPT6 Sol",
       "tier": "T2",
       "category": "Flagship",
-      "gold": "多轮通过 26/36",
-      "diamond": "仅 9/17",
-      "king": "多轮通过 2/3",
-      "goldStatus": "warn",
-      "diamondStatus": "fail",
-      "kingStatus": "warn",
+      "gold": "一轮过",
+      "diamond": "一轮过",
+      "king": "首轮仅过 1/2",
+      "goldStatus": "pass",
+      "diamondStatus": "pass",
+      "kingStatus": "fail",
       "quote": "2026-09-23 新版 AI 御三家大论剑 7 分，K005 二轮拿下，两轮共改 24 个文件",
-      "timestamp": "2026-09-23",
-      "episodesTested": "英雄榜第 4 名（new）",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 56 场",
+      "timestamp": "2026-09-28",
+      "episodesTested": "英雄榜第 4 名",
+      "volumeLabel": "本版 4 场",
       "analysis": "2026-09-23 新版 AI 御三家大论剑 7 分，K005 二轮拿下，两轮共改 24 个文件",
       "strengths": [],
       "weaknesses": [],
@@ -659,23 +754,28 @@
       "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-23 新版 AI 御三家大论剑 7 分，K005 二轮拿下，两轮共改 24 个文件",
       "rounds": {
-        "gold": 2,
-        "diamond": "fail",
-        "king": 2
+        "gold": 1,
+        "diamond": 1,
+        "king": "fail"
       },
       "curatedScore": null,
       "autoEvidence": [],
       "toy": {
         "rank": 4,
         "org": "OpenAI",
-        "trend": "new",
+        "trend": "hold",
         "delta": 0,
         "family": "GPT",
         "version": "GPT6 Sol",
+        "statsScope": "version",
+        "versionVolume": 4,
         "assessmentTotal": null,
+        "assessmentName": null,
         "hasRealAssess": false,
+        "assessmentDisputed": null,
         "groupWdl": null,
-        "groupPts": null
+        "groupPts": null,
+        "groupMatch": null
       }
     },
     {
@@ -683,17 +783,16 @@
       "model": "Grok4.7",
       "tier": "T2",
       "category": "Flagship",
-      "gold": "多轮通过 18/19",
-      "diamond": "仅 5/10",
-      "king": "仅 2/9",
-      "goldStatus": "warn",
-      "diamondStatus": "fail",
+      "gold": "一轮过",
+      "diamond": "首轮通过 2/3",
+      "king": "首轮仅过 1/3",
+      "goldStatus": "pass",
+      "diamondStatus": "warn",
       "kingStatus": "fail",
       "quote": "2026-09-23 新版 AI 御三家大论剑 6 分，K005 第三轮压哨拿下，D003 只改 4 个文件",
-      "timestamp": "2026-09-23",
-      "episodesTested": "英雄榜第 5 名（new）",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 38 场",
+      "timestamp": "2026-09-28",
+      "episodesTested": "英雄榜第 5 名",
+      "volumeLabel": "本版 9 场",
       "analysis": "2026-09-23 新版 AI 御三家大论剑 6 分，K005 第三轮压哨拿下，D003 只改 4 个文件",
       "strengths": [],
       "weaknesses": [],
@@ -701,8 +800,8 @@
       "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-23 新版 AI 御三家大论剑 6 分，K005 第三轮压哨拿下，D003 只改 4 个文件",
       "rounds": {
-        "gold": 2,
-        "diamond": "fail",
+        "gold": 1,
+        "diamond": 2,
         "king": "fail"
       },
       "curatedScore": null,
@@ -710,14 +809,19 @@
       "toy": {
         "rank": 5,
         "org": "xAI",
-        "trend": "new",
+        "trend": "hold",
         "delta": 0,
         "family": "Grok",
         "version": "Grok4.7",
+        "statsScope": "version",
+        "versionVolume": 9,
         "assessmentTotal": null,
+        "assessmentName": null,
         "hasRealAssess": false,
-        "groupWdl": "1胜 0平 0负",
-        "groupPts": 2
+        "assessmentDisputed": null,
+        "groupWdl": "2胜 0平 0负",
+        "groupPts": 4,
+        "groupMatch": "exact"
       }
     },
     {
@@ -725,17 +829,16 @@
       "model": "GLM5.3",
       "tier": "T2",
       "category": "Thinking",
-      "gold": "多轮通过 35/46",
-      "diamond": "仅 7/26",
-      "king": "仅 1/13",
+      "gold": "首轮通过 15/18",
+      "diamond": "首轮仅过 4/11",
+      "king": "首轮仅过 1/7",
       "goldStatus": "warn",
       "diamondStatus": "fail",
       "kingStatus": "fail",
       "quote": "智谱 AI · 挑战榜第 6 名",
-      "timestamp": "2026-09-23",
-      "episodesTested": "英雄榜第 6 名（down）",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 86 场",
+      "timestamp": "2026-09-28",
+      "episodesTested": "英雄榜第 6 名",
+      "volumeLabel": "本版 36 场",
       "analysis": "",
       "strengths": [],
       "weaknesses": [],
@@ -759,14 +862,19 @@
       "toy": {
         "rank": 6,
         "org": "智谱 AI",
-        "trend": "down",
-        "delta": -1,
+        "trend": "hold",
+        "delta": 0,
         "family": "GLM",
         "version": "GLM5.3",
+        "statsScope": "version",
+        "versionVolume": 36,
         "assessmentTotal": 12,
+        "assessmentName": "GLM-5.3",
         "hasRealAssess": true,
-        "groupWdl": "0胜 0平 1负",
-        "groupPts": 0
+        "assessmentDisputed": null,
+        "groupWdl": "1胜 0平 1负",
+        "groupPts": 2,
+        "groupMatch": "exact"
       }
     },
     {
@@ -774,17 +882,16 @@
       "model": "Kimi-K3",
       "tier": "T3",
       "category": "OpenSource",
-      "gold": "仅 18/32",
-      "diamond": "仅 5/15",
-      "king": "仅 1/7",
-      "goldStatus": "fail",
+      "gold": "首轮通过 11/14",
+      "diamond": "首轮仅过 4/14",
+      "king": "首轮仅过 1/7",
+      "goldStatus": "warn",
       "diamondStatus": "fail",
       "kingStatus": "fail",
       "quote": "月之暗面 · 挑战榜第 7 名",
-      "timestamp": "2026-09-23",
+      "timestamp": "2026-09-28",
       "episodesTested": "英雄榜第 7 名",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 55 场",
+      "volumeLabel": "本版 35 场",
       "analysis": "",
       "strengths": [],
       "weaknesses": [],
@@ -792,7 +899,7 @@
       "score": null,
       "sourceEpisodeTitle": "屎山英雄榜 · ",
       "rounds": {
-        "gold": "fail",
+        "gold": 2,
         "diamond": "fail",
         "king": "fail"
       },
@@ -805,10 +912,15 @@
         "delta": 0,
         "family": "Kimi",
         "version": "Kimi-K3",
+        "statsScope": "version",
+        "versionVolume": 35,
         "assessmentTotal": null,
+        "assessmentName": null,
         "hasRealAssess": false,
-        "groupWdl": "0胜 0平 1负",
-        "groupPts": 0
+        "assessmentDisputed": null,
+        "groupWdl": "1胜 0平 1负",
+        "groupPts": 2,
+        "groupMatch": "exact"
       }
     },
     {
@@ -816,23 +928,22 @@
       "model": "DeepSeek Flash",
       "tier": "T3",
       "category": "Flash",
-      "gold": "多轮通过 31/50",
-      "diamond": "仅 7/21",
-      "king": "全灭 0/6",
+      "gold": "首轮通过 5/6",
+      "diamond": "首轮仅过 3/7",
+      "king": "首轮全灭 0/3",
       "goldStatus": "warn",
       "diamondStatus": "fail",
       "kingStatus": "fail",
-      "quote": "2026-09-11 Flash 组第二次大乱斗 5 分夺魁，全场唯一拿下钻石题",
-      "timestamp": "2026-09-23",
-      "episodesTested": "英雄榜第 8 名（up）",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 77 场",
-      "analysis": "2026-09-11 Flash 组第二次大乱斗 5 分夺魁，全场唯一拿下钻石题",
+      "quote": "2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 第三轮 10 个文件拿下",
+      "timestamp": "2026-09-28",
+      "episodesTested": "英雄榜第 8 名",
+      "volumeLabel": "本版 16 场",
+      "analysis": "2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 第三轮 10 个文件拿下",
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
       "score": 50,
-      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 5 分夺魁，全场唯一拿下钻石题",
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 第三轮 10 个文件拿下",
       "rounds": {
         "gold": 2,
         "diamond": "fail",
@@ -850,14 +961,19 @@
       "toy": {
         "rank": 8,
         "org": "DeepSeek",
-        "trend": "up",
-        "delta": 1,
+        "trend": "hold",
+        "delta": 0,
         "family": "DeepSeek Flash",
         "version": "DeepSeek Flash",
+        "statsScope": "version",
+        "versionVolume": 16,
         "assessmentTotal": 9,
+        "assessmentName": "DeepSeek V4 Flash",
         "hasRealAssess": true,
+        "assessmentDisputed": null,
         "groupWdl": "0胜 1平 1负",
-        "groupPts": 1
+        "groupPts": 1,
+        "groupMatch": "exact"
       }
     },
     {
@@ -865,17 +981,16 @@
       "model": "Qwen3.8Max",
       "tier": "T3",
       "category": "Flagship",
-      "gold": "多轮通过 37/53",
-      "diamond": "仅 4/25",
-      "king": "全灭 0/6",
+      "gold": "首轮通过 14/18",
+      "diamond": "首轮仅过 1/7",
+      "king": "无记录",
       "goldStatus": "warn",
       "diamondStatus": "fail",
-      "kingStatus": "fail",
+      "kingStatus": "none",
       "quote": "阿里巴巴 · 挑战榜第 9 名",
-      "timestamp": "2026-09-23",
-      "episodesTested": "英雄榜第 9 名（up）",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 84 场",
+      "timestamp": "2026-09-28",
+      "episodesTested": "英雄榜第 9 名",
+      "volumeLabel": "本版 25 场",
       "analysis": "",
       "strengths": [],
       "weaknesses": [],
@@ -885,7 +1000,7 @@
       "rounds": {
         "gold": 2,
         "diamond": "fail",
-        "king": "fail"
+        "king": "none"
       },
       "curatedScore": 50,
       "autoEvidence": [
@@ -899,14 +1014,19 @@
       "toy": {
         "rank": 9,
         "org": "阿里巴巴",
-        "trend": "up",
-        "delta": 1,
+        "trend": "hold",
+        "delta": 0,
         "family": "Qwen 千问",
-        "version": "Qwen3.8Max Preview",
+        "version": "Qwen3.8Max正式版",
+        "statsScope": "version",
+        "versionVolume": 25,
         "assessmentTotal": 9,
+        "assessmentName": "Qwen3.8-Max",
         "hasRealAssess": true,
+        "assessmentDisputed": null,
         "groupWdl": "0胜 1平 1负",
-        "groupPts": 1
+        "groupPts": 1,
+        "groupMatch": "exact"
       }
     },
     {
@@ -914,25 +1034,24 @@
       "model": "Qwen3.8Flash",
       "tier": "T4",
       "category": "Flash",
-      "gold": "多轮通过 37/53",
-      "diamond": "仅 4/25",
-      "king": "全灭 0/6",
-      "goldStatus": "warn",
+      "gold": "一轮过",
+      "diamond": "首轮仅过 2/8",
+      "king": "首轮全灭 0/6",
+      "goldStatus": "pass",
       "diamondStatus": "fail",
       "kingStatus": "fail",
-      "quote": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石三轮失手未能卫冕",
-      "timestamp": "2026-09-23",
-      "episodesTested": "英雄榜第 10 名（up）",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 84 场",
-      "analysis": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石三轮失手未能卫冕",
+      "quote": "2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 三轮共改 17 个文件压哨拿下",
+      "timestamp": "2026-09-28",
+      "episodesTested": "英雄榜第 10 名",
+      "volumeLabel": "本版 20 场",
+      "analysis": "2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 三轮共改 17 个文件压哨拿下",
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
       "score": null,
-      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 3 分，钻石三轮失手未能卫冕",
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 三轮共改 17 个文件压哨拿下",
       "rounds": {
-        "gold": 2,
+        "gold": 1,
         "diamond": "fail",
         "king": "fail"
       },
@@ -941,38 +1060,42 @@
       "toy": {
         "rank": 10,
         "org": "阿里巴巴",
-        "trend": "up",
-        "delta": 1,
+        "trend": "hold",
+        "delta": 0,
         "family": "Qwen 千问",
         "version": "Qwen3.8Flash",
+        "statsScope": "version",
+        "versionVolume": 20,
         "assessmentTotal": null,
+        "assessmentName": null,
         "hasRealAssess": false,
+        "assessmentDisputed": null,
         "groupWdl": null,
-        "groupPts": null
+        "groupPts": null,
+        "groupMatch": null
       }
     },
     {
-      "id": "gemini38flash",
-      "model": "Gemini3.8Flash",
+      "id": "glm53flash",
+      "model": "GLM5.3Flash",
       "tier": "T4",
       "category": "Flash",
-      "gold": "多轮通过 23/30",
-      "diamond": "仅 1/23",
-      "king": "全灭 0/12",
+      "gold": "首轮通过 5/7",
+      "diamond": "首轮仅过 2/9",
+      "king": "首轮全灭 0/6",
       "goldStatus": "warn",
       "diamondStatus": "fail",
       "kingStatus": "fail",
-      "quote": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石与王者仍是零命中",
-      "timestamp": "2026-09-23",
+      "quote": "2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 第三轮拿下，该版本首次在钻石题得分",
+      "timestamp": "2026-09-28",
       "episodesTested": "英雄榜第 11 名（up）",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 65 场",
-      "analysis": "2026-09-11 Flash 组第二次大乱斗 3 分，钻石与王者仍是零命中",
+      "volumeLabel": "本版 22 场",
+      "analysis": "2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 第三轮拿下，该版本首次在钻石题得分",
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
       "score": null,
-      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 3 分，钻石与王者仍是零命中",
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-28 第三场 Flash 大乱斗 4 分并列第一，钻石 D001 第三轮拿下，该版本首次在钻石题得分",
       "rounds": {
         "gold": 2,
         "diamond": "fail",
@@ -982,41 +1105,45 @@
       "autoEvidence": [],
       "toy": {
         "rank": 11,
-        "org": "Google",
+        "org": "智谱 AI",
         "trend": "up",
         "delta": 1,
-        "family": "Gemini Flash",
-        "version": "Gemini3.8Flash",
+        "family": "GLM",
+        "version": "GLM5.3Flash",
+        "statsScope": "version",
+        "versionVolume": 22,
         "assessmentTotal": null,
+        "assessmentName": null,
         "hasRealAssess": false,
-        "groupWdl": "0胜 1平 1负",
-        "groupPts": 1
+        "assessmentDisputed": null,
+        "groupWdl": null,
+        "groupPts": null,
+        "groupMatch": null
       }
     },
     {
-      "id": "glm53flash",
-      "model": "GLM5.3Flash",
+      "id": "gemini38flash",
+      "model": "Gemini3.8Flash",
       "tier": "T4",
       "category": "Flash",
-      "gold": "多轮通过 35/46",
-      "diamond": "仅 7/26",
-      "king": "仅 1/13",
-      "goldStatus": "warn",
+      "gold": "一轮过",
+      "diamond": "首轮仅过 1/12",
+      "king": "首轮全灭 0/6",
+      "goldStatus": "pass",
       "diamondStatus": "fail",
       "kingStatus": "fail",
-      "quote": "2026-09-11 Flash 组第二次大乱斗 3 分，上一场失手的 S002 一轮翻案",
-      "timestamp": "2026-09-23",
-      "episodesTested": "英雄榜第 12 名（up）",
-      "costEstimate": "",
-      "tokensConsumed": "生涯 86 场",
-      "analysis": "2026-09-11 Flash 组第二次大乱斗 3 分，上一场失手的 S002 一轮翻案",
+      "quote": "2026-09-28 第三场 Flash 大乱斗 3 分，钻石 D001 第二轮耗时 82 分钟仍未通过",
+      "timestamp": "2026-09-28",
+      "episodesTested": "英雄榜第 12 名（down）",
+      "volumeLabel": "本版 25 场",
+      "analysis": "2026-09-28 第三场 Flash 大乱斗 3 分，钻石 D001 第二轮耗时 82 分钟仍未通过",
       "strengths": [],
       "weaknesses": [],
       "bestFor": "",
       "score": null,
-      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-11 Flash 组第二次大乱斗 3 分，上一场失手的 S002 一轮翻案",
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-28 第三场 Flash 大乱斗 3 分，钻石 D001 第二轮耗时 82 分钟仍未通过",
       "rounds": {
-        "gold": 2,
+        "gold": 1,
         "diamond": "fail",
         "king": "fail"
       },
@@ -1024,15 +1151,112 @@
       "autoEvidence": [],
       "toy": {
         "rank": 12,
-        "org": "智谱 AI",
-        "trend": "up",
-        "delta": 2,
-        "family": "GLM",
-        "version": "GLM5.3Flash",
+        "org": "Google",
+        "trend": "down",
+        "delta": -1,
+        "family": "Gemini Flash",
+        "version": "Gemini3.8Flash",
+        "statsScope": "version",
+        "versionVolume": 25,
         "assessmentTotal": null,
+        "assessmentName": null,
         "hasRealAssess": false,
+        "assessmentDisputed": null,
+        "groupWdl": "0胜 1平 1负",
+        "groupPts": 1,
+        "groupMatch": "exact"
+      }
+    },
+    {
+      "id": "minimaxm31flash",
+      "model": "MiniMax M3.1 Flash",
+      "tier": "T4",
+      "category": "Flash",
+      "gold": "一轮过",
+      "diamond": "首轮全灭 0/3",
+      "king": "无记录",
+      "goldStatus": "pass",
+      "diamondStatus": "fail",
+      "kingStatus": "none",
+      "quote": "2026-09-28 第三场 Flash 大乱斗首战 3 分，白银与黄金均一轮过、钻石三轮全失手",
+      "timestamp": "2026-09-28",
+      "episodesTested": "英雄榜第 13 名（new）",
+      "volumeLabel": "本版 5 场",
+      "analysis": "2026-09-28 第三场 Flash 大乱斗首战 3 分，白银与黄金均一轮过、钻石三轮全失手",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": null,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-28 第三场 Flash 大乱斗首战 3 分，白银与黄金均一轮过、钻石三轮全失手",
+      "rounds": {
+        "gold": 1,
+        "diamond": "fail",
+        "king": "none"
+      },
+      "curatedScore": null,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 13,
+        "org": "MiniMax",
+        "trend": "new",
+        "delta": 0,
+        "family": "MiniMax",
+        "version": "MiniMax M3.1 Flash",
+        "statsScope": "version",
+        "versionVolume": 5,
+        "assessmentTotal": null,
+        "assessmentName": null,
+        "hasRealAssess": false,
+        "assessmentDisputed": null,
         "groupWdl": null,
-        "groupPts": null
+        "groupPts": null,
+        "groupMatch": null
+      }
+    },
+    {
+      "id": "mimo26flash",
+      "model": "MiMo2.6Flash",
+      "tier": "T4",
+      "category": "Flash",
+      "gold": "首轮通过 2/3",
+      "diamond": "首轮全灭 0/3",
+      "king": "无记录",
+      "goldStatus": "warn",
+      "diamondStatus": "fail",
+      "kingStatus": "none",
+      "quote": "2026-09-28 第三场 Flash 大乱斗首战 2 分，黄金 G002 首轮失手是全场唯一的黄金失分",
+      "timestamp": "2026-09-28",
+      "episodesTested": "英雄榜第 14 名（new）",
+      "volumeLabel": "本版 6 场",
+      "analysis": "2026-09-28 第三场 Flash 大乱斗首战 2 分，黄金 G002 首轮失手是全场唯一的黄金失分",
+      "strengths": [],
+      "weaknesses": [],
+      "bestFor": "",
+      "score": null,
+      "sourceEpisodeTitle": "屎山英雄榜 · 2026-09-28 第三场 Flash 大乱斗首战 2 分，黄金 G002 首轮失手是全场唯一的黄金失分",
+      "rounds": {
+        "gold": 2,
+        "diamond": "fail",
+        "king": "none"
+      },
+      "curatedScore": null,
+      "autoEvidence": [],
+      "toy": {
+        "rank": 14,
+        "org": "小米",
+        "trend": "new",
+        "delta": 0,
+        "family": "MiMo",
+        "version": "MiMo2.6Flash",
+        "statsScope": "version",
+        "versionVolume": 6,
+        "assessmentTotal": null,
+        "assessmentName": null,
+        "hasRealAssess": false,
+        "assessmentDisputed": null,
+        "groupWdl": null,
+        "groupPts": null,
+        "groupMatch": null
       }
     }
   ]

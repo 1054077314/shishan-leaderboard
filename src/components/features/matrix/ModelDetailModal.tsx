@@ -3,7 +3,7 @@ import { KillLineRecord, StatusType } from "../../../types";
 import { Modal } from "../../ui/Modal";
 import { Badge } from "../../ui/Badge";
 import {
-  Coins,
+  Trophy,
   Lightbulb,
   ShieldAlert,
   Award,
@@ -61,17 +61,30 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
             <strong className="text-ink">
               {model.score != null ? `${model.score} / 100` : "—"}
             </strong>
-            {(model as any).toy?.assessmentTotal != null
-              ? `（官方考核 ${(model as any).toy.assessmentTotal}/18）`
+            {model.toy?.assessmentTotal != null
+              ? `（官方考核 ${model.toy.assessmentTotal}/18）`
               : "（暂无官方考核记录）"}
           </span>
-          {(model as any).toy?.rank != null && (
-            <span className="text-ink-muted">挑战榜第 {(model as any).toy.rank} 名</span>
+          {model.toy?.rank != null && (
+            <span className="text-ink-muted">挑战榜第 {model.toy.rank} 名</span>
+          )}
+          {model.toy?.assessmentDisputed && (
+            <span
+              className="text-amber-700"
+              title={model.toy.assessmentDisputed}
+            >
+              ⚠ 该考核成绩官方标注存疑
+            </span>
           )}
         </div>
       }
     >
       <div className="space-y-6">
+        {model.toy?.assessmentDisputed && (
+          <p className="rounded-xl border border-amber-300 bg-amber-50 px-3.5 py-2.5 text-[11px] leading-relaxed text-amber-900 font-mono-code">
+            {model.toy.assessmentDisputed}
+          </p>
+        )}
         {/* Core Kill-Line Performance */}
         <div>
           <h4 className="text-xs font-mono-code text-ink-muted uppercase tracking-wider mb-3 flex items-center gap-1.5">
@@ -128,15 +141,15 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
           </div>
         )}
 
-        {/* 生涯场次（toy 官方 player-data） */}
-        {model.tokensConsumed && (
+        {/* 出战场次（toy player-data，口径由 statsScope 声明） */}
+        {model.volumeLabel && (
           <div>
             <h4 className="text-xs font-mono-code text-ink-muted uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <Coins className="w-3.5 h-3.5 text-emerald-700" />
-              <span>生涯场次</span>
+              <Trophy className="w-3.5 h-3.5 text-emerald-700" />
+              <span>出战场次</span>
             </h4>
             <div className="p-3.5 rounded-xl bg-surface-soft border border-stone-200 font-mono-code text-xs text-ink">
-              {model.tokensConsumed}
+              {model.volumeLabel}
             </div>
           </div>
         )}
@@ -145,7 +158,10 @@ export const ModelDetailModal: React.FC<ModelDetailModalProps> = ({
         <div className="pt-4 border-t border-stone-200 flex items-center justify-between flex-wrap gap-3">
           <span className="font-mono-code text-[11px] text-ink-subtle">
             来源：屎山英雄榜（toy 官方）
-            {(model as any).toy?.org ? ` · ${(model as any).toy.org}` : ""}
+            {model.toy?.org ? ` · ${model.toy.org}` : ""}
+            {model.toy?.version
+              ? ` · 斩杀线取${model.toy.statsScope === "version" ? "本版" : "家族"}战绩（${model.toy.version}）`
+              : ""}
           </span>
 
           <div className="flex items-center gap-2 ml-auto">

@@ -30,7 +30,7 @@ export interface KillLineTableProps {
   usingFallback?: boolean;
   lastSyncedAt?: number | null;
   onRefresh?: () => void;
-  selectedModel: KillLineRecord;
+  selectedModel: KillLineRecord | null;
   onSelectModel: (model: KillLineRecord) => void;
   selectedForCompare?: KillLineRecord[];
   onToggleCompare?: (model: KillLineRecord) => void;
@@ -372,7 +372,7 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
               </tr>
             ) : (
               data.map((row) => {
-                const isSelected = selectedModel.id === row.id;
+                const isSelected = selectedModel?.id === row.id;
                 const isExpanded = !!expandedIds[row.id];
 
                 return (
@@ -440,8 +440,8 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
                       <td className="py-3.5 px-4 sm:px-6 text-right font-mono-code text-xs text-ink align-middle">
                         <span className="font-bold text-sm tracking-tight">{row.score ?? "—"}</span>
                         <span className="block text-[10px] text-ink-subtle font-normal">
-                          {(row as any).toy?.assessmentTotal != null
-                            ? `考核 ${(row as any).toy.assessmentTotal}/18`
+                          {row.toy?.assessmentTotal != null
+                            ? `考核 ${row.toy.assessmentTotal}/18`
                             : "无官方考核"}
                         </span>
                       </td>
@@ -502,10 +502,18 @@ export const KillLineTable: React.FC<KillLineTableProps> = ({
                                       <strong className="text-ink font-bold">
                                         {row.score != null ? `${row.score} 分` : "—"}
                                       </strong>
-                                      {(row as any).toy?.assessmentTotal != null
-                                        ? `（官方考核 ${(row as any).toy.assessmentTotal}/18）`
+                                      {row.toy?.assessmentTotal != null
+                                        ? `（官方考核 ${row.toy.assessmentTotal}/18）`
                                         : "（该模型暂无官方考核记录）"}
                                     </span>
+                                    {row.toy?.assessmentDisputed && (
+                                      <span
+                                        className="text-amber-700 text-[11px]"
+                                        title={row.toy.assessmentDisputed}
+                                      >
+                                        ⚠ 官方标注本场存疑
+                                      </span>
+                                    )}
                                   </div>
                                   <button
                                     onClick={(e) => {
