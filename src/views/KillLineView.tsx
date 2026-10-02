@@ -8,6 +8,7 @@ import { Footer } from "../components/Footer";
 import { CustomCursor } from "../components/CustomCursor";
 import {
   BentoStats,
+  CommentVerifyPanel,
   KillLineTable,
   ModelDetailModal,
   ModelComparatorModal,
@@ -202,6 +203,17 @@ export default function KillLineView() {
         >
           <ToyBoards payload={payload} />
         </motion.div>
+
+        {payload?.comments && (
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <CommentVerifyPanel comments={payload.comments} />
+          </motion.div>
+        )}
 
         <Footer />
       </div>

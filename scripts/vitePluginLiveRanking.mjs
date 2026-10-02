@@ -78,6 +78,12 @@ export function liveRankingPlugin(options = {}) {
     refreshing = (async () => {
       const t0 = Date.now();
       await runStep("python", ["scripts/sync_toy.py"]);
+      // 评论核实是增强项：失败（风控/无登录态）不阻塞主链路
+      try {
+        await runStep("python", ["scripts/sync_comments.py"]);
+      } catch (e) {
+        console.warn(`[live-ranking] 评论采集失败，跳过核实: ${e.message}`);
+      }
       await runStep("node", ["scripts/rebuildRanking.mjs"]);
       console.log(
         `[live-ranking] 榜单数据已刷新，耗时 ${((Date.now() - t0) / 1000).toFixed(1)}s`

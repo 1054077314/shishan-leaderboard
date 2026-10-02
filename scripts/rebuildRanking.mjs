@@ -60,11 +60,13 @@ import {
   resolveStandings,
   resolveVersion,
 } from "./lib/toyResolve.mjs";
+import { verifyComments } from "./lib/commentVerify.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, "..");
 
 const toyCacheFile = resolve(root, "scripts/.cache/toy.json");
+const commentsCacheFile = resolve(root, "scripts/.cache/comments.json");
 const outFile = resolve(root, "public/rankingData.json");
 
 const scoreMode =
@@ -107,7 +109,7 @@ function seatByShort(player, versionLabel, standingsIndex) {
  * 便于 tests/ 用合成 fixture 断言每一行的取数口径。
  * 返回 { payload, warnings }，warnings 记下没对上版本或没有官方考核的行。
  */
-export function buildPayload(toy, { mode = scoreMode } = {}) {
+export function buildPayload(toy, { mode = scoreMode, commentsCache = null } = {}) {
   const warnings = [];
   const versionIndex = toy.versionIndex ?? {};
   const players = toy.players ?? {};
@@ -276,12 +278,30 @@ export function buildPayload(toy, { mode = scoreMode } = {}) {
     latestBoutDate: toy.latestBoutDate ?? "",
   };
 
+  // 第二信源：评论区交叉核实。commentsCache 由 sync_comments.py 产出，
+  // 缺失/传 null 时 comments 为 null，前端不展示核实区块（不是故障，是没跑采集）
+  const commentsVerification = commentsCache
+    ? {
+        fetchedAt: commentsCache.fetchedAt ?? "",
+        authenticated: !!commentsCache.authenticated,
+        ...verifyComments(commentsCache, toy),
+      }
+    : null;
+  for (const c of commentsVerification?.claims ?? []) {
+    if (c.status === "conflict") {
+      warnings.push(
+        `评论区核实冲突：${c.model ?? c.mentionKey} ${c.claimed}，官方为 ${c.expected}（${c.uname}@ep${c.ep}）`
+      );
+    }
+  }
+
   const payload = {
     schemaVersion: 1,
     scoreMode: mode,
     // dataVersion 覆盖前端会展示的全部内容：三榜任何一张变了都要推进快照，
     // 早期只 hash models+ladder，考核榜/积分榜变动会被前端判成「数据没变」。
-    dataVersion: hash({ models, boards }),
+    // 评论核实结果也在展示面上，断言内容变化同样推进版本。
+    dataVersion: hash({ models, boards, comments: commentsVerification?.claims ?? null }),
     updatedAt: new Date().toISOString(),
     latestContentAt: toy.latestBoutDate ? `${toy.latestBoutDate}T00:00:00.000Z` : "",
     latestRecordedAt: toy.latestBoutDate ? `${toy.latestBoutDate}T00:00:00.000Z` : "",
@@ -304,6 +324,8 @@ export function buildPayload(toy, { mode = scoreMode } = {}) {
     pendingEpisodes: [],
     // toy 三榜全量，直供前端多榜展示：
     boards,
+    // 评论区第二信源核实结果（没跑过 sync_comments.py 为 null）
+    comments: commentsVerification,
     models,
   };
 
@@ -315,7 +337,10 @@ function main() {
     throw new Error(`toy 缓存缺失，请先跑 python scripts/sync_toy.py：${toyCacheFile}`);
   }
   const toy = JSON.parse(readFileSync(toyCacheFile, "utf8"));
-  const { payload, warnings } = buildPayload(toy);
+  const commentsCache = existsSync(commentsCacheFile)
+    ? JSON.parse(readFileSync(commentsCacheFile, "utf8"))
+    : null;
+  const { payload, warnings } = buildPayload(toy, { commentsCache });
 
   writeFileSync(outFile, JSON.stringify(payload, null, 2) + "\n", "utf8");
 
@@ -326,6 +351,16 @@ function main() {
       `考核 ${payload.boards.kaohe.length} 份 / 小组 ${payload.boards.standingsGroups.length} 个 / ` +
       `有官方分 ${assessed.length} 位 · dataVersion=${payload.dataVersion} (${payload.scoreMode})`
   );
+  if (payload.comments) {
+    const s = payload.comments.stats;
+    console.log(
+      `[rebuildRanking] 评论区核实：扫描 ${s.scanned} 条评论 → ${s.claims} 条断言 ` +
+        `（一致 ${s.confirmed} / 冲突 ${s.conflict} / 无法核对 ${s.unverifiable} / 指向不明 ${s.ambiguous}）` +
+        `${payload.comments.authenticated ? "" : " · 匿名采集，仅置顶+热评"}`
+    );
+  } else {
+    console.log("[rebuildRanking] 无 comments.json，跳过评论区核实（跑 python scripts/sync_comments.py 生成）");
+  }
   payload.models.forEach((m) =>
     console.log(
       `  #${String(m.toy.rank).padStart(2)} ${m.model.padEnd(20)} ` +

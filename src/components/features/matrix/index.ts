@@ -3,3 +3,4 @@ export * from "./ModelDetailModal";
 export * from "./ModelComparatorModal";
 export * from "./BentoStats";
 export * from "./ToyBoards";
+export * from "./CommentVerifyPanel";

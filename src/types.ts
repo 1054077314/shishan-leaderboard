@@ -95,6 +95,8 @@ export interface RankingPayload {
   videos?: RankingEpisode[];
   /** 已发布但结果尚未录入的期数，需要人工补录 rounds */
   pendingEpisodes: RankingEpisode[];
+  /** 评论区第二信源核实结果；没跑过 sync_comments.py 为 null */
+  comments?: CommentsVerification | null;
   /** toy 三榜原始透出（挑战榜/考核榜/小组/总积分），字段名沿用官方口径 */
   boards?: {
     ladder: Array<{ rank: number; name: string; org: string; note: string; trend: string; delta: number }>;
@@ -147,6 +149,62 @@ export interface ToyModelMeta {
   groupMatch: "exact" | "alias" | null;
   groupWdl: string | null;
   groupPts: number | null;
+}
+
+/** 评论区核实断言的核对结果 */
+export type CommentClaimStatus = "confirmed" | "conflict" | "unverifiable" | "ambiguous";
+
+/** 断言来源信任级：official=UP主本人，endorsed=置顶/UP主点赞回复，community=热评 */
+export type CommentTrust = "official" | "endorsed" | "community";
+
+/** 一条从评论里提取并与官方榜核对过的断言 */
+export interface CommentClaim {
+  /** 指向的上榜模型/版本显示名；歧义断言为 null */
+  model: string | null;
+  modelKey: string | null;
+  /** 评论里的原始叫法（norm 后），歧义时靠它呈现 */
+  mentionKey: string | null;
+  kind: "kaoheTotal" | "ladderRank" | "wdl" | "standingsPts";
+  /** 评论里的说法，如 "12/18"、"第3名"、"2-0-0"、"积4分" */
+  claimed: string;
+  /** 官方榜对应值；官方没这项数据时为 null */
+  expected: string | null;
+  status: CommentClaimStatus;
+  trust: CommentTrust;
+  ep: number;
+  bvid: string;
+  rpid: string;
+  uname: string;
+  like: number;
+  excerpt: string;
+}
+
+/** UP主官方声音里的勘误/声明（不参与断言核对，直接展示） */
+export interface CommentNotice {
+  ep: number;
+  bvid: string;
+  rpid: string;
+  uname: string;
+  trust: CommentTrust;
+  excerpt: string;
+}
+
+/** 评论区第二信源核实的整体结果 */
+export interface CommentsVerification {
+  fetchedAt: string;
+  /** false = 匿名采集（B站只给置顶+3条热评），覆盖面有限 */
+  authenticated: boolean;
+  stats: {
+    videos: number;
+    scanned: number;
+    claims: number;
+    confirmed: number;
+    conflict: number;
+    unverifiable: number;
+    ambiguous: number;
+  };
+  notices: CommentNotice[];
+  claims: CommentClaim[];
 }
 
 export type ScoreMode = "curated" | "computed";
