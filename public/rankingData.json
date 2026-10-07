@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "scoreMode": "curated",
-  "dataVersion": "0dbbb27adb56",
-  "updatedAt": "2026-10-02T10:05:51.597Z",
+  "dataVersion": "a29ab4af9931",
+  "updatedAt": "2026-10-02T12:02:33.566Z",
   "latestContentAt": "2026-09-28T00:00:00.000Z",
   "latestRecordedAt": "2026-09-28T00:00:00.000Z",
   "scoring": {
@@ -19,7 +19,7 @@
     "seasonId": "toy-shishan",
     "origin": "toy",
     "sourceUrl": "https://www.bilibili.com/toy/shishan/index.html?spm_id_from=333.1387.0.0",
-    "fetchedAt": "2026-10-02T18:05:51+08:00"
+    "fetchedAt": "2026-10-02T11:45:29+08:00"
   },
   "episodes": [],
   "videos": [],
@@ -301,32 +301,6 @@
         ]
       },
       {
-        "name": "混元 3.0",
-        "total": 6,
-        "rank": 7,
-        "date": "2026-07-08",
-        "duration": "9 道题定位加修复共约 7 分钟",
-        "byTier": {
-          "bronze": 3,
-          "silver": 1,
-          "gold": 2,
-          "diamond": 0,
-          "king": 0
-        },
-        "unlock": {
-          "baseScore": 6,
-          "diamondUnlocked": false,
-          "kingUnlocked": false,
-          "reached": "gold"
-        },
-        "disputed": null,
-        "highlights": [
-          "考核历史上最快的一场：9 道题定位加修复总共约 7 分钟，其中还有 3 分钟是主持人复制提示词的时间。",
-          "G003 第二轮只用了 53 秒，加上第一轮全程不到 3 分钟解决一道黄金。",
-          "两个月前首次挑战时一道题都没做对，本场三道青铜全部一轮通过。"
-        ]
-      },
-      {
         "name": "Claude Opus 4.6",
         "total": 6,
         "rank": 7,
@@ -369,6 +343,32 @@
         },
         "disputed": null,
         "highlights": []
+      },
+      {
+        "name": "混元 3.0",
+        "total": 6,
+        "rank": 7,
+        "date": "2026-07-08",
+        "duration": "9 道题定位加修复共约 7 分钟",
+        "byTier": {
+          "bronze": 3,
+          "silver": 1,
+          "gold": 2,
+          "diamond": 0,
+          "king": 0
+        },
+        "unlock": {
+          "baseScore": 6,
+          "diamondUnlocked": false,
+          "kingUnlocked": false,
+          "reached": "gold"
+        },
+        "disputed": null,
+        "highlights": [
+          "考核历史上最快的一场：9 道题定位加修复总共约 7 分钟，其中还有 3 分钟是主持人复制提示词的时间。",
+          "G003 第二轮只用了 53 秒，加上第一轮全程不到 3 分钟解决一道黄金。",
+          "两个月前首次挑战时一道题都没做对，本场三道青铜全部一轮通过。"
+        ]
       }
     ],
     "standingsGroups": [
@@ -592,6 +592,21 @@
       }
     ],
     "latestBoutDate": "2026-09-28"
+  },
+  "comments": {
+    "fetchedAt": "2026-10-02T11:56:14+08:00",
+    "authenticated": false,
+    "stats": {
+      "videos": 14,
+      "scanned": 47,
+      "claims": 0,
+      "confirmed": 0,
+      "conflict": 0,
+      "unverifiable": 0,
+      "ambiguous": 0
+    },
+    "notices": [],
+    "claims": []
   },
   "models": [
     {
